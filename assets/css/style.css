@@ -20,3 +20,67 @@ body {
   overflow: hidden;
   position: relative;
 }
+
+.sun {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#ffe600, #e79701);
+  border-radius: 50%;
+  z-index: -3;
+  top: 5%;
+  left: 30%;
+}
+
+.game-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100vh;
+  align-items: center;
+}
+
+.title-container {
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: min(450px, 40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.title-container > h1 {
+  /* text-align: center; */
+  font-size: 3rem;
+}
+
+.title-container i {
+  font-size: inherit;
+}
+
+.middle-container {
+  width: min(900px, 80%);
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellow;
+}
+
+
+
+.main-container {
+  width: min(900px, 80%);
+  height: min(60%, 900px);
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-bottom: 1%;
+  background-color: green;
+}
