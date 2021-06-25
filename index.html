@@ -95,25 +95,33 @@
         <h2>Game Settings</h2>
       </div>
       <div class="modal-body settings-modal-body">
-        <div>
+        <div class="settings-modal-column">
           <h4>Game Difficulty</h4>
           <label class="switch">
-            <input type="checkbox" id="difficulty-checkbox">
-            <span class="toggle round"></span>
+            <div class="slider-container">
+              <p class="left-label">Easy</p>
+              <input type="checkbox" id="difficulty-checkbox" class="checkbox">
+              <span class="toggle round"></span>
+              <p class="right-label">Hard</p>
+            </div>
           </label>
         </div>
-        <div> 
+        <div class="settings-modal-column"> 
           <h4>Rounds Needed To Win</h4>
           <label class="switch">
             <input type="range" min="5" max="33" step="2" id="rounds-slider">
             <span class="slider round"></span>
           </label>
         </div>
-        <div>
+        <div class="settings-modal-column">
           <h4>Colour Mode</h4>
           <label class="switch">
-            <input type="checkbox" id="colour-mode-checkbox">
-            <span class="toggle round"></span>
+            <div class="slider-container">
+              <p class="left-label">Light</p>
+              <input type="checkbox" id="colour-mode-checkbox"class="checkbox">
+              <span class="toggle round"></span>
+              <p class="right-label">Dark</p>
+            </div>
           </label>
         </div>
       </div>

@@ -203,3 +203,84 @@ background-color: rgba(230,191,144,1);
 background: rgba(43,32,18,1);
 border-radius: 5px;
 }
+
+/* Styling for settings modal*/
+
+#settings-modal {
+  display: block;
+}
+
+.settings-modal-body {
+  display: flex;
+  justify-content: space-around;
+}
+
+.settings-modal-column {
+  text-align: center;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-label {
+  margin-right: 5px;
+}
+
+.right-label {
+  margin-left: 5px;
+}
+
+/* Styling to turn checkbox inputs into toggle sliders.*/
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  background: rgba(43,32,18,1);
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: ease-in 500ms;
+}
+
+.toggle:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: rgba(230,191,144,1);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: 500ms;
+}
+
+.checkbox:checked ~ .toggle:before {
+  transform: translateX(40px);
+}
+
+.toggle:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: rgba(230,191,144,1);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: 500ms;
+  transform: translateX(-40px);
+}
+
+.checkbox:checked ~ .toggle:after {
+  transform: translateX(0px);
+}
