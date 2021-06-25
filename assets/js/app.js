@@ -1,5 +1,18 @@
 // Globally needed variables
+let gameIsHard = false;
 // Capture player system colour scheme preference
+// Capture game difficulty setting
+let gameDifficultyToggle = document.getElementById('difficulty-checkbox');
+// Event listener for game difficulty change 
+// Set game difficulty
+gameDifficultyToggle.addEventListener('change', function(e){
+  if (gameDifficultyToggle.checked) {
+    gameIsHard = true;
+  } else {
+    gameIsHard = false;
+  }
+});
+
 
 // FUNCTIONS
 
