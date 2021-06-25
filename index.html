@@ -87,6 +87,38 @@
       </div>
     </div>
   </div>
+  <!-- Settings Modal-->
+  <div class="modal-container" id="settings-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close" id="settings-modal-close">&times;</span>
+        <h2>Game Settings</h2>
+      </div>
+      <div class="modal-body settings-modal-body">
+        <div>
+          <h4>Game Difficulty</h4>
+          <label class="switch">
+            <input type="checkbox" id="difficulty-checkbox">
+            <span class="toggle round"></span>
+          </label>
+        </div>
+        <div> 
+          <h4>Rounds Needed To Win</h4>
+          <label class="switch">
+            <input type="range" min="5" max="33" step="2" id="rounds-slider">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div>
+          <h4>Colour Mode</h4>
+          <label class="switch">
+            <input type="checkbox" id="colour-mode-checkbox">
+            <span class="toggle round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="./assets/js/app.js"></script>
 </body>
