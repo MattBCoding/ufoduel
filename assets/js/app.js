@@ -54,6 +54,12 @@ function openMainRulesModal() {
 function closeMainRulesModal() {
   mainRulesModal.style.display = 'none';
 }
+// M.M. Close Rules Modal if player clicks outside the modal content
+function outsideModalClick(e) {
+  if (e.target == mainRulesModal) {
+    mainRulesModal.style.display = 'none';
+  }
+}
 // M.M. Open Game Settings Screen Modal
 // M.M. Close Game Settings Screen Modal
 // Get Main Menu Elements - getElementById
@@ -66,3 +72,4 @@ let mainRulesModalCloseButton = document.getElementById("main-rules-modal-close"
 // Main Menu Modal Event Listeners - capture player click events
 mainRulesModalButton.addEventListener('click', openMainRulesModal);
 mainRulesModalCloseButton.addEventListener('click', closeMainRulesModal);
+window.addEventListener('click', outsideModalClick);
