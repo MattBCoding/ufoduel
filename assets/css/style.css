@@ -207,7 +207,7 @@ border-radius: 5px;
 /* Styling for settings modal*/
 
 #settings-modal {
-  display: block;
+  display: none;
 }
 
 .settings-modal-body {

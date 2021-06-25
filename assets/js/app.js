@@ -58,18 +58,35 @@ function closeMainRulesModal() {
 function outsideModalClick(e) {
   if (e.target == mainRulesModal) {
     mainRulesModal.style.display = 'none';
+  } if (e.target == mainSettingsModal) {
+    mainSettingsModal.style.display = 'none';
   }
 }
 // M.M. Open Game Settings Screen Modal
+function openMainSettingsModal() {
+  mainSettingsModal.style.display = 'block';
+}
 // M.M. Close Game Settings Screen Modal
+function closeMainSettingsModal() {
+  mainSettingsModal.style.display = 'none';
+}
 // Get Main Menu Elements - getElementById
 // Main Menu Event Listeners - capture player click events
-// Main Menu Modal elements - getElementById
+// Main Menu Rules Modal elements - getElementById
 let mainRulesModalButton = document.getElementById("main-rules-button");
 let mainRulesModal = document.getElementById("main-rules-modal");
 let mainRulesModalCloseButton = document.getElementById("main-rules-modal-close");
 
-// Main Menu Modal Event Listeners - capture player click events
+// Main Menu Rules Modal Event Listeners - capture player click events
 mainRulesModalButton.addEventListener('click', openMainRulesModal);
 mainRulesModalCloseButton.addEventListener('click', closeMainRulesModal);
 window.addEventListener('click', outsideModalClick);
+
+// Main Menu Settings Modal elements - getElementById
+let mainSettingsModalButton = document.getElementById("main-settings-button");
+let mainSettingsModal = document.getElementById("settings-modal");
+let mainSettingsModalCloseButton = document.getElementById("settings-modal-close");
+
+// Main Menu Settings Modal Event Listeners - capture player click events
+mainSettingsModalButton.addEventListener('click', openMainSettingsModal);
+mainSettingsModalCloseButton.addEventListener('click', closeMainSettingsModal);
