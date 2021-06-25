@@ -109,6 +109,56 @@ body {
               inset 1px 5px 5px rgba(159,123,94,1);
   font-size: 2.5rem;
   font-weight: 700;
-  color: rgba(43,32,18,1));
+  color: rgba(43,32,18,1);
   cursor: pointer;
+}
+
+#main-rules-modal {
+  display: block;
+}
+
+.modal-container {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  margin: 20% auto;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 15px;
+  background-color: #fff;
+  /*****************************
+  ** add modal open animation **
+  ******************************/
+}
+
+.modal-header {
+  padding: 15px;
+  border-top: 15px;
+  /* border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
+}
+
+.modal-body {
+  padding: 10px 20px;
+  border-bottom: 15px;
+}
+
+.modal-close {
+  float: right;
+  font-size: 2rem;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: #FF312E;
 }
