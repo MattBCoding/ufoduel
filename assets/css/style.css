@@ -114,7 +114,7 @@ body {
 }
 
 #main-rules-modal {
-  display: block; /* change this value between none and block to display modal*/
+  display: none; /* change this value between none and block to display modal*/
 }
 
 .modal-container {

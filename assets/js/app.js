@@ -46,11 +46,23 @@
 // Change to Name Screen
 // M.M. What happens when player clicks play classic mode
 // M.M. What happens when player clicks play spock mode
+// M.M. Open Rules Modal
+function openMainRulesModal() {
+  mainRulesModal.style.display = 'block';
+}
+// M.M. Close Rules Modal
+function closeMainRulesModal() {
+  mainRulesModal.style.display = 'none';
+}
 // M.M. Open Game Settings Screen Modal
 // M.M. Close Game Settings Screen Modal
-// M.M. Open Rules Modal
-// M.M. Close Rules Modal
 // Get Main Menu Elements - getElementById
 // Main Menu Event Listeners - capture player click events
 // Main Menu Modal elements - getElementById
+let mainRulesModalButton = document.getElementById("main-rules-button");
+let mainRulesModal = document.getElementById("main-rules-modal");
+let mainRulesModalCloseButton = document.getElementById("main-rules-modal-close");
+
 // Main Menu Modal Event Listeners - capture player click events
+mainRulesModalButton.addEventListener('click', openMainRulesModal);
+mainRulesModalCloseButton.addEventListener('click', closeMainRulesModal);
