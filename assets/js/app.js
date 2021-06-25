@@ -1,6 +1,17 @@
 // Globally needed variables
-let gameIsHard = false;
-// Capture player system colour scheme preference
+let gameIsHard = false; // true means hard difficulty
+let colourMode = false; // true means dark scheme
+// Capture player colour scheme preference
+let colourModeToggle = document.getElementById('colour-mode-checkbox');
+// Event listener for colour mode change
+// Set colour mode
+colourModeToggle.addEventListener('change', function(e) {
+  if (colourModeToggle.checked) {
+    colourMode = true;
+  } else {
+    colourMode = false;
+  }
+});
 // Capture game difficulty setting
 let gameDifficultyToggle = document.getElementById('difficulty-checkbox');
 // Event listener for game difficulty change 
