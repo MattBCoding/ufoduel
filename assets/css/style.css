@@ -114,7 +114,7 @@ body {
 }
 
 #main-rules-modal {
-  display: block;
+  display: block; /* change this value between none and block to display modal*/
 }
 
 .modal-container {
@@ -124,31 +124,59 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(0,0,0,0.6);
 }
 
 .modal-content {
-  margin: 20% auto;
+  margin: 10% auto;
   width: 80%;
   max-width: 900px;
+  max-height: 80%;
   border-radius: 15px;
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
   /*****************************
   ** add modal open animation **
   ******************************/
 }
 
 .modal-header {
+  box-sizing: border-box;
   padding: 15px;
-  border-top: 15px;
-  /* border-top-left-radius: 15px;
-  border-top-right-radius: 15px; */
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: rgba(43,32,18,1);
+  color: rgba(230,191,144,1);
+  width: 100%;
+}
+
+.modal-header > h2 {
+  font-size: 2rem;
 }
 
 .modal-body {
   padding: 10px 20px;
-  border-bottom: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 5px solid rgba(230,191,144,1);
+  background-color: rgba(230,191,144,1);
+  color: rgba(43,32,18,1);
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.modal-body > h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.modal-body > h4 {
+  margin-top: 1.5rem;
+}
+
+.modal-body i {
+  font-size: 1.25rem;
 }
 
 .modal-close {
@@ -161,4 +189,17 @@ body {
 .modal-close:hover,
 .modal-close:focus {
   background-color: #FF312E;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background-color: rgba(230,191,144,1);
+}
+
+::-webkit-scrollbar-thumb {
+background: rgba(43,32,18,1);
+border-radius: 5px;
 }
