@@ -11,6 +11,7 @@ colourModeToggle.addEventListener('change', function(e) {
   } else {
     colourMode = false;
   }
+  changeColour();
 });
 // Capture game difficulty setting
 let gameDifficultyToggle = document.getElementById('difficulty-checkbox');
@@ -29,6 +30,68 @@ gameDifficultyToggle.addEventListener('change', function(e){
 
 // SETTINGS
 // Change Colour Scheme
+function changeColour() {
+  if (colourMode == true) {
+    //change colours
+    let r = document.querySelector(':root');
+    r.style.setProperty('--dark', '#232323');
+    r.style.setProperty('--light', '#2f2f2f');
+    r.style.setProperty('--light-highlight', '#353535');
+    r.style.setProperty('--shadow-light', '#353535');
+    r.style.setProperty('--shadow-dark', '#121212');
+    r.style.setProperty('--border', '#232323');
+    r.style.setProperty('--sky-light', '#4e667c8e');
+    r.style.setProperty('--sky-dark', '#0b3564');
+    r.style.setProperty('--text', '#f0d471');
+    r.style.setProperty('--text-light', '#f9f9f9');
+    r.style.setProperty('--error', '#f18988');
+    //change background image to darker version
+    let background = document.getElementById('screen-container');
+    background.style.backgroundImage = 'url(./assets/images/night.svg)';
+    // moon comes up
+    let moon = document.getElementById('moon');
+    moon.style.display = 'inline';
+    // sun goes down
+    let sun = document.getElementById('sun');
+    sun.style.display = 'none';
+  } else {
+    //change colours
+    let r = document.querySelector(':root');
+    r.style.setProperty('--dark', 'rgba(43,32,18,1)');
+    r.style.setProperty('--light', 'rgba(229,177,116,1)');
+    r.style.setProperty('--light-highlight', 'rgba(230,191,144,1)');
+    r.style.setProperty('--shadow-light', 'rgba(159,123,94,1)');
+    r.style.setProperty('--shadow-dark', 'rgba(97,58,28,1)');
+    r.style.setProperty('--border', 'rgba(168,103,50,1)');
+    r.style.setProperty('--sky-light', '#9bcaf58e');
+    r.style.setProperty('--sky-dark', '#1876e2');
+    r.style.setProperty('--text', 'rgba(43,32,18,1)');
+    r.style.setProperty('--text-light', 'rgba(229,177,116,1)');
+    r.style.setProperty('--error', '#FF312E');
+    //change background image to darker version
+    let background = document.getElementById('screen-container');
+    background.style.backgroundImage = 'url(./assets/images/day.svg)';
+    // moon goes down
+    let moon = document.getElementById('moon');
+    moon.style.display = 'none';
+    // sun comes up
+    let sun = document.getElementById('sun');
+    sun.style.display = 'inline';
+  }
+}
+  // Original day colour scheme
+  //--dark: rgba(43,32,18,1); >> #232323
+  //--light: rgba(229,177,116,1); #2f2f2f
+  //--light-highlight: rgba(230,191,144,1); #353535
+  //--shadow-light: rgba(159,123,94,1); #353535
+  //--shadow-dark: rgba(97,58,28,1); #121212
+  //--border: rgba(168,103,50,1); #232323
+  //--sky-light: #9bcaf58e;
+  //--sky-dark: #1876e2;
+  //--text: rgba(43,32,18,1); #f0d471
+  //--text-light: rgba(229,177,116,1); #f9f9f9
+  //--error: #FF312E; #f18988
+
 // Change Game Difficulty
 // Change Game Winning Condition
 

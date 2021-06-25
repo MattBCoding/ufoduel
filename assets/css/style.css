@@ -5,6 +5,9 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
+}
+
+:root {
   --dark: rgba(43,32,18,1);
   --light: rgba(229,177,116,1);
   --light-highlight: rgba(230,191,144,1);
@@ -13,6 +16,9 @@
   --border: rgba(168,103,50,1);
   --sky-light: #9bcaf58e;
   --sky-dark: #1876e2;
+  --text: rgba(43,32,18,1);
+  --text-light: rgba(229,177,116,1);
+  --error: #FF312E;
 }
 
 body {
@@ -38,6 +44,19 @@ body {
   z-index: -3;
   top: 5%;
   left: 30%;
+  display: inline;
+}
+
+.moon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#cacaca, #f4f4f4);
+  border-radius: 50%;
+  z-index: -3;
+  top: 5%;
+  right: 30%;
+  display: none;
 }
 
 .game-container {
@@ -69,7 +88,7 @@ body {
 .title-container > h1 {
   /* text-align: center; */
   font-size: 3rem;
-  color: var(--dark);
+  color: var(--text);
   /* border: rgba(114,81,49,1) solid 2px; */
   text-shadow: 0 10px 4px var(--shadow-light);
 }
@@ -117,7 +136,7 @@ body {
               inset 1px 5px 5px var(--shadow-light);
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--text);
   cursor: pointer;
 }
 
@@ -155,7 +174,7 @@ body {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: var(--dark);
-  color: var(--light);
+  color: var(--text-light);
   width: 100%;
 }
 
@@ -169,7 +188,7 @@ body {
   border-bottom-right-radius: 15px;
   border: 5px solid var(--light-highlight);
   background-color: var(--light-highlight);
-  color: var(--dark);
+  color: var(--text);
   height: 100%;
   overflow-y: scroll;
 }
@@ -196,7 +215,7 @@ body {
 
 .modal-close:hover,
 .modal-close:focus {
-  background-color: #FF312E;
+  background-color: var(--error);
 }
 
 ::-webkit-scrollbar {
