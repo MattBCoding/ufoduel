@@ -172,13 +172,14 @@ function setGameModeSpock(){
 function openNameScreen() {
   menu = document.getElementById("main-container").innerHTML; //captures main menu elements so can be reinserted when needed
   document.getElementById("main-container").innerHTML = `
-  <div class="menu">
+  <div class="main-menu">
     <form action="#">  
       <div class="form">
         <label for="name">Enter name:</label>
-        <input type="text" id="name" name="name" pattern="[A-Za-z0-9]{1,15}">
+        <input type="text" id="name" name="name" pattern="[A-Za-z0-9]{1,15}" maxlength="15">
       </div>
-      <button class="main-menu-button" id="start-button">Start</button>
+      <button type="submit" class="main-menu-button" id="start-button">Start</button>
+    </form>
   </div>
   `;
   console.log("function openNameScreen ran");
