@@ -209,7 +209,7 @@ function launchClassicGame() {
   <div class="game">
     <div class="game-grid">
 <!--rock game tile-->    
-      <div class="game-tile rock ufo" id="rock-tile-classic">
+      <div class="game-tile rock ufo slide-in-blurred-right" id="rock-tile-classic">
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
@@ -221,7 +221,7 @@ function launchClassicGame() {
         <i class="far fa-hand-rock"></i>
       </div>
 <!-- paper game tile-->
-      <div class="game-tile paper ufo" id="paper-tile-classic">
+      <div class="game-tile paper ufo slide-in-blurred-right" id="paper-tile-classic">
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
@@ -233,7 +233,7 @@ function launchClassicGame() {
         <i class="far fa-hand-paper"></i>
       </div>
 <!-- scissors game tile-->
-      <div class="game-tile scissors ufo" id="scissors-tile-classic">
+      <div class="game-tile scissors ufo slide-in-blurred-right" id="scissors-tile-classic">
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
