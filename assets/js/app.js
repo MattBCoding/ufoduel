@@ -2,7 +2,7 @@
 let gameIsHard = false; // true means hard difficulty
 let colourMode = false; // true means dark scheme
 let starsOn = false; //true means stars inserted for dark mode
-let gameMode = 'classic';
+let gameMode = '';
 let menu;
 let playerName = "";
 // Capture player colour scheme preference
@@ -137,6 +137,18 @@ function setGameModeSpock(){
   openNameScreen();
 }
 // Determine Game Mode
+function launchGame() {
+  if (gameMode === "classic") {
+    launchClassicGame();
+  } else if (gameMode == "spock") {
+    launchSpockGame();
+  } else {
+    // error message displayed - safety measure incase user finds way to element without going through the menu
+    alert("No game type selected - restarting game");
+    //refresh page - forces game to restart
+    location.reload();
+  }
+}
 // Add Scoreboard to screen
 // Classic Game Logic
 // Spock Game Logic
@@ -170,23 +182,26 @@ function nameScreen() {
   //listen for click
   start.addEventListener('click', captureName);
   function captureName(e){
+    //prevent default action
     e.preventDefault();
     let name = document.getElementById("name");
     if (name.value.includes(' ')) {
       document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space, their language doesn't understand them and it makes them angry.`
+      //reset form field
       name.value = '';
     } else if(name.value == ''){
       playerName = 'Mystery Person';
+      // start game
+      launchGame();
     } else {
+      //capture name input
       playerName = name.value;
+      // start game
+      launchGame();
     }
     console.log("start button pressed")
     console.log(playerName);
   }
-  //prevent default action
-
-  //capture name input
-  //start game
 }
 // Change to Game Screen - Classic
 // Change to Game Screen - Spock
