@@ -213,39 +213,36 @@ function launchClassicGame() {
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
-          <div class="window small"></div>
-          <div class="window"></div>
-          <div class="window small"></div>
+          <div class="window small window-left"></div>
+          <div class="window window-center"></div>
+          <div class="window small window-right"></div>
         </div>
-        <div class="light" id="rock-light-classic">
-          <i class="far fa-hand-rock"></i>
-        </div>
+        <div class="light" id="rock-light-classic"></div>
+        <i class="far fa-hand-rock"></i>
       </div>
 <!-- paper game tile-->
       <div class="game-tile paper ufo" id="paper-tile-classic">
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
-          <div class="window small"></div>
-          <div class="window"></div>
-          <div class="window small"></div>
+          <div class="window small window-left"></div>
+          <div class="window window-center"></div>
+          <div class="window small window-right"></div>
         </div>
-        <div class="light" id="paper-light-classic">
-          <i class="far fa-hand-paper"></i>
-        </div>
+        <div class="light" id="paper-light-classic"></div>
+        <i class="far fa-hand-paper"></i>
       </div>
 <!-- scissors game tile-->
       <div class="game-tile scissors ufo" id="scissors-tile-classic">
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
-          <div class="window small"></div>
-          <div class="window"></div>
-          <div class="window small"></div>
+          <div class="window small window-left" id="window-left"></div>
+          <div class="window window-center" id="window-center"></div>
+          <div class="window small window-right" id="window-right"></div>
         </div>
-        <div class="light" id="scissors-light-classic">
-          <i class="far fa-hand-scissors"></i>
-        </div>
+        <div class="light" id="scissors-light-classic"></div>
+        <i class="far fa-hand-scissors"></i>
       </div>  
 
       <div class="game-button rules" id="classic-rules-button">Rules</div>
