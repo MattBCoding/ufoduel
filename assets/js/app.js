@@ -2,6 +2,7 @@
 let gameIsHard = false; // true means hard difficulty
 let colourMode = false; // true means dark scheme
 let starsOn = false; //true means stars inserted for dark mode
+let gameMode = 'classic';
 // Capture player colour scheme preference
 let colourModeToggle = document.getElementById('colour-mode-checkbox');
 // Event listener for colour mode change
@@ -122,6 +123,12 @@ function stars(background) {
 
 // FUNCTIONS NEEDED BY MORE THAN ONE SCREEN
 // Set Game Mode
+function setGameModeClassic(){
+  gameMode = 'classic';
+  console.log(gameMode);
+  // openNameScreen();
+}
+
 // Determine Game Mode
 // Add Scoreboard to screen
 // Classic Game Logic
@@ -157,7 +164,10 @@ function stars(background) {
 // HOME SCREEN
 // Change to Name Screen
 // M.M. What happens when player clicks play classic mode
+let playClassicButton = document.getElementById("play-classic");
+playClassicButton.addEventListener('click', setGameModeClassic);
 // M.M. What happens when player clicks play spock mode
+
 // M.M. Open Rules Modal
 function openMainRulesModal() {
   mainRulesModal.style.display = 'block';
