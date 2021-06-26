@@ -377,3 +377,9 @@ border-radius: 5px;
   color: var(--text);
   font-size: 1.25rem;
 }
+
+#error-message {
+  width: 90%;
+  position: relative;
+  top: -25px;
+}

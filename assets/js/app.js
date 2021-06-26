@@ -4,6 +4,7 @@ let colourMode = false; // true means dark scheme
 let starsOn = false; //true means stars inserted for dark mode
 let gameMode = 'classic';
 let menu;
+let playerName = "";
 // Capture player colour scheme preference
 let colourModeToggle = document.getElementById('colour-mode-checkbox');
 // Event listener for colour mode change
@@ -163,6 +164,30 @@ function setGameModeSpock(){
 
 // ENTER NAME SCREEN
 // Capture Name Entry by player
+function nameScreen() {
+  //get button
+  let start = document.getElementById("start-button");
+  //listen for click
+  start.addEventListener('click', captureName);
+  function captureName(e){
+    e.preventDefault();
+    let name = document.getElementById("name");
+    if (name.value.includes(' ')) {
+      document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space, their language doesn't understand them and it makes them angry.`
+      name.value = '';
+    } else if(name.value == ''){
+      playerName = 'Mystery Person';
+    } else {
+      playerName = name.value;
+    }
+    console.log("start button pressed")
+    console.log(playerName);
+  }
+  //prevent default action
+
+  //capture name input
+  //start game
+}
 // Change to Game Screen - Classic
 // Change to Game Screen - Spock
 // Back or Quit button
@@ -175,6 +200,7 @@ function openNameScreen() {
   <div class="main-menu">
     <form action="#">  
       <div class="form">
+        <span id="error-message"></span>
         <label for="name">Enter name:</label>
         <input type="text" id="name" name="name" pattern="[A-Za-z0-9]{1,15}" maxlength="15">
       </div>
@@ -184,6 +210,7 @@ function openNameScreen() {
   `;
   console.log("function openNameScreen ran");
   console.log(menu);
+  nameScreen();
 }
 // M.M. What happens when player clicks play classic mode
 let playClassicButton = document.getElementById("play-classic");
