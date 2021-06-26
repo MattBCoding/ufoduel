@@ -3,6 +3,7 @@ let gameIsHard = false; // true means hard difficulty
 let colourMode = false; // true means dark scheme
 let starsOn = false; //true means stars inserted for dark mode
 let gameMode = 'classic';
+let menu;
 // Capture player colour scheme preference
 let colourModeToggle = document.getElementById('colour-mode-checkbox');
 // Event listener for colour mode change
@@ -126,13 +127,13 @@ function stars(background) {
 function setGameModeClassic(){
   gameMode = 'classic';
   console.log(gameMode);
-  // openNameScreen();
+  openNameScreen();
 }
 
 function setGameModeSpock(){
   gameMode = 'spock';
   console.log(gameMode);
-  // openNameScreen();
+  openNameScreen();
 }
 // Determine Game Mode
 // Add Scoreboard to screen
@@ -168,6 +169,21 @@ function setGameModeSpock(){
 
 // HOME SCREEN
 // Change to Name Screen
+function openNameScreen() {
+  menu = document.getElementById("main-container").innerHTML; //captures main menu elements so can be reinserted when needed
+  document.getElementById("main-container").innerHTML = `
+  <div class="menu">
+    <form action="#">  
+      <div class="form">
+        <label for="name">Enter name:</label>
+        <input type="text" id="name" name="name" pattern="[A-Za-z0-9]{1,15}">
+      </div>
+      <button class="main-menu-button" id="start-button">Start</button>
+  </div>
+  `;
+  console.log("function openNameScreen ran");
+  console.log(menu);
+}
 // M.M. What happens when player clicks play classic mode
 let playClassicButton = document.getElementById("play-classic");
 playClassicButton.addEventListener('click', setGameModeClassic);
