@@ -160,7 +160,7 @@ function launchGame() {
 // Add Scoreboard to screen
 function addScoreboard() {
   document.getElementById("middle-container").innerHTML = `
-    <div class="scoreboard scale-in-ver-bottom">
+    <div class="scoreboard">
       <div class="scoreboard-top-row" id="scoreboard-top-row">
         <span id="player-name">${playerName}</span>
         <span id="name-vs">vs</span>
@@ -172,7 +172,7 @@ function addScoreboard() {
         <span class="comp-score" id="comp-score">0</span>
       </div>
       <div id="round-message-div">
-        <p id="round-message"></p>
+        <p id="round-message">test text to be removed for auto update</p>
       </div>
     </div>`;
 }

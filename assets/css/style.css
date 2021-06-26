@@ -97,6 +97,7 @@ body {
   flex-wrap: nowrap;
   height: 100vh;
   align-items: center;
+  overflow: hidden;
 }
 
 .title-container {
@@ -655,3 +656,79 @@ border-radius: 5px;
   }
 }
 
+.scoreboard {
+  width: min(440px, 90%);
+  height: min(150px, 90%);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-image: repeating-linear-gradient(180deg, var(--light), var(--light-highlight) 8%, var(--light-highlight) 10%);
+  border: 5px solid var(--border);
+  border-radius: 15px;
+}
+
+.scoreboard-top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 20%;
+  flex-grow: 0;
+}
+
+.scoreboard-top-row > span {
+  font-size: 1rem;
+}
+
+.scoreboard-middle-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 60%;
+  flex-grow: 0;
+}
+
+.scoreboard-middle-row > span {
+  font-size: 4rem;
+  line-height: .5rem;
+}
+
+#round-message-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 20%;
+  width: 100%;
+  flex-grow: 0;
+  overflow: hidden;
+  background-color: var(--dark);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#round-message {
+  font-size: 1rem;
+  color: var(--text-light);
+  /*Add scrolling animation like sports ticker board*/
+}
+
+#player-name {
+  width: 45%;
+  text-align: right;
+}
+
+#name-vs {
+  justify-self: center;
+  width: 10%;
+  text-align: center;
+}
+
+#comp-name {
+  width: 45%;
+  text-align: left;
+}
