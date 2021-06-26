@@ -1,6 +1,7 @@
 // Globally needed variables
 let gameIsHard = false; // true means hard difficulty
 let colourMode = false; // true means dark scheme
+let starsOn = false; //true means stars inserted for dark mode
 // Capture player colour scheme preference
 let colourModeToggle = document.getElementById('colour-mode-checkbox');
 // Event listener for colour mode change
@@ -48,6 +49,9 @@ function changeColour() {
     //change background image to darker version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/night.svg)';
+    // call star function
+    starsOn = true;
+    stars(background);
     // moon comes up
     let moon = document.getElementById('moon');
     moon.style.display = 'inline';
@@ -71,6 +75,9 @@ function changeColour() {
     //change background image to darker version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/day.svg)';
+    // call star function
+    starsOn = false;
+    stars(background);
     // moon goes down
     let moon = document.getElementById('moon');
     moon.style.display = 'none';
@@ -79,18 +86,36 @@ function changeColour() {
     sun.style.display = 'inline';
   }
 }
-  // Original day colour scheme
-  //--dark: rgba(43,32,18,1); >> #232323
-  //--light: rgba(229,177,116,1); #2f2f2f
-  //--light-highlight: rgba(230,191,144,1); #353535
-  //--shadow-light: rgba(159,123,94,1); #353535
-  //--shadow-dark: rgba(97,58,28,1); #121212
-  //--border: rgba(168,103,50,1); #232323
-  //--sky-light: #9bcaf58e;
-  //--sky-dark: #1876e2;
-  //--text: rgba(43,32,18,1); #f0d471
-  //--text-light: rgba(229,177,116,1); #f9f9f9
-  //--error: #FF312E; #f18988
+
+// stars on or off function
+function stars(background) {
+  if (starsOn == true) {
+    let starContainer = document.createElement('div');
+    starContainer.setAttribute('id','star-container');
+    background.appendChild(starContainer);
+    let count = 100;
+    let s = 0;
+    while(s < count) {
+      let star = document.createElement('i');
+      let x = Math.floor(Math.random() * window.innerWidth);
+      let y = Math.floor((Math.random() * window.innerHeight)/2);
+      let duration = Math.random() * 10;
+      let size = Math.random() * 2;
+      star.style.left = x + 'px';
+      star.style.top = y + 'px';
+      star.style.width = 1+size+'px';
+      star.style.height = 1+size+'px';
+      star.style.animationDuration = 5+duration+'s';
+      star.style.animationDelay = duration+'s';
+      starContainer.appendChild(star);
+      s++;
+    } 
+  } else {
+    let starContainer = document.getElementById('star-container');
+    starContainer.remove();
+  }
+
+}
 
 // Change Game Difficulty
 // Change Game Winning Condition

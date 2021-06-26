@@ -59,6 +59,29 @@ body {
   display: none;
 }
 
+.screen-container i {
+  position: absolute;
+  background: rgb(0, 255, 221);
+  border-radius: 50%;
+  animation: starsAnimation linear infinite;
+  z-index: -2;
+}
+
+@keyframes starsAnimation {
+  0% {
+      opacity: 0;
+      transform: translate(0, 0);
+  }
+  10%,90%{
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      transform: translate(600px, 400px);
+      
+  }
+}
+
 .game-container {
   position: absolute;
   top: 0;
@@ -105,7 +128,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .main-container {
