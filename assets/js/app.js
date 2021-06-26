@@ -158,6 +158,24 @@ function launchGame() {
   }
 }
 // Add Scoreboard to screen
+function addScoreboard() {
+  document.getElementById("middle-container").innerHTML = `
+    <div class="scoreboard scale-in-ver-bottom">
+      <div class="scoreboard-top-row" id="scoreboard-top-row">
+        <span id="player-name">${playerName}</span>
+        <span id="name-vs">vs</span>
+        <span id="comp-name">Q</span>
+      </div>
+      <div class="scoreboard-middle-row" id="scoreboard-middle-row">
+        <span class="player-score" id="player-score">0</span>
+        <span class="score-vs" id="score-vs">:</span>
+        <span class="comp-score" id="comp-score">0</span>
+      </div>
+      <div id="round-message-div">
+        <p id="round-message"></p>
+      </div>
+    </div>`;
+}
 // Classic Game Logic
 // Spock Game Logic
 // Computer move selection - Math.random for easy difficulty
@@ -176,7 +194,8 @@ function launchGame() {
 // Quit Game button - Spock
 
 // CLASSIC GAME SCREEN
-// Classic Game Event Capture
+
+
 // In game rules modal
 // Classic Rules modal open
 // Classic Rules modal close
@@ -257,7 +276,9 @@ function launchClassicGame() {
       <div class="game-button quit" id="classic-quit-button">Quit</div>
     </div>
   </div>
-  `
+  `;
+  addScoreboard();
+  // gameClassic();
 }
 // Change to Game Screen - Spock
 // Back or Quit button
