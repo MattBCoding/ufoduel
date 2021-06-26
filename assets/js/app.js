@@ -204,6 +204,56 @@ function nameScreen() {
   }
 }
 // Change to Game Screen - Classic
+function launchClassicGame() {
+  document.getElementById("main-container").innerHTML=`
+  <div class="game">
+    <div class="game-grid">
+<!--rock game tile-->    
+      <div class="game-tile rock ufo" id="rock-tile-classic">
+        <div class="glass"></div>
+        <div class="separator"></div>
+        <div class="body">
+          <div class="window small"></div>
+          <div class="window"></div>
+          <div class="window small"></div>
+        </div>
+        <div class="light" id="rock-light-classic">
+          <i class="far fa-hand-rock"></i>
+        </div>
+      </div>
+<!-- paper game tile-->
+      <div class="game-tile paper ufo" id="paper-tile-classic">
+        <div class="glass"></div>
+        <div class="separator"></div>
+        <div class="body">
+          <div class="window small"></div>
+          <div class="window"></div>
+          <div class="window small"></div>
+        </div>
+        <div class="light" id="paper-light-classic">
+          <i class="far fa-hand-paper"></i>
+        </div>
+      </div>
+<!-- scissors game tile-->
+      <div class="game-tile scissors ufo" id="scissors-tile-classic">
+        <div class="glass"></div>
+        <div class="separator"></div>
+        <div class="body">
+          <div class="window small"></div>
+          <div class="window"></div>
+          <div class="window small"></div>
+        </div>
+        <div class="light" id="scissors-light-classic">
+          <i class="far fa-hand-scissors"></i>
+        </div>
+      </div>  
+
+      <div class="game-button rules" id="classic-rules-button">Rules</div>
+      <div class="game-button quit" id="classic-quit-button">Quit</div>
+    </div>
+  </div>
+  `
+}
 // Change to Game Screen - Spock
 // Back or Quit button
 
