@@ -20,6 +20,7 @@
   --text-light: rgba(229,177,116,1);
   --error: #FF312E;
   --ufo-body: #b8b8b8;
+  --ufo-body-shadow: #2f2f2f;
   --ufo-glass: #ffffff;
   --ufo-light: #f0d471;
 }
@@ -460,7 +461,7 @@ border-radius: 5px;
 	padding: 0px 15px;
 	border-radius: 50%;
 	background-color: var(--ufo-body);
-  background-image: radial-gradient(farthest-corner at 60% 30%,#ffffff, #b8b8b8 7%, #b8b8b8 60%, #2f2f2f 98%);
+  background-image: radial-gradient(farthest-corner at 60% 30%,var(--ufo-glass), var(--ufo-body) 7%, var(--ufo-body) 60%, var(--ufo-body-shadow) 98%);
 	z-index:1;
 	display:flex;
 	justify-content:space-around;

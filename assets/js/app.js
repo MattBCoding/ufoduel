@@ -49,6 +49,10 @@ function changeColour() {
     r.style.setProperty('--text', '#f0d471');
     r.style.setProperty('--text-light', '#f9f9f9');
     r.style.setProperty('--error', '#f18988');
+    r.style.setProperty('--ufo-body', '#353535');
+    r.style.setProperty('--ufo-body-shadow', '#232323');
+    r.style.setProperty('--ufo-glass', '#ffffff');
+    r.style.setProperty('--ufo-light', '#72ded4');
     //change background image to darker version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/night.svg)';
@@ -75,6 +79,10 @@ function changeColour() {
     r.style.setProperty('--text', 'rgba(43,32,18,1)');
     r.style.setProperty('--text-light', 'rgba(229,177,116,1)');
     r.style.setProperty('--error', '#FF312E');
+    r.style.setProperty('--ufo-body', '#b8b8b8');
+    r.style.setProperty('--ufo-body-shadow', '#2f2f2f');
+    r.style.setProperty('--ufo-glass', '#ffffff');
+    r.style.setProperty('--ufo-light', '#f0d471');
     //change background image to darker version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/day.svg)';
