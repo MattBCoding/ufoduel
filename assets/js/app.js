@@ -129,6 +129,11 @@ function setGameModeClassic(){
   // openNameScreen();
 }
 
+function setGameModeSpock(){
+  gameMode = 'spock';
+  console.log(gameMode);
+  // openNameScreen();
+}
 // Determine Game Mode
 // Add Scoreboard to screen
 // Classic Game Logic
@@ -167,7 +172,8 @@ function setGameModeClassic(){
 let playClassicButton = document.getElementById("play-classic");
 playClassicButton.addEventListener('click', setGameModeClassic);
 // M.M. What happens when player clicks play spock mode
-
+let playSpockButton = document.getElementById("play-spock");
+playSpockButton.addEventListener('click', setGameModeSpock);
 // M.M. Open Rules Modal
 function openMainRulesModal() {
   mainRulesModal.style.display = 'block';
