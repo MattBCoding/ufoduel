@@ -18,6 +18,7 @@
   --sky-dark: #1876e2;
   --text: rgba(43,32,18,1);
   --text-light: rgba(229,177,116,1);
+  --toggle-button: rgba(230,191,144,1);
   --error: #FF312E;
   --ufo-body: #b8b8b8;
   --ufo-body-shadow: #2f2f2f;
@@ -316,7 +317,7 @@ border-radius: 5px;
   position: absolute;
   top: 2px;
   left: 2px;
-  background: var(--light-highlight);
+  background: var(--toggle-button);
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -332,7 +333,7 @@ border-radius: 5px;
   position: absolute;
   top: 2px;
   right: 2px;
-  background: var(--light-highlight);
+  background: var(--toggle-button);
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -679,6 +680,7 @@ border-radius: 5px;
 
 .scoreboard-top-row > span {
   font-size: 1rem;
+  color: var(--text);
 }
 
 .scoreboard-middle-row {
@@ -694,6 +696,7 @@ border-radius: 5px;
 .scoreboard-middle-row > span {
   font-size: 4rem;
   line-height: .5rem;
+  color: var(--text);
 }
 
 #round-message-div {
