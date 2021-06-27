@@ -181,6 +181,28 @@ function addScoreboard() {
     </div>`;
 }
 // Classic Game Logic
+function classicGameLogic(playerSelection) {
+  let compSelection = getCompSelection();
+  switch (playerSelection + compSelection) {
+    case 'rockscissors':
+        case 'paperrock':
+        case 'scissorspaper':
+            playerWin(playerSelection, compSelection);
+            break;
+        case 'rockpaper':
+        case 'paperscissors':
+        case 'scissorsrock':
+            playerLose(playerSelection, compSelection);
+            break;
+        case 'rockrock':
+        case 'paperpaper':
+        case 'scissorsscissors':
+            playerDraw(playerSelection, compSelection);
+            break;
+
+            //need to add compSelection function 28/06
+  }
+}
 // Spock Game Logic
 // Computer move selection - Math.random for easy difficulty
 // Computer move selection - hard difficulty
