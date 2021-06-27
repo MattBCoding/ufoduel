@@ -30,6 +30,7 @@ gameDifficultyToggle.addEventListener('change', function(e){
 });
 
 let classicRulesModal;
+let quitModal;
 
 // FUNCTIONS
 
@@ -202,7 +203,7 @@ function addScoreboard() {
 // In game rules modal
 function addClassicRulesModal() {
   // add classic rules modal into overall modal container
-  document.getElementById("overall-modal-container").innerHTML = `
+  document.getElementById("rules-modal-container").innerHTML = `
   <div class="modal-container" id="classic-rules-modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -250,7 +251,50 @@ function addClassicRulesModal() {
   }
 
 }
+// quit game modal
+function addQuitModal() {
+  document.getElementById("quit-modal-container").innerHTML = `
+  <div class="modal-container" id="quit-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close" id="quit-modal-close">&times;</span>
+        <h2>Quit Game</h2>
+      </div>
+      <div class="modal-body">
+        <h3>Are you sure?</h3>
+        <p>"Woah...Commander, you need to think carefully! Going A.W.O.L. in our moment of need is not going to go down well, hell, I might shoot you myself."</p>
+        <button class="game-button" id="quit-modal-quit-button">Quit</button>
+        <button class="game-button" id="quit-modal-cancel-button">Stay and Fight</button>
+      </div>
+    </div>
+  </div>`;
+  
+  let quitGameButton = document.getElementById("quit-button");
+  quitGameButton.addEventListener('click', openQuitModal);
+  
+  let quitGameModalClose = document.getElementById("quit-modal-close");
+  quitGameModalClose.addEventListener('click', closeQuitModal);
+  let quitGameCancelButton = document.getElementById("quit-modal-cancel-button");
+  quitGameCancelButton.addEventListener('click', closeQuitModal);
 
+  let quitModalQuitButton = document.getElementById("quit-modal-quit-button");
+  quitModalQuitButton.addEventListener('click', returnToMenu);
+
+  quitModal = document.getElementById("quit-modal");
+  // Quit modal open
+  function openQuitModal() {
+    quitModal.style.display = 'block';
+  }
+  // Quit modal close
+  function closeQuitModal() {
+    quitModal.style.display = 'none';
+  }
+
+}
+
+function returnToMenu() {
+  document.getElementById("main-container").innerHTML = menu;
+}
 // Quit Game button - Classic
 
 // ENTER NAME SCREEN
@@ -325,16 +369,17 @@ function launchClassicGame() {
       </div>  
 
       <div class="game-button rules" id="classic-rules-button">Rules</div>
-      <div class="game-button quit" id="classic-quit-button">Quit</div>
+      <div class="game-button quit" id="quit-button">Quit</div>
     </div>
   </div>
   `;
   addClassicRulesModal();
+  addQuitModal();
   addScoreboard();
   // gameClassic();
 }
 // Change to Game Screen - Spock
-// Back or Quit button
+// Back or Quit button - name screen
 
 // HOME SCREEN
 // Change to Name Screen
@@ -378,6 +423,8 @@ function outsideModalClick(e) {
     mainSettingsModal.style.display = 'none';
   } if (e.target == classicRulesModal) {
     classicRulesModal.style.display = 'none';
+  } if (e.target == quitModal) {
+    quitModal.style.display = 'none';
   }
 }
 // M.M. Open Game Settings Screen Modal

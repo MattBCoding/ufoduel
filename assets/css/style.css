@@ -742,6 +742,10 @@ border-radius: 5px;
 
 #response {
   display:block;
-  
+
   text-align: end;
+}
+
+#quit-modal {
+  display: none;
 }
