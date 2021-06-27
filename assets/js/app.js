@@ -29,6 +29,7 @@ gameDifficultyToggle.addEventListener('change', function(e){
   }
 });
 
+let classicRulesModal;
 
 // FUNCTIONS
 
@@ -199,8 +200,57 @@ function addScoreboard() {
 
 
 // In game rules modal
-// Classic Rules modal open
+function addClassicRulesModal() {
+  // add classic rules modal into overall modal container
+  document.getElementById("overall-modal-container").innerHTML = `
+  <div class="modal-container" id="classic-rules-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close" id="classic-rules-modal-close">&times;</span>
+        <h2>Rules of the game</h2>
+      </div>
+      <div class="modal-body">
+        <h3>How to win</h3>
+        <p>
+          <i class="far fa-hand-rock"></i>
+          Rock beats Scissors 
+          <i class="far fa-hand-scissors"></i>
+          <br>
+          <i class="far fa-hand-scissors"></i>
+            Scissors beats Paper 
+          <i class="far fa-hand-paper"></i>
+          <br>
+          <i class="far fa-hand-paper"></i>
+            Paper beats Rock 
+          <i class="far fa-hand-rock"></i>
+        </p>
+        <br>
+        <p>"Commander, you need to decide which hand you want to play by touching or clicking on the ufo that is lighting it up. The aliens will have already decided which move they are going to make way before you, their minds are much quicker than ours. You don't have to worry about them cheating either, they may spend their time invading other planets, destroying everything and stealing anything of potential value, but they pride themselves on the fact they do it honourably, in a fair fight."</p>
+        <h3>Hard Mode</h3>
+        <p>"If you were brave enough to try and beat them in the Hard mode you will be taking on the alien boss and not one of the minions, I wish you luck, you are going to need it. Some of the really crazy looking scientists keep muttering to themselves that there is a pattern to the way the boss plays but none of the previous commanders have ever survived to report back."</p> <span id="response"><p>"???"</p></span><p>"Oh, sorry, I thought you already knew you weren't the first choice"
+        </p>
+      </div>
+    </div>
+  </div>`;
+  
+  let rulesButton = document.getElementById("classic-rules-button");
+  rulesButton.addEventListener('click', openClassicRulesModal);
+  
+  let classicRulesModalClose = document.getElementById("classic-rules-modal-close");
+  classicRulesModalClose.addEventListener('click', closeClassicRulesModal);
+
+  classicRulesModal = document.getElementById("classic-rules-modal");
+  // Classic Rules modal open
+  function openClassicRulesModal() {
+    classicRulesModal.style.display = 'block';
+  }
 // Classic Rules modal close
+  function closeClassicRulesModal() {
+    classicRulesModal.style.display = 'none';
+  }
+
+}
+
 // Quit Game button - Classic
 
 // ENTER NAME SCREEN
@@ -279,6 +329,7 @@ function launchClassicGame() {
     </div>
   </div>
   `;
+  addClassicRulesModal();
   addScoreboard();
   // gameClassic();
 }
@@ -325,6 +376,8 @@ function outsideModalClick(e) {
     mainRulesModal.style.display = 'none';
   } if (e.target == mainSettingsModal) {
     mainSettingsModal.style.display = 'none';
+  } if (e.target == classicRulesModal) {
+    classicRulesModal.style.display = 'none';
   }
 }
 // M.M. Open Game Settings Screen Modal

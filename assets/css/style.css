@@ -735,3 +735,13 @@ border-radius: 5px;
   width: 45%;
   text-align: left;
 }
+
+#classic-rules-modal {
+  display: none;
+}
+
+#response {
+  display:block;
+  
+  text-align: end;
+}
