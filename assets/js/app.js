@@ -198,7 +198,28 @@ function addScoreboard() {
 // Quit Game button - Spock
 
 // CLASSIC GAME SCREEN
-
+function playerSelectionClassic() {
+  //capture game tiles
+  let rock = document.getElementById("rock-tile-classic");
+  let paper = document.getElementById("paper-tile-classic");
+  let scissors = document.getElementById("scissors-tile-classic");
+  //event listeners for game tiles
+  rock.addEventListener('click', function() {
+   //temp needs animation added. phase original location out and phase in on new location
+    this.style.gridArea = 'player'
+    classicGameLogic('rock');
+  });
+  paper.addEventListener('click', function(){
+    //temp needs animation added. phase original location out and phase in on new location
+    this.style.gridArea = 'player'
+    classicGameLogic('paper');
+  });
+  scissors.addEventListener('click', function(){
+    //temp needs animation added. phase original location out and phase in on new location
+    this.style.gridArea = 'player'
+    classicGameLogic('scissors');
+  });
+}
 
 // In game rules modal
 function addClassicRulesModal() {
@@ -384,7 +405,7 @@ function launchClassicGame() {
   addClassicRulesModal();
   addQuitModal();
   addScoreboard();
-  // gameClassic();
+  playerSelectionClassic();
 }
 // Change to Game Screen - Spock
 // Back or Quit button - name screen

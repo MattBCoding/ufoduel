@@ -407,12 +407,12 @@ border-radius: 5px;
   grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr ; */
   gap: 5px;
   grid-template-areas: 
-  ".      .       lizard  lizard  .           ."
-  ".      .       lizard  lizard  .           ."
+  ".      lizard  lizard  spock   spock       ."
+  ".      lizard  lizard  spock   spock       ."
   "rock   rock    paper   paper   scissors    scissors"
   "rock   rock    paper   paper   scissors    scissors"
-  ".      .       spock   spock   .           ."
-  ".      .       spock   spock   .           ."
+  ".      player  player  comp    comp         ."
+  ".      player  player  comp    comp         ."
   "rules  rules   .       .       quit        quit";
   place-content: space-around;
   place-items: center;
@@ -446,7 +446,7 @@ border-radius: 5px;
   grid-area: quit;
 }
 
-.ufo{
+.ufo {
 	width:250px;
 	height:150px;
 	position: relative;
@@ -529,7 +529,7 @@ border-radius: 5px;
 	height: 0px;
 	border-right: 42px solid transparent;
 	border-left: 42px solid transparent;
-	border-bottom: 150px solid var(--ufo-light);
+	border-bottom: 140px solid var(--ufo-light);
   z-index:0;
 	display:flex;
 	justify-content:center;
