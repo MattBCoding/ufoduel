@@ -291,9 +291,17 @@ function addQuitModal() {
   }
 
 }
-
+// BUG! BUG! BUG! BUG! BUG!
+// when returning to menu the elements captured and the event listeners no longer work
+// this is because the browser has previously loaded them so the event listeners are already done
+// FIX FIX FIX FIX FIX
+// need to move the main menu itself into a function and have the event listeners load with it
+// will need to run the insert main menu function at a point in time, maybe when page loaded,
+// or another event that the entire script can identify
 function returnToMenu() {
   document.getElementById("main-container").innerHTML = menu;
+  document.getElementById("middle-container").innerHTML = ``;
+  document.getElementById("quit-modal").style.display = 'none';
 }
 // Quit Game button - Classic
 
