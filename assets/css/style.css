@@ -299,6 +299,10 @@ border-radius: 5px;
   margin-left: 5px;
 }
 
+/* #rounds-wanted {
+  color: var(--text);
+} */
+
 /* Styling to turn checkbox inputs into toggle sliders.*/
 
 .toggle {

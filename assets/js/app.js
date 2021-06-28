@@ -134,6 +134,12 @@ function stars(background) {
 
 // Change Game Difficulty
 // Change Game Winning Condition
+let roundsWanted = 5;
+function updateRoundsWanted(){
+  roundsWanted = document.getElementById("rounds-slider").value;
+  document.getElementById("rounds-wanted").innerHTML = roundsWanted;
+}
+
 
 // FUNCTIONS NEEDED BY MORE THAN ONE SCREEN
 // Set Game Mode
@@ -199,8 +205,6 @@ function classicGameLogic(playerSelection) {
     case 'scissorsscissors':
         playerDraw(playerSelection, compSelection);
         break;
-
-        //need to add compSelection function 28/06
   }
 }
 // Spock Game Logic
@@ -265,8 +269,19 @@ function playerLose(playerSelection, compSelection) {
   resultMessage.style.color = "red";
   resultMessage.innerHTML = `${playerSelection} loses to ${compSelection}. You lost this round!`;
   //reset board
-  // let tileIdentifier = playerSelection + "-tile-" + gameMode;
-  // document.getElementById(tileIdentifier); //what to do with tile once round over
+  setTimeout(function() {
+    document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+    let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+    let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+    
+    playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+    playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+    setTimeout(function() {
+      document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
+      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+    }, 500);
+    console.log(document.getElementById("player-tile-classic").classList);
+  }, 3000);
 }
 // Round is a draw
 function playerDraw(playerSelection, compSelection) {
@@ -275,8 +290,19 @@ function playerDraw(playerSelection, compSelection) {
   resultMessage.style.color = "var(--text-light)";
   resultMessage.innerHTML = `${playerSelection} draws with ${compSelection}. This round is a draw!`;
   //reset board
-  // let tileIdentifier = playerSelection + "-tile-" + gameMode;
-  // document.getElementById(tileIdentifier); //what to do with tile once round over
+  setTimeout(function() {
+    document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+    let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+    let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+    
+    playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+    playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+    setTimeout(function() {
+      document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
+      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+    }, 500);
+    console.log(document.getElementById("player-tile-classic").classList);
+  }, 3000);
 }
 // Player Win Game
 // Player lose game
@@ -588,6 +614,8 @@ function outsideModalClick(e) {
 // M.M. Open Game Settings Screen Modal
 function openMainSettingsModal() {
   mainSettingsModal.style.display = 'block';
+  document.getElementById("rounds-slider").addEventListener('click', updateRoundsWanted);
+  
 }
 // M.M. Close Game Settings Screen Modal
 function closeMainSettingsModal() {
