@@ -235,6 +235,21 @@ function playerWin(playerSelection, compSelection) {
   // document.getElementById(tileIdentifier); //what to do with tile once round over
 }
 // Player lose round
+function playerLose(playerSelection, compSelection) {
+  //get current comp score
+  let compScoreSpan = documnet.getElementById("comp-score");
+  let compScore = compScoreSpan.innerHTML;
+  //update comp score
+  compScore++;
+  compScoreSpan.innerHTML = compScore;
+  //display round result message
+  let resultMessage = document.getElementById("round-message");
+  resultMessage.style.color = "red";
+  resultMessage.innerHTML = `${playerSelection} loses to ${compSelection}. You lost this round!`;
+  //reset board
+  // let tileIdentifier = playerSelection + "-tile-" + gameMode;
+  // document.getElementById(tileIdentifier); //what to do with tile once round over
+}
 // Round is a draw
 // Player Win Game
 // Player lose game
