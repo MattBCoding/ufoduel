@@ -185,22 +185,22 @@ function classicGameLogic(playerSelection) {
   let compSelection = getCompSelection();
   switch (playerSelection + compSelection) {
     case 'rockscissors':
-        case 'paperrock':
-        case 'scissorspaper':
-            playerWin(playerSelection, compSelection);
-            break;
-        case 'rockpaper':
-        case 'paperscissors':
-        case 'scissorsrock':
-            playerLose(playerSelection, compSelection);
-            break;
-        case 'rockrock':
-        case 'paperpaper':
-        case 'scissorsscissors':
-            playerDraw(playerSelection, compSelection);
-            break;
+    case 'paperrock':
+    case 'scissorspaper':
+        playerWin(playerSelection, compSelection);
+        break;
+    case 'rockpaper':
+    case 'paperscissors':
+    case 'scissorsrock':
+        playerLose(playerSelection, compSelection);
+        break;
+    case 'rockrock':
+    case 'paperpaper':
+    case 'scissorsscissors':
+        playerDraw(playerSelection, compSelection);
+        break;
 
-            //need to add compSelection function 28/06
+        //need to add compSelection function 28/06
   }
 }
 // Spock Game Logic
@@ -237,7 +237,7 @@ function playerWin(playerSelection, compSelection) {
 // Player lose round
 function playerLose(playerSelection, compSelection) {
   //get current comp score
-  let compScoreSpan = documnet.getElementById("comp-score");
+  let compScoreSpan = document.getElementById("comp-score");
   let compScore = compScoreSpan.innerHTML;
   //update comp score
   compScore++;
@@ -276,10 +276,17 @@ function playerSelectionClassic() {
   let rock = document.getElementById("rock-tile-classic");
   let paper = document.getElementById("paper-tile-classic");
   let scissors = document.getElementById("scissors-tile-classic");
+  let player = document.getElementById("player-tile-classic");
   //event listeners for game tiles
   rock.addEventListener('click', function() {
    //temp needs animation added. phase original location out and phase in on new location
-    this.style.gridArea = 'player'
+   let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800); 
+  //  this.style.gridArea = 'player'
     classicGameLogic('rock');
   });
   paper.addEventListener('click', function(){
@@ -434,19 +441,21 @@ function launchClassicGame() {
   <div class="game">
     <div class="game-grid">
 <!--rock game tile-->    
-      <div class="game-tile rock ufo slide-in-blurred-right" id="rock-tile-classic">
-        <div class="glass"></div>
-        <div class="separator"></div>
-        <div class="body">
-          <div class="window small window-left"></div>
-          <div class="window window-center"></div>
-          <div class="window small window-right"></div>
+      <div class="rock" id="rock-tile-classic">
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body">
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
+          </div>
+          <div class="light" id="rock-light-classic"></div>
+          <i class="far fa-hand-rock"></i>
         </div>
-        <div class="light" id="rock-light-classic"></div>
-        <i class="far fa-hand-rock"></i>
       </div>
 <!-- paper game tile-->
-      <div class="game-tile paper ufo slide-in-blurred-right" id="paper-tile-classic">
+      <div class="paper ufo slide-in-blurred-right" id="paper-tile-classic">
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
@@ -458,7 +467,7 @@ function launchClassicGame() {
         <i class="far fa-hand-paper"></i>
       </div>
 <!-- scissors game tile-->
-      <div class="game-tile scissors ufo slide-in-blurred-right" id="scissors-tile-classic">
+      <div class="scissors ufo slide-in-blurred-right" id="scissors-tile-classic">
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
@@ -468,7 +477,9 @@ function launchClassicGame() {
         </div>
         <div class="light" id="scissors-light-classic"></div>
         <i class="far fa-hand-scissors"></i>
-      </div>  
+      </div>
+<!-- tile location to display player choice -->      
+      <div id="player-tile-classic"></div>
 
       <div class="game-button rules" id="classic-rules-button">Rules</div>
       <div class="game-button quit" id="quit-button">Quit</div>
