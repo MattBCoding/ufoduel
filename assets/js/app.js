@@ -330,7 +330,20 @@ function playerOverallWin(){
 }
 // Player lose game
 function playerOverallLost(){
-
+  let playerScoreSpan = document.getElementById("player-score");
+  let playerScore = playerScoreSpan.innerHTML;
+  let compScoreSpan = document.getElementById("comp-score");
+  let compScore = compScoreSpan.innerHTML;
+  document.getElementById("main-container").innerHTML=`
+    <div class="endscreen-container">
+      <div class="endscreen-text-container">
+        <h2>You Lost!</h2>
+        <p>"Commander ${playerName} you have lost to the aliens ${playerScore}:${compScore}! I suggest you try again, military personnel in this conflict do not have permission to lose.<br>All unaddressed losses will be dealt with through court martial with punishment being dealt swiftly and severely.<br>Between you and me, I've heard on the grapevine that they made the last commander, who refused to try again, enter the Eurovision Song Contest!"</p>
+      </div>
+      <button class="main-menu-button" id="end-back-to-menu-button">Back to Menu</button>
+    </div>`;
+    let button = document.getElementById("end-back-to-menu-button");
+    button.addEventListener('click', returnToMenu);
 }
 // SPOCK GAME SCREEN
 // Spock Game Event Capture
