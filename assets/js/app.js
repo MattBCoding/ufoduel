@@ -360,6 +360,71 @@ function playerOverallLost(){
 }
 
 // SPOCK GAME SCREEN
+function playerSelectionSpock() {
+  //capture game tiles
+  let rock = document.getElementById("rock-tile-spock");
+  let paper = document.getElementById("paper-tile-spock");
+  let scissors = document.getElementById("scissors-tile-spock");
+  let lizard = document.getElementById("lizard-tile-spock");
+  let spock = document.getElementById("spock-tile-spock");
+  let player = document.getElementById("player-tile-spock");
+  
+  //event listeners for game tiles
+  rock.addEventListener('click', function() {
+   //temp needs animation added. phase original location out and phase in on new location
+   let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800);
+    spockGameLogic('rock');
+  });
+
+  paper.addEventListener('click', function(){
+    //temp needs animation added. phase original location out and phase in on new location
+    let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800);
+    spockGameLogic('paper');
+  });
+
+  scissors.addEventListener('click', function(){
+    //temp needs animation added. phase original location out and phase in on new location
+    let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800);
+    spockGameLogic('scissors');
+  });
+
+  lizard.addEventListener('click', function(){
+    //temp needs animation added. phase original location out and phase in on new location
+    let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800);
+    spockGameLogic('lizard');
+  });
+
+  spock.addEventListener('click', function(){
+    //temp needs animation added. phase original location out and phase in on new location
+    let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800);
+    spockGameLogic('spock');
+  });
+}
 // Spock Game Event Capture
 // In game rules modal
 // Spock Rules modal open
@@ -697,7 +762,7 @@ function launchSpockGame() {
   <div class="game">
     <div class="game-grid">
 <!-- lizard game tile-->
-    <div class="lizard" id="lizard-tile-classic">
+    <div class="lizard" id="lizard-tile-spock">
       <div class="ufo slide-in-blurred-right">
         <div class="glass"></div>
         <div class="separator"></div>
@@ -711,7 +776,7 @@ function launchSpockGame() {
       </div>
     </div>
 <!-- spock game tile-->
-    <div class="spock" id="spock-tile-classic">
+    <div class="spock" id="spock-tile-spock">
       <div class="ufo slide-in-blurred-right">
         <div class="glass"></div>
         <div class="separator"></div>
@@ -720,12 +785,12 @@ function launchSpockGame() {
           <div class="window window-center" id="window-center"></div>
           <div class="window small window-right" id="window-right"></div>
         </div>
-        <div class="light" id="spock-light-classic"></div>
+        <div class="light" id="spock-light-spock"></div>
         <i class="far fa-hand-spock"></i>
       </div>
     </div>
 <!--rock game tile-->    
-      <div class="rock" id="rock-tile-classic">
+      <div class="rock" id="rock-tile-spock">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -734,12 +799,12 @@ function launchSpockGame() {
             <div class="window window-center"></div>
             <div class="window small window-right"></div>
           </div>
-          <div class="light" id="rock-light-classic"></div>
+          <div class="light" id="rock-light-spock"></div>
           <i class="far fa-hand-rock"></i>
         </div>
       </div>
 <!-- paper game tile-->
-      <div class="paper" id="paper-tile-classic">
+      <div class="paper" id="paper-tile-spock">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -748,12 +813,12 @@ function launchSpockGame() {
             <div class="window window-center"></div>
             <div class="window small window-right"></div>
           </div>
-          <div class="light" id="paper-light-classic"></div>
+          <div class="light" id="paper-light-spock"></div>
           <i class="far fa-hand-paper"></i>
         </div>
       </div>
 <!-- scissors game tile-->
-      <div class="scissors" id="scissors-tile-classic">
+      <div class="scissors" id="scissors-tile-spock">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -762,14 +827,14 @@ function launchSpockGame() {
             <div class="window window-center" id="window-center"></div>
             <div class="window small window-right" id="window-right"></div>
           </div>
-          <div class="light" id="scissors-light-classic"></div>
+          <div class="light" id="scissors-light-spock"></div>
           <i class="far fa-hand-scissors"></i>
         </div>
       </div>
 <!-- tile location to display player choice -->      
-      <div id="player-tile-classic"></div>
+      <div id="player-tile-spock"></div>
 <!-- comp choice tile -->
-      <div class="comp-choice" id="comp-tile-classic">
+      <div class="comp-choice" id="comp-tile-spock">
       <div class="ufo slide-in-blurred-right">
         <div class="glass"></div>
         <div class="separator"></div>
@@ -782,15 +847,15 @@ function launchSpockGame() {
       </div>
       </div>
 
-      <div class="game-button rules" id="classic-rules-button">Rules</div>
+      <div class="game-button rules" id="spock-rules-button">Rules</div>
       <div class="game-button quit" id="quit-button">Quit</div>
     </div>
   </div>
   `;
-  // addSpockRulesModal(); change to spock
+  addSpockRulesModal();
   addQuitModal();
   addScoreboard();
-  // playerSelectionClassic(); change to spock
+  playerSelectionSpock();
 }
 // Back or Quit button - name screen
 

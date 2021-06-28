@@ -769,7 +769,8 @@ border-radius: 5px;
   text-align: left;
 }
 
-#classic-rules-modal {
+#classic-rules-modal,
+#spock-rules-modal {
   display: none;
 }
 
