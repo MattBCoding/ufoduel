@@ -843,8 +843,8 @@ border-radius: 5px;
 } */
 
 .slide-out-blurred-left {
-	-webkit-animation: slide-out-blurred-left 1s ease-in-out both;
-	        animation: slide-out-blurred-left 1s ease-in-out both;
+	-webkit-animation: slide-out-blurred-left 500ms ease-in-out both;
+	        animation: slide-out-blurred-left 500ms ease-in-out both;
 }
 
 /* ----------------------------------------------

@@ -211,9 +211,11 @@ function getCompSelection() {
     let compOptions = ['rock', 'paper', 'scissors'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
-    document.getElementById("comp-light-container").innerHTML = `
+    setTimeout(function(){
+      document.getElementById("comp-light-container").innerHTML = `
       <div class="light" id="${compMove}-light-classic"></div>
       <i class="far fa-hand-${compMove}"></i>`;
+    }, 800);
     return compMove;  
   } else if (gameIsHard === false && gameMode === "spock") {
     let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
@@ -235,8 +237,20 @@ function playerWin(playerSelection, compSelection) {
   resultMessage.style.color = 'green';
   resultMessage.innerHTML = `${playerSelection} beats ${compSelection}. You win this round!`;
   // reset board
-  // let tileIdentifier = playerSelection + "-tile-" + gameMode;
-  // document.getElementById(tileIdentifier); //what to do with tile once round over
+  setTimeout(function() {
+    document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+    let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+    let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+    
+    playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+    playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+    setTimeout(function() {
+      document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
+      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+    }, 500);
+    console.log(document.getElementById("player-tile-classic").classList);
+  }, 3000);
+   
 }
 // Player lose round
 function playerLose(playerSelection, compSelection) {
@@ -290,7 +304,7 @@ function playerSelectionClassic() {
    setTimeout(function() {
      player.innerHTML = tileCapture;
    }, 800); 
-  //  this.style.gridArea = 'player'
+  
     classicGameLogic('rock');
   });
   paper.addEventListener('click', function(){
