@@ -260,7 +260,13 @@ function getCompSelection() {
   } else if (gameIsHard === false && gameMode === "spock") {
     let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
-    return compOptions[randomChoice];
+    let compMove = compOptions[randomChoice];
+    setTimeout(function(){
+      document.getElementById("comp-light-container").innerHTML = `
+      <div class="light" id="${compMove}-light-classic"></div>
+      <i class="far fa-hand-${compMove}"></i>`;
+    }, 800);
+    return compMove;  
   } // need to add options for when gameIsHard === true for hard difficulty mode.
 }
 
@@ -321,10 +327,10 @@ function playerLose(playerSelection, compSelection) {
       playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
       playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
       setTimeout(function() {
-        document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
-        document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+        document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
+        document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
       }, 500);
-      console.log(document.getElementById("player-tile-classic").classList);
+      console.log(document.getElementById(playerGridIdentifier).classList);
     }, 3000);
   }
 }
@@ -345,10 +351,10 @@ function playerDraw(playerSelection, compSelection) {
     playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
     playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
     setTimeout(function() {
-      document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
-      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+      document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
+      document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
     }, 500);
-    console.log(document.getElementById("player-tile-classic").classList);
+    console.log(document.getElementById(playerGridIdentifier).classList);
   }, 3000);
 }
 

@@ -451,7 +451,8 @@ border-radius: 5px;
   grid-area: quit;
 }
 
-#player-tile-classic {
+#player-tile-classic,
+#player-tile-spock {
   grid-area: player;
 }
 
