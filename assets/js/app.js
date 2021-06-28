@@ -281,17 +281,18 @@ function playerWin(playerSelection, compSelection) {
     playerOverallWin();
   } else {
     setTimeout(function() {
-      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+      let playerGridIdentifier = "player-tile-" + gameMode;
+      document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
       let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
       let playerTile = document.getElementById(tileIdentifier); //grabs original tile
       
       playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
       playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
       setTimeout(function() {
-        document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
-        document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+        document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
+        document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
       }, 500);
-      console.log(document.getElementById("player-tile-classic").classList);
+      console.log(document.getElementById(playerGridIdentifier).classList);
     }, 3000);
   } 
 }
@@ -312,7 +313,8 @@ function playerLose(playerSelection, compSelection) {
     playerOverallLost();
   } else {
     setTimeout(function() {
-      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+      let playerGridIdentifier = "player-tile-" + gameMode;
+      document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
       let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
       let playerTile = document.getElementById(tileIdentifier); //grabs original tile
       
@@ -335,7 +337,8 @@ function playerDraw(playerSelection, compSelection) {
   resultMessage.innerHTML = `${playerSelection} draws with ${compSelection}. This round is a draw!`;
   //reset board
   setTimeout(function() {
-    document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+    let playerGridIdentifier = "player-tile-" + gameMode;
+      document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
     let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
     let playerTile = document.getElementById(tileIdentifier); //grabs original tile
     
