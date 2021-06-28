@@ -309,12 +309,22 @@ function playerSelectionClassic() {
   });
   paper.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
-    this.style.gridArea = 'player'
+    let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800);
     classicGameLogic('paper');
   });
   scissors.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
-    this.style.gridArea = 'player'
+    let tileCapture = this.innerHTML;
+   this.classList.toggle("slide-in-blurred-right")
+   this.classList.toggle("slide-out-blurred-left");
+   setTimeout(function() {
+     player.innerHTML = tileCapture;
+   }, 800);
     classicGameLogic('scissors');
   });
 }
@@ -473,28 +483,32 @@ function launchClassicGame() {
         </div>
       </div>
 <!-- paper game tile-->
-      <div class="paper ufo slide-in-blurred-right" id="paper-tile-classic">
-        <div class="glass"></div>
-        <div class="separator"></div>
-        <div class="body">
-          <div class="window small window-left"></div>
-          <div class="window window-center"></div>
-          <div class="window small window-right"></div>
+      <div class="paper" id="paper-tile-classic">
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body">
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
+          </div>
+          <div class="light" id="paper-light-classic"></div>
+          <i class="far fa-hand-paper"></i>
         </div>
-        <div class="light" id="paper-light-classic"></div>
-        <i class="far fa-hand-paper"></i>
       </div>
 <!-- scissors game tile-->
-      <div class="scissors ufo slide-in-blurred-right" id="scissors-tile-classic">
-        <div class="glass"></div>
-        <div class="separator"></div>
-        <div class="body">
-          <div class="window small window-left" id="window-left"></div>
-          <div class="window window-center" id="window-center"></div>
-          <div class="window small window-right" id="window-right"></div>
+      <div class="scissors" id="scissors-tile-classic">
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body">
+            <div class="window small window-left" id="window-left"></div>
+            <div class="window window-center" id="window-center"></div>
+            <div class="window small window-right" id="window-right"></div>
+          </div>
+          <div class="light" id="scissors-light-classic"></div>
+          <i class="far fa-hand-scissors"></i>
         </div>
-        <div class="light" id="scissors-light-classic"></div>
-        <i class="far fa-hand-scissors"></i>
       </div>
 <!-- tile location to display player choice -->      
       <div id="player-tile-classic"></div>
