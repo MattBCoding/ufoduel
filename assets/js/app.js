@@ -219,6 +219,21 @@ function getCompSelection() {
 }
 
 // Player win round
+function playerWin(playerSelection, compSelection) {
+  //get current player score
+  let playerScoreSpan = document.getElementById("player-score");
+  let playerScore = playerScoreSpan.innerHTML;
+  //update player score
+  playerScore++;
+  playerScoreSpan.innerHTML = playerScore;
+  //display round result message
+  let resultMessage = document.getElementById("round-message");
+  resultMessage.style.color = 'green';
+  resultMessage.innerHTML = `${playerSelection} beats ${compSelection}. You win this round!`;
+  // reset board
+  // let tileIdentifier = playerSelection + "-tile-" + gameMode;
+  // document.getElementById(tileIdentifier); //what to do with tile once round over
+}
 // Player lose round
 // Round is a draw
 // Player Win Game
