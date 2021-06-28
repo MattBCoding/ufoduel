@@ -240,21 +240,24 @@ function playerWin(playerSelection, compSelection) {
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = 'green';
   resultMessage.innerHTML = `${playerSelection} beats ${compSelection}. You win this round!`;
-  // reset board
-  setTimeout(function() {
-    document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
-    let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
-    let playerTile = document.getElementById(tileIdentifier); //grabs original tile
-    
-    playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
-    playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+  // check for overall win else reset board
+  if (playerScore == roundsWanted) {
+    playerOverallWin();
+  } else {
     setTimeout(function() {
-      document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
-      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
-    }, 500);
-    console.log(document.getElementById("player-tile-classic").classList);
-  }, 3000);
-   
+      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+      let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+      let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+      
+      playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+      playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+      setTimeout(function() {
+        document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
+        document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+      }, 500);
+      console.log(document.getElementById("player-tile-classic").classList);
+    }, 3000);
+  } 
 }
 // Player lose round
 function playerLose(playerSelection, compSelection) {
@@ -268,20 +271,24 @@ function playerLose(playerSelection, compSelection) {
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = "red";
   resultMessage.innerHTML = `${playerSelection} loses to ${compSelection}. You lost this round!`;
-  //reset board
-  setTimeout(function() {
-    document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
-    let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
-    let playerTile = document.getElementById(tileIdentifier); //grabs original tile
-    
-    playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
-    playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+  //check for overall loss else reset board
+  if (compScore == roundsWanted) {
+    playerOverallLost();
+  } else {
     setTimeout(function() {
-      document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
-      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
-    }, 500);
-    console.log(document.getElementById("player-tile-classic").classList);
-  }, 3000);
+      document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");
+      let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+      let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+      
+      playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+      playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+      setTimeout(function() {
+        document.getElementById("player-tile-classic").innerHTML = ``; //clears player tile
+        document.getElementById("player-tile-classic").classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+      }, 500);
+      console.log(document.getElementById("player-tile-classic").classList);
+    }, 3000);
+  }
 }
 // Round is a draw
 function playerDraw(playerSelection, compSelection) {
@@ -305,8 +312,26 @@ function playerDraw(playerSelection, compSelection) {
   }, 3000);
 }
 // Player Win Game
+function playerOverallWin(){
+  let playerScoreSpan = document.getElementById("player-score");
+  let playerScore = playerScoreSpan.innerHTML;
+  let compScoreSpan = document.getElementById("comp-score");
+  let compScore = compScoreSpan.innerHTML;
+  document.getElementById("main-container").innerHTML=`
+    <div class="endscreen-container">
+      <div class="endscreen-text-container">
+        <h2>You Won!</h2>
+        <p>Congratulations Commander ${playerName} you have beaten the aliens back. People will sing songs about your ${playerScore}:${compScore} victory for generations! Well at least until someone better comes along and people forget all about your victory and start singing about them instead.</p>
+      </div>
+      <button class="main-menu-button" id="end-back-to-menu-button">Back to Menu</button>
+    </div>`;
+    let button = document.getElementById("end-back-to-menu-button");
+    button.addEventListener('click', returnToMenu);
+}
 // Player lose game
+function playerOverallLost(){
 
+}
 // SPOCK GAME SCREEN
 // Spock Game Event Capture
 // In game rules modal
@@ -472,7 +497,7 @@ function nameScreen() {
     e.preventDefault();
     let name = document.getElementById("name");
     if (name.value.includes(' ')) {
-      document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space, their language doesn't understand them and it makes them angry.`
+      document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space or special characters such as *&()^%, their language doesn't contain them so they get confused and that just makes them angry.`
       //reset form field
       name.value = '';
     } else if(name.value == ''){
