@@ -21,6 +21,7 @@
   --toggle-button: rgba(230,191,144,1);
   --error: #FF312E;
   --ufo-body: #b8b8b8;
+  --ufo-body-comp: #FF312E;
   --ufo-body-shadow: #2f2f2f;
   --ufo-glass: #ffffff;
   --ufo-light: #f0d471;
@@ -450,6 +451,10 @@ border-radius: 5px;
   grid-area: player;
 }
 
+.comp-choice {
+  grid-area: comp;
+}
+
 .ufo {
 	width:250px;
 	height:150px;
@@ -475,25 +480,45 @@ border-radius: 5px;
 	position:absolute;
 }
 
-.window{
+.body-comp {
+	box-sizing:border-box;
+	width: 200px;
+	height: 50px;
+	padding: 0px 15px;
+	border-radius: 50%;
+	background-color: var(--ufo-body-comp);
+  background-image: radial-gradient(farthest-corner at 60% 30%,var(--ufo-glass), var(--ufo-body-comp) 7%, var(--ufo-body-comp) 60%, var(--ufo-body-shadow) 98%);
+	z-index:1;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	position:absolute;
+}
+#comp-light-container {
+  display: flex;
+  justify-content:space-around;
+	align-items:center;
+}
+
+.window {
 	width:16px;
 	height:16px;
 	border-radius:50%;
 	background-color: var(--ufo-light);
 }
 
-.small{
+.small {
 	width:12px;
   height:12px;
 }
 
-.window-left{
+.window-left {
 	position:relative;
 	top: -5px;
 	right: 12px;
 }
 
-.window-right{
+.window-right {
 	position:relative;
 	top: -5px;
 	right: -12px;
@@ -504,7 +529,7 @@ border-radius: 5px;
 	top: 5px;
 }
 
-.glass{
+.glass {
 	width:100px;
 	height:50px;
 	border-radius:50px 50px 0px 0px;
@@ -514,7 +539,7 @@ border-radius: 5px;
   opacity: .8;
 }
 
-.separator{
+.separator {
 	width:96px;
 	height:12px;
 	border-radius: 50%;
@@ -526,7 +551,7 @@ border-radius: 5px;
   opacity: .4;
 }
 
-.light{
+.light {
 	position: absolute;
 	top: 50px;
 	width: 15px;

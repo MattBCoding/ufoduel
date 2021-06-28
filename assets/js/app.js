@@ -210,7 +210,11 @@ function getCompSelection() {
   if (gameIsHard === false && gameMode === "classic") {
     let compOptions = ['rock', 'paper', 'scissors'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
-    return compOptions[randomChoice];    
+    let compMove = compOptions[randomChoice];
+    document.getElementById("comp-light-container").innerHTML = `
+      <div class="light" id="${compMove}-light-classic"></div>
+      <i class="far fa-hand-${compMove}"></i>`;
+    return compMove;  
   } else if (gameIsHard === false && gameMode === "spock") {
     let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
@@ -480,6 +484,19 @@ function launchClassicGame() {
       </div>
 <!-- tile location to display player choice -->      
       <div id="player-tile-classic"></div>
+<!-- comp choice tile -->
+      <div class="comp-choice" id="comp-tile-classic">
+      <div class="ufo slide-in-blurred-right">
+        <div class="glass"></div>
+        <div class="separator"></div>
+        <div class="body-comp">
+          <div class="window small window-left" id="window-left"></div>
+          <div class="window window-center" id="window-center"></div>
+          <div class="window small window-right" id="window-right"></div>
+        </div>
+        <div id="comp-light-container"></div>
+      </div>
+      </div>
 
       <div class="game-button rules" id="classic-rules-button">Rules</div>
       <div class="game-button quit" id="quit-button">Quit</div>
