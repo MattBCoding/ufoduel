@@ -1,13 +1,26 @@
+
+
 // Globally needed variables
 let gameIsHard = false; // true means hard difficulty
 let colourMode = false; // true means dark scheme
 let starsOn = false; //true means stars inserted for dark mode
 let gameMode = '';
-let menu;
 let playerName = "";
+let classicRulesModal;
+let quitModal;
+
+let menu = `<div class="main-menu">
+<button class="main-menu-button" id="play-classic">Play Classic</button>
+<button class="main-menu-button" id="play-spock">Play Spock</button>
+<button class="main-menu-button" id="main-rules-button">Rules</button>
+<button class="main-menu-button" id="main-settings-button">Settings</button>
+</div>`;
+let mainSettingsModal = document.getElementById("settings-modal");
+let mainRulesModal = document.getElementById("main-rules-modal");
 // Capture player colour scheme preference
 let colourModeToggle = document.getElementById('colour-mode-checkbox');
 // Event listener for colour mode change
+
 // Set colour mode
 colourModeToggle.addEventListener('change', function(e) {
   if (colourModeToggle.checked) {
@@ -28,9 +41,6 @@ gameDifficultyToggle.addEventListener('change', function(e){
     gameIsHard = false;
   }
 });
-
-let classicRulesModal;
-let quitModal;
 
 // FUNCTIONS
 
@@ -290,6 +300,7 @@ function playerLose(playerSelection, compSelection) {
     }, 3000);
   }
 }
+
 // Round is a draw
 function playerDraw(playerSelection, compSelection) {
   //display round result message
@@ -311,6 +322,7 @@ function playerDraw(playerSelection, compSelection) {
     console.log(document.getElementById("player-tile-classic").classList);
   }, 3000);
 }
+
 // Player Win Game
 function playerOverallWin(){
   let playerScoreSpan = document.getElementById("player-score");
@@ -328,6 +340,7 @@ function playerOverallWin(){
     let button = document.getElementById("end-back-to-menu-button");
     button.addEventListener('click', returnToMenu);
 }
+
 // Player lose game
 function playerOverallLost(){
   let playerScoreSpan = document.getElementById("player-score");
@@ -338,13 +351,14 @@ function playerOverallLost(){
     <div class="endscreen-container">
       <div class="endscreen-text-container">
         <h2>You Lost!</h2>
-        <p>"Commander ${playerName} you have lost to the aliens ${playerScore}:${compScore}! I suggest you try again, military personnel in this conflict do not have permission to lose.<br>All unaddressed losses will be dealt with through court martial with punishment being dealt swiftly and severely.<br>Between you and me, I've heard on the grapevine that they made the last commander, who refused to try again, enter the Eurovision Song Contest!"</p>
+        <p>"Commander ${playerName} you have lost to the aliens ${playerScore}:${compScore}! I suggest you try again, military personnel in this conflict do not have permission to lose.<br>All unaddressed losses will be dealt with through court martial with punishment being dealt swiftly and severely.<br>Between you and me, I've heard on the grapevine that the last commander who refused to try again, was made to enter the Eurovision Song Contest!"</p>
       </div>
       <button class="main-menu-button" id="end-back-to-menu-button">Back to Menu</button>
     </div>`;
     let button = document.getElementById("end-back-to-menu-button");
     button.addEventListener('click', returnToMenu);
 }
+
 // SPOCK GAME SCREEN
 // Spock Game Event Capture
 // In game rules modal
@@ -359,6 +373,7 @@ function playerSelectionClassic() {
   let paper = document.getElementById("paper-tile-classic");
   let scissors = document.getElementById("scissors-tile-classic");
   let player = document.getElementById("player-tile-classic");
+  
   //event listeners for game tiles
   rock.addEventListener('click', function() {
    //temp needs animation added. phase original location out and phase in on new location
@@ -367,10 +382,10 @@ function playerSelectionClassic() {
    this.classList.toggle("slide-out-blurred-left");
    setTimeout(function() {
      player.innerHTML = tileCapture;
-   }, 800); 
-  
+   }, 800);
     classicGameLogic('rock');
   });
+
   paper.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
@@ -381,6 +396,7 @@ function playerSelectionClassic() {
    }, 800);
     classicGameLogic('paper');
   });
+
   scissors.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
@@ -434,16 +450,19 @@ function addClassicRulesModal() {
   classicRulesModalClose.addEventListener('click', closeClassicRulesModal);
 
   classicRulesModal = document.getElementById("classic-rules-modal");
+
   // Classic Rules modal open
   function openClassicRulesModal() {
     classicRulesModal.style.display = 'block';
   }
-// Classic Rules modal close
+
+  // Classic Rules modal close
   function closeClassicRulesModal() {
     classicRulesModal.style.display = 'none';
   }
 
 }
+
 // quit game modal
 function addQuitModal() {
   document.getElementById("quit-modal-container").innerHTML = `
@@ -471,7 +490,7 @@ function addQuitModal() {
   quitGameCancelButton.addEventListener('click', closeQuitModal);
 
   let quitModalQuitButton = document.getElementById("quit-modal-quit-button");
-  quitModalQuitButton.addEventListener('click', returnToMenu);
+  quitModalQuitButton.addEventListener('click', quitFromQuitModal);
 
   quitModal = document.getElementById("quit-modal");
   // Quit modal open
@@ -484,6 +503,12 @@ function addQuitModal() {
   }
 
 }
+
+function quitFromQuitModal(){
+  document.getElementById("quit-modal").style.display = 'none';
+  returnToMenu();
+}
+
 // BUG! BUG! BUG! BUG! BUG!
 // when returning to menu the elements captured and the event listeners no longer work
 // this is because the browser has previously loaded them so the event listeners are already done
@@ -494,8 +519,10 @@ function addQuitModal() {
 function returnToMenu() {
   document.getElementById("main-container").innerHTML = menu;
   document.getElementById("middle-container").innerHTML = ``;
-  document.getElementById("quit-modal").style.display = 'none';
+  
+  mainMenuElements();
 }
+
 // Quit Game button - Classic
 
 // ENTER NAME SCREEN
@@ -606,7 +633,6 @@ function launchClassicGame() {
 // HOME SCREEN
 // Change to Name Screen
 function openNameScreen() {
-  menu = document.getElementById("main-container").innerHTML; //captures main menu elements so can be reinserted when needed
   document.getElementById("main-container").innerHTML = `
   <div class="main-menu">
     <form action="#">  
@@ -623,12 +649,7 @@ function openNameScreen() {
   console.log(menu);
   nameScreen();
 }
-// M.M. What happens when player clicks play classic mode
-let playClassicButton = document.getElementById("play-classic");
-playClassicButton.addEventListener('click', setGameModeClassic);
-// M.M. What happens when player clicks play spock mode
-let playSpockButton = document.getElementById("play-spock");
-playSpockButton.addEventListener('click', setGameModeSpock);
+
 // M.M. Open Rules Modal
 function openMainRulesModal() {
   mainRulesModal.style.display = 'block';
@@ -661,21 +682,40 @@ function closeMainSettingsModal() {
 }
 // Get Main Menu Elements - getElementById
 // Main Menu Event Listeners - capture player click events
-// Main Menu Rules Modal elements - getElementById
-let mainRulesModalButton = document.getElementById("main-rules-button");
-let mainRulesModal = document.getElementById("main-rules-modal");
-let mainRulesModalCloseButton = document.getElementById("main-rules-modal-close");
 
-// Main Menu Rules Modal Event Listeners - capture player click events
-mainRulesModalButton.addEventListener('click', openMainRulesModal);
-mainRulesModalCloseButton.addEventListener('click', closeMainRulesModal);
-window.addEventListener('click', outsideModalClick);
 
-// Main Menu Settings Modal elements - getElementById
-let mainSettingsModalButton = document.getElementById("main-settings-button");
-let mainSettingsModal = document.getElementById("settings-modal");
-let mainSettingsModalCloseButton = document.getElementById("settings-modal-close");
 
-// Main Menu Settings Modal Event Listeners - capture player click events
-mainSettingsModalButton.addEventListener('click', openMainSettingsModal);
-mainSettingsModalCloseButton.addEventListener('click', closeMainSettingsModal);
+
+
+
+
+
+function mainMenuElements() {
+  // M.M. What happens when player clicks play classic mode
+  let playClassicButton = document.getElementById("play-classic");
+  playClassicButton.addEventListener('click', setGameModeClassic);
+  // M.M. What happens when player clicks play spock mode
+  let playSpockButton = document.getElementById("play-spock");
+  playSpockButton.addEventListener('click', setGameModeSpock);
+  
+  // Main Menu Rules Modal elements - getElementById
+  let mainRulesModalButton = document.getElementById("main-rules-button");
+  
+  let mainRulesModalCloseButton = document.getElementById("main-rules-modal-close");
+  
+  // Main Menu Rules Modal Event Listeners - capture player click events
+  mainRulesModalButton.addEventListener('click', openMainRulesModal);
+  mainRulesModalCloseButton.addEventListener('click', closeMainRulesModal);
+  window.addEventListener('click', outsideModalClick);
+    
+  // Main Menu Settings Modal elements - getElementById
+  let mainSettingsModalButton = document.getElementById("main-settings-button");
+  
+  let mainSettingsModalCloseButton = document.getElementById("settings-modal-close");
+  
+  // Main Menu Settings Modal Event Listeners - capture player click events
+  mainSettingsModalButton.addEventListener('click', openMainSettingsModal);
+  mainSettingsModalCloseButton.addEventListener('click', closeMainSettingsModal); 
+}
+
+window.onload = returnToMenu();
