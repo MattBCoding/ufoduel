@@ -218,6 +218,32 @@ function classicGameLogic(playerSelection) {
   }
 }
 // Spock Game Logic
+function spockGameLogic(playerSelection){
+  let compSelection = getCompSelection();
+  switch (playerSelection + compSelection) {
+      case 'rockscissors' || 'rocklizard':
+      case 'paperrock' || 'paperspock':
+      case 'scissorspaper' || 'scissorslizard':
+      case 'lizardspock' || 'lizardpaper':
+      case 'spockscissors' || 'spockrock':
+          playerWin(playerSelection, compSelection);
+          break;
+      case 'rockpaper' || 'rockspock':
+      case 'paperscissors' || 'paperlizard':
+      case 'scissorsspock' || 'scissorsrock':
+      case 'lizardrock' || 'lizardscissors':
+      case 'spocklizard' || 'spockpaper':
+          playerLose(playerSelection, compSelection);
+          break;
+      case 'rockrock':
+      case 'paperpaper':
+      case 'scissorsscissors':
+      case 'lizardlizard':
+      case 'spockspock':
+          playerDraw(playerSelection, compSelection);
+          break;
+  }
+}
 // Computer move selection - Math.random for easy difficulty
 // Computer move selection - hard difficulty
 function getCompSelection() {
