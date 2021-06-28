@@ -251,6 +251,15 @@ function playerLose(playerSelection, compSelection) {
   // document.getElementById(tileIdentifier); //what to do with tile once round over
 }
 // Round is a draw
+function playerDraw(playerSelection, compSelection) {
+  //display round result message
+  let resultMessage = document.getElementById("round-message");
+  resultMessage.style.color = "var(--text-light)";
+  resultMessage.innerHTML = `${playerSelection} draws with ${compSelection}. This round is a draw!`;
+  //reset board
+  // let tileIdentifier = playerSelection + "-tile-" + gameMode;
+  // document.getElementById(tileIdentifier); //what to do with tile once round over
+}
 // Player Win Game
 // Player lose game
 
