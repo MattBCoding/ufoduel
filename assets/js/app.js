@@ -462,6 +462,70 @@ function addClassicRulesModal() {
   }
 
 }
+// spock rules modal
+function addSpockRulesModal() {
+  // add spock rules modal into overall modal container
+  document.getElementById("rules-modal-container").innerHTML = `
+  <div class="modal-container" id="spock-rules-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close" id="spock-rules-modal-close">&times;</span>
+        <h2>Rules of the game</h2>
+      </div>
+      <div class="modal-body">
+        <h3>How to win</h3>
+        <p>
+        <i class="far fa-hand-rock"></i>
+        Rock beats Scissors 
+        <i class="far fa-hand-scissors"></i>
+         and Lizard <i class="far fa-hand-lizard"></i>
+        <br>
+        <i class="far fa-hand-scissors"></i>
+         Scissors beats Paper 
+        <i class="far fa-hand-paper"></i>
+        and Lizard <i class="far fa-hand-lizard"></i>
+        <br>
+        <i class="far fa-hand-paper"></i>
+          Paper beats Rock 
+        <i class="far fa-hand-rock"></i>
+          and Spock <i class="far fa-hand-spock"></i>
+        <br>
+        <i class="far fa-hand-lizard"></i> Lizard beats Spock and Paper 
+        <i class="far fa-hand-paper"></i>
+        <br>
+        <i class="far fa-hand-spock"></i> Spock beats Scissors 
+        <i class="far fa-hand-scissors"></i>
+             and Rock 
+        <i class="far fa-hand-rock"></i>
+        </p>
+        <br>
+        <p>"Commander, you need to decide which hand you want to play by touching or clicking on the ufo that is lighting it up. The aliens will have already decided which move they are going to make way before you, their minds are much quicker than ours. You don't have to worry about them cheating either, they may spend their time invading other planets, destroying everything and stealing anything of potential value, but they pride themselves on the fact they do it honourably, in a fair fight."</p>
+        <h3>Hard Mode</h3>
+        <p>"If you were brave enough to try and beat them in the Hard mode you will be taking on the alien boss and not one of the minions, I wish you luck, you are going to need it. Some of the really crazy looking scientists keep muttering to themselves that there is a pattern to the way the boss plays but none of the previous commanders have ever survived to report back."</p> <span id="response"><p>"???"</p></span><p>"Oh, sorry, I thought you already knew you weren't the first choice"
+        </p>
+      </div>
+    </div>
+  </div>`;
+  
+  let rulesButton = document.getElementById("spock-rules-button");
+  rulesButton.addEventListener('click', openSpockRulesModal);
+  
+  let spockRulesModalClose = document.getElementById("spock-rules-modal-close");
+  spockRulesModalClose.addEventListener('click', closeSpockRulesModal);
+
+  spockRulesModal = document.getElementById("spock-rules-modal");
+
+  // Spock Rules modal open
+  function openSpockRulesModal() {
+    spockRulesModal.style.display = 'block';
+  }
+
+  // Spock Rules modal close
+  function closeSpockRulesModal() {
+    spockRulesModal.style.display = 'none';
+  }
+
+}
 
 // quit game modal
 function addQuitModal() {
@@ -723,7 +787,7 @@ function launchSpockGame() {
     </div>
   </div>
   `;
-  // addClassicRulesModal(); change to spock
+  // addSpockRulesModal(); change to spock
   addQuitModal();
   addScoreboard();
   // playerSelectionClassic(); change to spock
