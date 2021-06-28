@@ -628,6 +628,106 @@ function launchClassicGame() {
   playerSelectionClassic();
 }
 // Change to Game Screen - Spock
+function launchSpockGame() {
+  document.getElementById("main-container").innerHTML=`
+  <div class="game">
+    <div class="game-grid">
+<!-- lizard game tile-->
+    <div class="lizard" id="lizard-tile-classic">
+      <div class="ufo slide-in-blurred-right">
+        <div class="glass"></div>
+        <div class="separator"></div>
+        <div class="body">
+          <div class="window small window-left" id="window-left"></div>
+          <div class="window window-center" id="window-center"></div>
+          <div class="window small window-right" id="window-right"></div>
+        </div>
+        <div class="light" id="lizard-light-spock"></div>
+        <i class="far fa-hand-lizard"></i>
+      </div>
+    </div>
+<!-- spock game tile-->
+    <div class="spock" id="spock-tile-classic">
+      <div class="ufo slide-in-blurred-right">
+        <div class="glass"></div>
+        <div class="separator"></div>
+        <div class="body">
+          <div class="window small window-left" id="window-left"></div>
+          <div class="window window-center" id="window-center"></div>
+          <div class="window small window-right" id="window-right"></div>
+        </div>
+        <div class="light" id="spock-light-classic"></div>
+        <i class="far fa-hand-spock"></i>
+      </div>
+    </div>
+<!--rock game tile-->    
+      <div class="rock" id="rock-tile-classic">
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body">
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
+          </div>
+          <div class="light" id="rock-light-classic"></div>
+          <i class="far fa-hand-rock"></i>
+        </div>
+      </div>
+<!-- paper game tile-->
+      <div class="paper" id="paper-tile-classic">
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body">
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
+          </div>
+          <div class="light" id="paper-light-classic"></div>
+          <i class="far fa-hand-paper"></i>
+        </div>
+      </div>
+<!-- scissors game tile-->
+      <div class="scissors" id="scissors-tile-classic">
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body">
+            <div class="window small window-left" id="window-left"></div>
+            <div class="window window-center" id="window-center"></div>
+            <div class="window small window-right" id="window-right"></div>
+          </div>
+          <div class="light" id="scissors-light-classic"></div>
+          <i class="far fa-hand-scissors"></i>
+        </div>
+      </div>
+<!-- tile location to display player choice -->      
+      <div id="player-tile-classic"></div>
+<!-- comp choice tile -->
+      <div class="comp-choice" id="comp-tile-classic">
+      <div class="ufo slide-in-blurred-right">
+        <div class="glass"></div>
+        <div class="separator"></div>
+        <div class="body-comp">
+          <div class="window small window-left" id="window-left"></div>
+          <div class="window window-center" id="window-center"></div>
+          <div class="window small window-right" id="window-right"></div>
+        </div>
+        <div id="comp-light-container"></div>
+      </div>
+      </div>
+
+      <div class="game-button rules" id="classic-rules-button">Rules</div>
+      <div class="game-button quit" id="quit-button">Quit</div>
+    </div>
+  </div>
+  `;
+  // addClassicRulesModal(); change to spock
+  addQuitModal();
+  addScoreboard();
+  // playerSelectionClassic(); change to spock
+}
 // Back or Quit button - name screen
 
 // HOME SCREEN
