@@ -206,6 +206,18 @@ function classicGameLogic(playerSelection) {
 // Spock Game Logic
 // Computer move selection - Math.random for easy difficulty
 // Computer move selection - hard difficulty
+function getCompSelection() {
+  if (gameIsHard === false && gameMode === "classic") {
+    let compOptions = ['rock', 'paper', 'scissors'];
+    let randomChoice = Math.floor(Math.random() * compOptions.length);
+    return compOptions[randomChoice];    
+  } else if (gameIsHard === false && gameMode === "spock") {
+    let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+    let randomChoice = Math.floor(Math.random() * compOptions.length);
+    return compOptions[randomChoice];
+  } // need to add options for when gameIsHard === true for hard difficulty mode.
+}
+
 // Player win round
 // Player lose round
 // Round is a draw
