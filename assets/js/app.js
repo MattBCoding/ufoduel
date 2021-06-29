@@ -228,7 +228,7 @@ function classicGameLogic(playerSelection) {
 }
 
 // Spock Game Logic
-function spockGameLogic(playerSelection){
+function spockGameLogic(playerSelection) {
   let compSelection = getCompSelection();
   switch (playerSelection + compSelection) {
       case 'rockscissors' || 'rocklizard':
@@ -261,7 +261,7 @@ function getCompSelection() {
     let compOptions = ['rock', 'paper', 'scissors'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
-
+// need to move this out into its own function. causing error when game ended by overall win or lose.
     setTimeout(function(){
       document.getElementById("comp-light-container").innerHTML = `
         <div class="light" id="${compMove}-light-classic"></div>
@@ -435,7 +435,7 @@ function playerSelectionSpock() {
   rock.addEventListener('click', function() {
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -443,10 +443,10 @@ function playerSelectionSpock() {
     spockGameLogic('rock');
   });
 
-  paper.addEventListener('click', function(){
+  paper.addEventListener('click', function() {
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -454,10 +454,10 @@ function playerSelectionSpock() {
     spockGameLogic('paper');
   });
 
-  scissors.addEventListener('click', function(){
+  scissors.addEventListener('click', function() {
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -465,10 +465,10 @@ function playerSelectionSpock() {
     spockGameLogic('scissors');
   });
 
-  lizard.addEventListener('click', function(){
+  lizard.addEventListener('click', function() {
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -476,10 +476,10 @@ function playerSelectionSpock() {
     spockGameLogic('lizard');
   });
 
-  spock.addEventListener('click', function(){
+  spock.addEventListener('click', function() {
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -505,7 +505,7 @@ function playerSelectionClassic() {
   rock.addEventListener('click', function() {
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -516,7 +516,7 @@ function playerSelectionClassic() {
   paper.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -527,7 +527,7 @@ function playerSelectionClassic() {
   scissors.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     setTimeout(function() {
       player.innerHTML = tileCapture;
@@ -723,7 +723,7 @@ function nameScreen() {
     e.preventDefault();
     let name = document.getElementById("name");
     if (name.value.includes(' ')) {
-      document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space or go over 15 characters, their language doesn't contain spaces, whilst their names are all really short, so they get confused and that just makes them angry.`
+      document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space or go over 15 characters, their language doesn't contain spaces, whilst their names are all really short, so they get confused and that just makes them angry.`;
       //reset form field
       name.value = '';
     } else if(name.value == ''){
