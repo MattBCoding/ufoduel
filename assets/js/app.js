@@ -723,7 +723,7 @@ function nameScreen() {
     e.preventDefault();
     let name = document.getElementById("name");
     if (name.value.includes(' ')) {
-      document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space or special characters such as *&()^%, their language doesn't contain them so they get confused and that just makes them angry.`
+      document.getElementById("error-message").innerHTML =`Commander, I forgot to tell you when the aliens ask you your name, don't include a space or go over 15 characters, their language doesn't contain spaces, whilst their names are all really short, so they get confused and that just makes them angry.`
       //reset form field
       name.value = '';
     } else if(name.value == ''){
@@ -790,18 +790,18 @@ function launchClassicGame() {
       <div id="player-tile-classic"></div>
 <!-- comp choice tile -->
       <div class="comp-choice" id="comp-tile-classic">
-      <div class="ufo slide-in-blurred-right">
-        <div class="glass"></div>
-        <div class="separator"></div>
-        <div class="body-comp">
-          <div class="window small window-left" id="window-left"></div>
-          <div class="window window-center" id="window-center"></div>
-          <div class="window small window-right" id="window-right"></div>
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body-comp">
+            <div class="window small window-left" id="window-left"></div>
+            <div class="window window-center" id="window-center"></div>
+            <div class="window small window-right" id="window-right"></div>
+          </div>
+          <div id="comp-light-container"></div>
         </div>
-        <div id="comp-light-container"></div>
       </div>
-      </div>
-
+<!-- in game buttons -->
       <div class="game-button rules" id="classic-rules-button">Rules</div>
       <div class="game-button quit" id="quit-button">Quit</div>
     </div>
@@ -892,18 +892,18 @@ function launchSpockGame() {
       <div id="player-tile-spock"></div>
 <!-- comp choice tile -->
       <div class="comp-choice" id="comp-tile-spock">
-      <div class="ufo slide-in-blurred-right">
-        <div class="glass"></div>
-        <div class="separator"></div>
-        <div class="body-comp">
-          <div class="window small window-left" id="window-left"></div>
-          <div class="window window-center" id="window-center"></div>
-          <div class="window small window-right" id="window-right"></div>
+        <div class="ufo slide-in-blurred-right">
+          <div class="glass"></div>
+          <div class="separator"></div>
+          <div class="body-comp">
+            <div class="window small window-left" id="window-left"></div>
+            <div class="window window-center" id="window-center"></div>
+            <div class="window small window-right" id="window-right"></div>
+          </div>
+          <div id="comp-light-container"></div>
         </div>
-        <div id="comp-light-container"></div>
       </div>
-      </div>
-
+<!-- in game buttons -->
       <div class="game-button rules" id="spock-rules-button">Rules</div>
       <div class="game-button quit" id="quit-button">Quit</div>
     </div>
