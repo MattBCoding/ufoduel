@@ -1,5 +1,3 @@
-
-
 // Globally needed variables
 let gameIsHard = false; // true means hard difficulty
 let colourMode = false; // true means dark scheme
@@ -8,7 +6,7 @@ let gameMode = '';
 let playerName = "";
 let classicRulesModal;
 let quitModal;
-
+let roundsWanted = 5;
 let menu = `<div class="main-menu">
 <button class="main-menu-button" id="play-classic">Play Classic</button>
 <button class="main-menu-button" id="play-spock">Play Spock</button>
@@ -17,12 +15,13 @@ let menu = `<div class="main-menu">
 </div>`;
 let mainSettingsModal = document.getElementById("settings-modal");
 let mainRulesModal = document.getElementById("main-rules-modal");
+
 // Capture player colour scheme preference
 let colourModeToggle = document.getElementById('colour-mode-checkbox');
-// Event listener for colour mode change
 
-// Set colour mode
+// Event listener for colour mode change
 colourModeToggle.addEventListener('change', function(e) {
+  // Set colour mode
   if (colourModeToggle.checked) {
     colourMode = true;
   } else {
@@ -30,11 +29,13 @@ colourModeToggle.addEventListener('change', function(e) {
   }
   changeColour();
 });
+
 // Capture game difficulty setting
 let gameDifficultyToggle = document.getElementById('difficulty-checkbox');
+
 // Event listener for game difficulty change 
-// Set game difficulty
 gameDifficultyToggle.addEventListener('change', function(e){
+  // Set game difficulty
   if (gameDifficultyToggle.checked) {
     gameIsHard = true;
   } else {
@@ -48,7 +49,7 @@ gameDifficultyToggle.addEventListener('change', function(e){
 // Change Colour Scheme
 function changeColour() {
   if (colourMode == true) {
-    //change colours
+    //change colours to dark mode
     let r = document.querySelector(':root');
     r.style.setProperty('--dark', '#232323');
     r.style.setProperty('--light', '#2f2f2f');
@@ -66,20 +67,24 @@ function changeColour() {
     r.style.setProperty('--ufo-body-shadow', '#232323');
     r.style.setProperty('--ufo-glass', '#ffffff');
     r.style.setProperty('--ufo-light', '#72ded4');
+    
     //change background image to darker version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/night.svg)';
+    
     // call star function
     starsOn = true;
     stars(background);
+    
     // moon comes up
     let moon = document.getElementById('moon');
     moon.style.display = 'inline';
+    
     // sun goes down
     let sun = document.getElementById('sun');
     sun.style.display = 'none';
   } else {
-    //change colours
+    //change colours back to light mode
     let r = document.querySelector(':root');
     r.style.setProperty('--dark', 'rgba(43,32,18,1)');
     r.style.setProperty('--light', 'rgba(229,177,116,1)');
@@ -97,15 +102,19 @@ function changeColour() {
     r.style.setProperty('--ufo-body-shadow', '#2f2f2f');
     r.style.setProperty('--ufo-glass', '#ffffff');
     r.style.setProperty('--ufo-light', '#f0d471');
-    //change background image to darker version
+    
+    //change background image to lighter version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/day.svg)';
+    
     // call star function
     starsOn = false;
     stars(background);
+    
     // moon goes down
     let moon = document.getElementById('moon');
     moon.style.display = 'none';
+    
     // sun comes up
     let sun = document.getElementById('sun');
     sun.style.display = 'inline';
@@ -139,31 +148,29 @@ function stars(background) {
     let starContainer = document.getElementById('star-container');
     starContainer.remove();
   }
-
 }
 
 // Change Game Difficulty
+
 // Change Game Winning Condition
-let roundsWanted = 5;
 function updateRoundsWanted(){
   roundsWanted = document.getElementById("rounds-slider").value;
   document.getElementById("rounds-wanted").innerHTML = roundsWanted;
 }
 
-
 // FUNCTIONS NEEDED BY MORE THAN ONE SCREEN
+
 // Set Game Mode
 function setGameModeClassic(){
   gameMode = 'classic';
-  console.log(gameMode);
   openNameScreen();
 }
 
 function setGameModeSpock(){
   gameMode = 'spock';
-  console.log(gameMode);
   openNameScreen();
 }
+
 // Determine Game Mode
 function launchGame() {
   if (gameMode === "classic") {
@@ -177,6 +184,7 @@ function launchGame() {
     location.reload();
   }
 }
+
 // Add Scoreboard to screen
 function addScoreboard() {
   document.getElementById("middle-container").innerHTML = `
@@ -196,6 +204,7 @@ function addScoreboard() {
       </div>
     </div>`;
 }
+
 // Classic Game Logic
 function classicGameLogic(playerSelection) {
   let compSelection = getCompSelection();
@@ -217,6 +226,7 @@ function classicGameLogic(playerSelection) {
         break;
   }
 }
+
 // Spock Game Logic
 function spockGameLogic(playerSelection){
   let compSelection = getCompSelection();
@@ -251,20 +261,22 @@ function getCompSelection() {
     let compOptions = ['rock', 'paper', 'scissors'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
+
     setTimeout(function(){
       document.getElementById("comp-light-container").innerHTML = `
-      <div class="light" id="${compMove}-light-classic"></div>
-      <i class="far fa-hand-${compMove}"></i>`;
+        <div class="light" id="${compMove}-light-classic"></div>
+        <i class="far fa-hand-${compMove}"></i>`;
     }, 800);
     return compMove;  
   } else if (gameIsHard === false && gameMode === "spock") {
     let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
+
     setTimeout(function(){
       document.getElementById("comp-light-container").innerHTML = `
-      <div class="light" id="${compMove}-light-classic"></div>
-      <i class="far fa-hand-${compMove}"></i>`;
+        <div class="light" id="${compMove}-light-classic"></div>
+        <i class="far fa-hand-${compMove}"></i>`;
     }, 800);
     return compMove;  
   } // need to add options for when gameIsHard === true for hard difficulty mode.
@@ -275,13 +287,16 @@ function playerWin(playerSelection, compSelection) {
   //get current player score
   let playerScoreSpan = document.getElementById("player-score");
   let playerScore = playerScoreSpan.innerHTML;
+
   //update player score
   playerScore++;
   playerScoreSpan.innerHTML = playerScore;
+
   //display round result message
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = 'green';
   resultMessage.innerHTML = `${playerSelection} beats ${compSelection}. You win this round!`;
+
   // check for overall win else reset board
   if (playerScore == roundsWanted) {
     playerOverallWin();
@@ -289,31 +304,36 @@ function playerWin(playerSelection, compSelection) {
     setTimeout(function() {
       let playerGridIdentifier = "player-tile-" + gameMode;
       document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
+
       let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
       let playerTile = document.getElementById(tileIdentifier); //grabs original tile
       
       playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
       playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+
       setTimeout(function() {
         document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
         document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
       }, 500);
-      console.log(document.getElementById(playerGridIdentifier).classList);
     }, 3000);
   } 
 }
+
 // Player lose round
 function playerLose(playerSelection, compSelection) {
   //get current comp score
   let compScoreSpan = document.getElementById("comp-score");
   let compScore = compScoreSpan.innerHTML;
+
   //update comp score
   compScore++;
   compScoreSpan.innerHTML = compScore;
+
   //display round result message
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = "red";
   resultMessage.innerHTML = `${playerSelection} loses to ${compSelection}. You lost this round!`;
+
   //check for overall loss else reset board
   if (compScore == roundsWanted) {
     playerOverallLost();
@@ -321,16 +341,17 @@ function playerLose(playerSelection, compSelection) {
     setTimeout(function() {
       let playerGridIdentifier = "player-tile-" + gameMode;
       document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
+
       let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
       let playerTile = document.getElementById(tileIdentifier); //grabs original tile
       
       playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
       playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+
       setTimeout(function() {
         document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
         document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
       }, 500);
-      console.log(document.getElementById(playerGridIdentifier).classList);
     }, 3000);
   }
 }
@@ -341,20 +362,22 @@ function playerDraw(playerSelection, compSelection) {
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = "var(--text-light)";
   resultMessage.innerHTML = `${playerSelection} draws with ${compSelection}. This round is a draw!`;
+
   //reset board
   setTimeout(function() {
     let playerGridIdentifier = "player-tile-" + gameMode;
-      document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
+    document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
+
     let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
     let playerTile = document.getElementById(tileIdentifier); //grabs original tile
     
     playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
     playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+    
     setTimeout(function() {
       document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
       document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
     }, 500);
-    console.log(document.getElementById(playerGridIdentifier).classList);
   }, 3000);
 }
 
@@ -362,8 +385,10 @@ function playerDraw(playerSelection, compSelection) {
 function playerOverallWin(){
   let playerScoreSpan = document.getElementById("player-score");
   let playerScore = playerScoreSpan.innerHTML;
+
   let compScoreSpan = document.getElementById("comp-score");
   let compScore = compScoreSpan.innerHTML;
+
   document.getElementById("main-container").innerHTML=`
     <div class="endscreen-container">
       <div class="endscreen-text-container">
@@ -380,8 +405,10 @@ function playerOverallWin(){
 function playerOverallLost(){
   let playerScoreSpan = document.getElementById("player-score");
   let playerScore = playerScoreSpan.innerHTML;
+
   let compScoreSpan = document.getElementById("comp-score");
   let compScore = compScoreSpan.innerHTML;
+
   document.getElementById("main-container").innerHTML=`
     <div class="endscreen-container">
       <div class="endscreen-text-container">
@@ -406,57 +433,57 @@ function playerSelectionSpock() {
   
   //event listeners for game tiles
   rock.addEventListener('click', function() {
-   //temp needs animation added. phase original location out and phase in on new location
-   let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    //temp needs animation added. phase original location out and phase in on new location
+    let tileCapture = this.innerHTML;
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     spockGameLogic('rock');
   });
 
   paper.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     spockGameLogic('paper');
   });
 
   scissors.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     spockGameLogic('scissors');
   });
 
   lizard.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     spockGameLogic('lizard');
   });
 
   spock.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     spockGameLogic('spock');
   });
 }
@@ -476,35 +503,35 @@ function playerSelectionClassic() {
   
   //event listeners for game tiles
   rock.addEventListener('click', function() {
-   //temp needs animation added. phase original location out and phase in on new location
-   let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    //temp needs animation added. phase original location out and phase in on new location
+    let tileCapture = this.innerHTML;
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     classicGameLogic('rock');
   });
 
   paper.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     classicGameLogic('paper');
   });
 
   scissors.addEventListener('click', function(){
     //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
-   this.classList.toggle("slide-in-blurred-right")
-   this.classList.toggle("slide-out-blurred-left");
-   setTimeout(function() {
-     player.innerHTML = tileCapture;
-   }, 800);
+    this.classList.toggle("slide-in-blurred-right")
+    this.classList.toggle("slide-out-blurred-left");
+    setTimeout(function() {
+      player.innerHTML = tileCapture;
+    }, 800);
     classicGameLogic('scissors');
   });
 }
@@ -560,8 +587,8 @@ function addClassicRulesModal() {
   function closeClassicRulesModal() {
     classicRulesModal.style.display = 'none';
   }
-
 }
+
 // spock rules modal
 function addSpockRulesModal() {
   // add spock rules modal into overall modal container
@@ -624,7 +651,6 @@ function addSpockRulesModal() {
   function closeSpockRulesModal() {
     spockRulesModal.style.display = 'none';
   }
-
 }
 
 // quit game modal
@@ -650,6 +676,7 @@ function addQuitModal() {
   
   let quitGameModalClose = document.getElementById("quit-modal-close");
   quitGameModalClose.addEventListener('click', closeQuitModal);
+  
   let quitGameCancelButton = document.getElementById("quit-modal-cancel-button");
   quitGameCancelButton.addEventListener('click', closeQuitModal);
 
@@ -657,15 +684,16 @@ function addQuitModal() {
   quitModalQuitButton.addEventListener('click', quitFromQuitModal);
 
   quitModal = document.getElementById("quit-modal");
+  
   // Quit modal open
   function openQuitModal() {
     quitModal.style.display = 'block';
   }
+  
   // Quit modal close
   function closeQuitModal() {
     quitModal.style.display = 'none';
   }
-
 }
 
 function quitFromQuitModal(){
@@ -673,23 +701,17 @@ function quitFromQuitModal(){
   returnToMenu();
 }
 
-// BUG! BUG! BUG! BUG! BUG!
-// when returning to menu the elements captured and the event listeners no longer work
-// this is because the browser has previously loaded them so the event listeners are already done
-// FIX FIX FIX FIX FIX
-// need to move the main menu itself into a function and have the event listeners load with it
-// will need to run the insert main menu function at a point in time, maybe when page loaded,
-// or another event that the entire script can identify
+// returns game to main menu
 function returnToMenu() {
   document.getElementById("main-container").innerHTML = menu;
   document.getElementById("middle-container").innerHTML = ``;
-  
   mainMenuElements();
 }
 
 // Quit Game button - Classic
 
 // ENTER NAME SCREEN
+
 // Capture Name Entry by player
 function nameScreen() {
   //get button
@@ -714,10 +736,9 @@ function nameScreen() {
       // start game
       launchGame();
     }
-    console.log("start button pressed")
-    console.log(playerName);
   }
 }
+
 // Change to Game Screen - Classic
 function launchClassicGame() {
   document.getElementById("main-container").innerHTML=`
@@ -791,6 +812,7 @@ function launchClassicGame() {
   addScoreboard();
   playerSelectionClassic();
 }
+
 // Change to Game Screen - Spock
 function launchSpockGame() {
   document.getElementById("main-container").innerHTML=`
@@ -909,8 +931,6 @@ function openNameScreen() {
     </form>
   </div>
   `;
-  console.log("function openNameScreen ran");
-  console.log(menu);
   nameScreen();
 }
 
@@ -918,11 +938,15 @@ function openNameScreen() {
 function openMainRulesModal() {
   mainRulesModal.style.display = 'block';
 }
+
 // M.M. Close Rules Modal
 function closeMainRulesModal() {
   mainRulesModal.style.display = 'none';
 }
-// M.M. Close Rules Modal if player clicks outside the modal content
+
+/**
+ * M.M. Closes Modals if player clicks outside the modal content
+ */
 function outsideModalClick(e) {
   if (e.target == mainRulesModal) {
     mainRulesModal.style.display = 'none';
@@ -934,37 +958,32 @@ function outsideModalClick(e) {
     quitModal.style.display = 'none';
   }
 }
+
 // M.M. Open Game Settings Screen Modal
 function openMainSettingsModal() {
   mainSettingsModal.style.display = 'block';
   document.getElementById("rounds-slider").addEventListener('click', updateRoundsWanted);
-  
 }
+
 // M.M. Close Game Settings Screen Modal
 function closeMainSettingsModal() {
   mainSettingsModal.style.display = 'none';
 }
-// Get Main Menu Elements - getElementById
-// Main Menu Event Listeners - capture player click events
 
-
-
-
-
-
-
-
+/**
+ * Captures menu elements and adds event listeners for each button
+ */
 function mainMenuElements() {
   // M.M. What happens when player clicks play classic mode
   let playClassicButton = document.getElementById("play-classic");
   playClassicButton.addEventListener('click', setGameModeClassic);
+
   // M.M. What happens when player clicks play spock mode
   let playSpockButton = document.getElementById("play-spock");
   playSpockButton.addEventListener('click', setGameModeSpock);
   
   // Main Menu Rules Modal elements - getElementById
   let mainRulesModalButton = document.getElementById("main-rules-button");
-  
   let mainRulesModalCloseButton = document.getElementById("main-rules-modal-close");
   
   // Main Menu Rules Modal Event Listeners - capture player click events
@@ -974,7 +993,6 @@ function mainMenuElements() {
     
   // Main Menu Settings Modal elements - getElementById
   let mainSettingsModalButton = document.getElementById("main-settings-button");
-  
   let mainSettingsModalCloseButton = document.getElementById("settings-modal-close");
   
   // Main Menu Settings Modal Event Listeners - capture player click events
