@@ -4,6 +4,9 @@ let colourMode = false; // true means dark scheme
 let starsOn = false; //true means stars inserted for dark mode
 let gameMode = '';
 let playerName = "";
+let previousPlayerChoice = "";
+let previousCompChoice = "";
+let previousResult = "";
 let classicRulesModal;
 let quitModal;
 let roundsWanted = 5;
@@ -213,16 +216,25 @@ function classicGameLogic(playerSelection) {
     case 'paperrock':
     case 'scissorspaper':
         playerWin(playerSelection, compSelection);
+        previousPlayerChoice = playerSelection;
+        previousCompChoice = compSelection;
+        previousResult = "playerWin";
         break;
     case 'rockpaper':
     case 'paperscissors':
     case 'scissorsrock':
         playerLose(playerSelection, compSelection);
+        previousPlayerChoice = playerSelection;
+        previousCompChoice = compSelection;
+        previousResult = "playerLose";
         break;
     case 'rockrock':
     case 'paperpaper':
     case 'scissorsscissors':
         playerDraw(playerSelection, compSelection);
+        previousPlayerChoice = playerSelection;
+        previousCompChoice = compSelection;
+        previousResult = "playerDraw";
         break;
   }
 }
@@ -290,8 +302,10 @@ function spockGameLogic(playerSelection) {
 //           break;
 //   }
 // }
+
 // Computer move selection - Math.random for easy difficulty
 // Computer move selection - hard difficulty
+
 function getCompSelection() {
   if (gameIsHard === false && gameMode === "classic") {
     let compOptions = ['rock', 'paper', 'scissors'];
@@ -315,10 +329,67 @@ function getCompSelection() {
         <i class="far fa-hand-${compMove}"></i>`;
     }, 800);
     return compMove;  
-  } // need to add options for when gameIsHard === true for hard difficulty mode.
+  } else if (gameIsHard === true && gameMode === "classic") {
+      if (previousResult === "" || previousResult === "playerDraw") {
+        let compOptions = ['rock', 'paper', 'scissors'];
+        let randomChoice = Math.floor(Math.random() * compOptions.length);
+        let compMove = compOptions[randomChoice];
+
+        setTimeout(function(){
+          document.getElementById("comp-light-container").innerHTML = `
+            <div class="light" id="${compMove}-light-classic"></div>
+            <i class="far fa-hand-${compMove}"></i>`;
+        }, 800);
+
+        return compMove;
+      } else if (previousResult === "playerWin") {
+          let compMove ="";
+          switch (previousPlayerChoice) {
+            case "rock":{
+              compMove = "paper";
+              break;}
+            case "paper":{
+              compMove = "scissors";
+              break;}
+            case "scissors":{
+              compMove = "rock";
+              break;}
+          } 
+          
+          setTimeout(function(){
+            document.getElementById("comp-light-container").innerHTML = `
+              <div class="light" id="${compMove}-light-classic"></div>
+              <i class="far fa-hand-${compMove}"></i>`;
+          }, 800);
+          
+          return compMove;
+      } else if (previousResult === "playerLose") {
+        let compMove ="";
+        switch (previousCompChoice) {
+          case "rock":{
+            compMove = "scissors";
+            break;}
+          case "paper":{
+            compMove = "rock";
+            break;}
+          case "scissors":{
+            compMove = "paper";
+            break;}
+        } 
+        
+        setTimeout(function(){
+          document.getElementById("comp-light-container").innerHTML = `
+            <div class="light" id="${compMove}-light-classic"></div>
+            <i class="far fa-hand-${compMove}"></i>`;
+        }, 800);
+        
+        return compMove;
+      }
+  }
+    // need to add options for when gameIsHard === true for hard difficulty mode.
 }
 
-// Player win round
+// Player win round comp loses
 function playerWin(playerSelection, compSelection) {
   //get current player score
   let playerScoreSpan = document.getElementById("player-score");
@@ -337,21 +408,27 @@ function playerWin(playerSelection, compSelection) {
   if (playerScore == roundsWanted) {
     playerOverallWin();
   } else {
+
+    //reset board
     setTimeout(function() {
-      let playerGridIdentifier = "player-tile-" + gameMode;
-      document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
-
-      let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
-      let playerTile = document.getElementById(tileIdentifier); //grabs original tile
-      
-      playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
-      playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
-
-      setTimeout(function() {
-        document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
-        document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
-      }, 500);
+    resetBoard(playerSelection);
     }, 3000);
+
+    // setTimeout(function() {
+    //   let playerGridIdentifier = "player-tile-" + gameMode;
+    //   document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
+
+    //   let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+    //   let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+      
+    //   playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+    //   playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+
+    //   setTimeout(function() {
+    //     document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
+    //     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+    //   }, 500);
+    // }, 3000);
   } 
 }
 
@@ -374,21 +451,27 @@ function playerLose(playerSelection, compSelection) {
   if (compScore == roundsWanted) {
     playerOverallLost();
   } else {
+
+    //reset board
     setTimeout(function() {
-      let playerGridIdentifier = "player-tile-" + gameMode;
-      document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
-
-      let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
-      let playerTile = document.getElementById(tileIdentifier); //grabs original tile
-      
-      playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
-      playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
-
-      setTimeout(function() {
-        document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
-        document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
-      }, 500);
+    resetBoard(playerSelection);
     }, 3000);
+
+    // setTimeout(function() {
+    //   let playerGridIdentifier = "player-tile-" + gameMode;
+    //   document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
+
+    //   let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+    //   let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+      
+    //   playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+    //   playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+
+    //   setTimeout(function() {
+    //     document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
+    //     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+    //   }, 500);
+    // }, 3000);
   }
 }
 
@@ -401,7 +484,29 @@ function playerDraw(playerSelection, compSelection) {
 
   //reset board
   setTimeout(function() {
-    let playerGridIdentifier = "player-tile-" + gameMode;
+    resetBoard(playerSelection);
+  }, 3000);
+
+  // setTimeout(function() {
+  //   let playerGridIdentifier = "player-tile-" + gameMode;
+  //   document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
+
+  //   let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
+  //   let playerTile = document.getElementById(tileIdentifier); //grabs original tile
+    
+  //   playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
+  //   playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
+    
+  //   setTimeout(function() {
+  //     document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
+  //     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
+  //   }, 500);
+  // }, 3000);
+}
+
+//Reset Board function
+function resetBoard(playerSelection) {
+  let playerGridIdentifier = "player-tile-" + gameMode;
     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
 
     let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
@@ -414,7 +519,6 @@ function playerDraw(playerSelection, compSelection) {
       document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
       document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
     }, 500);
-  }, 3000);
 }
 
 // Player Win Game
@@ -458,6 +562,11 @@ function playerOverallLost(){
 }
 
 // SPOCK GAME SCREEN
+/**
+ * Captures the player tile selection on the spock game mode screen,
+ * then runs animation to move tile off screen and place tile in player tile location,
+ * then sends player choice to the spockGameLogic function
+ */
 function playerSelectionSpock() {
   //capture game tiles
   let rock = document.getElementById("rock-tile-spock");
@@ -529,7 +638,11 @@ function playerSelectionSpock() {
 // Spock Rules modal close
 // Quit Game button - Spock
 
-// CLASSIC GAME SCREEN
+/**
+ * Captures the player tile selection on the classic game mode screen,
+ * then runs animation to move tile off screen and place tile in player tile location,
+ * then sends player choice to the classicGameLogic function
+ */
 function playerSelectionClassic() {
   //capture game tiles
   let rock = document.getElementById("rock-tile-classic");
