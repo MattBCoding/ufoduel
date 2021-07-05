@@ -253,6 +253,9 @@ function spockGameLogic(playerSelection) {
       case 'spockscissors':
       case 'spockrock':
           playerWin(playerSelection, compSelection);
+          previousPlayerChoice = playerSelection;
+          previousCompChoice = compSelection;
+          previousResult = "playerWin";
           break;
       case 'rockpaper':
       case 'rockspock':
@@ -265,6 +268,9 @@ function spockGameLogic(playerSelection) {
       case 'spocklizard':
       case 'spockpaper':
           playerLose(playerSelection, compSelection);
+          previousPlayerChoice = playerSelection;
+          previousCompChoice = compSelection;
+          previousResult = "playerLose";
           break;
       case 'rockrock':
       case 'paperpaper':
@@ -272,6 +278,9 @@ function spockGameLogic(playerSelection) {
       case 'lizardlizard':
       case 'spockspock':
           playerDraw(playerSelection, compSelection);
+          previousPlayerChoice = playerSelection;
+          previousCompChoice = compSelection;
+          previousResult = "playerDraw";
           break;
   }
 }
@@ -329,7 +338,7 @@ function getCompSelection() {
         <i class="far fa-hand-${compMove}"></i>`;
     }, 800);
     return compMove;  
-  } else if (gameIsHard === true && gameMode === "classic") {
+  } else if (gameIsHard === true && gameMode === "classic") { //start of hard mode comp selection
       if (previousResult === "" || previousResult === "playerDraw") {
         let compOptions = ['rock', 'paper', 'scissors'];
         let randomChoice = Math.floor(Math.random() * compOptions.length);
@@ -342,6 +351,7 @@ function getCompSelection() {
         }, 800);
 
         return compMove;
+
       } else if (previousResult === "playerWin") {
           let compMove ="";
           switch (previousPlayerChoice) {
@@ -363,17 +373,72 @@ function getCompSelection() {
           }, 800);
           
           return compMove;
+
       } else if (previousResult === "playerLose") {
+          let compMove ="";
+          switch (previousCompChoice) {
+            case "rock":{
+              compMove = "scissors";
+              break;}
+            case "paper":{
+              compMove = "rock";
+              break;}
+            case "scissors":{
+              compMove = "paper";
+              break;}
+          } 
+          
+          setTimeout(function(){
+            document.getElementById("comp-light-container").innerHTML = `
+              <div class="light" id="${compMove}-light-classic"></div>
+              <i class="far fa-hand-${compMove}"></i>`;
+          }, 800);
+          
+          return compMove;
+
+      } 
+    // need to add options for when gameIsHard === true for hard difficulty mode.
+  }
+  else if (gameIsHard === true && gameMode === "spock") {
+    if (previousResult === "" || previousResult === "playerDraw") {
+      let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+      let randomChoice = Math.floor(Math.random() * compOptions.length);
+      let compMove = compOptions[randomChoice];
+
+      setTimeout(function(){
+        document.getElementById("comp-light-container").innerHTML = `
+          <div class="light" id="${compMove}-light-classic"></div>
+          <i class="far fa-hand-${compMove}"></i>`;
+      }, 800);
+
+      return compMove;
+    } else if (previousResult === "playerWin") {
         let compMove ="";
-        switch (previousCompChoice) {
+        switch (previousPlayerChoice) {
           case "rock":{
-            compMove = "scissors";
+            let compOptions = ['paper', 'spock'];
+            let randomChoice = Math.floor(Math.random() * compOptions.length);
+            compMove = compOptions[randomChoice];
             break;}
           case "paper":{
-            compMove = "rock";
+            let compOptions = ['scissors', 'lizard'];
+            let randomChoice = Math.floor(Math.random() * compOptions.length);
+            compMove = compOptions[randomChoice];
             break;}
           case "scissors":{
-            compMove = "paper";
+            let compOptions = ['rock', 'spock'];
+            let randomChoice = Math.floor(Math.random() * compOptions.length);
+            compMove = compOptions[randomChoice];
+            break;}
+          case "lizard":{
+            let compOptions = ['rock', 'scissors'];
+            let randomChoice = Math.floor(Math.random() * compOptions.length);
+            compMove = compOptions[randomChoice];
+            break;}
+          case "spock":{
+            let compOptions = ['paper', 'lizard'];
+            let randomChoice = Math.floor(Math.random() * compOptions.length);
+            compMove = compOptions[randomChoice];
             break;}
         } 
         
@@ -384,10 +449,34 @@ function getCompSelection() {
         }, 800);
         
         return compMove;
+    } else if (previousResult === "playerLose") {
+        let compMove ="";
+        switch (previousCompChoice) {
+          case "rock":{
+            compMove = "lizard";
+            break;}
+          case "paper":{
+            compMove = "rock";
+            break;}
+          case "scissors":{
+            compMove = "paper";
+            break;}
+          case "lizard":{
+            compMove = "spock";
+            break;}
+          case "spock":{
+            compMove = "scissors";
+            break;}
+        } 
+        setTimeout(function(){
+          document.getElementById("comp-light-container").innerHTML = `
+            <div class="light" id="${compMove}-light-classic"></div>
+            <i class="far fa-hand-${compMove}"></i>`;
+        }, 800);
+        return compMove;
       }
-  }
-    // need to add options for when gameIsHard === true for hard difficulty mode.
 }
+} //end of comp selection function
 
 // Player win round comp loses
 function playerWin(playerSelection, compSelection) {
