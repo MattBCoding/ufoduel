@@ -226,23 +226,32 @@ function classicGameLogic(playerSelection) {
         break;
   }
 }
-
-// Spock Game Logic
+// Spock Game Logic 2
 function spockGameLogic(playerSelection) {
   let compSelection = getCompSelection();
   switch (playerSelection + compSelection) {
-      case 'rockscissors' || 'rocklizard':
-      case 'paperrock' || 'paperspock':
-      case 'scissorspaper' || 'scissorslizard':
-      case 'lizardspock' || 'lizardpaper':
-      case 'spockscissors' || 'spockrock':
+      case 'rockscissors':
+      case 'rocklizard':
+      case 'paperrock':
+      case 'paperspock':
+      case 'scissorspaper':
+      case 'scissorslizard':
+      case 'lizardspock':
+      case 'lizardpaper':
+      case 'spockscissors':
+      case 'spockrock':
           playerWin(playerSelection, compSelection);
           break;
-      case 'rockpaper' || 'rockspock':
-      case 'paperscissors' || 'paperlizard':
-      case 'scissorsspock' || 'scissorsrock':
-      case 'lizardrock' || 'lizardscissors':
-      case 'spocklizard' || 'spockpaper':
+      case 'rockpaper':
+      case 'rockspock':
+      case 'paperscissors':
+      case 'paperlizard':
+      case 'scissorsspock':
+      case 'scissorsrock':
+      case 'lizardrock':
+      case 'lizardscissors':
+      case 'spocklizard':
+      case 'spockpaper':
           playerLose(playerSelection, compSelection);
           break;
       case 'rockrock':
@@ -254,6 +263,33 @@ function spockGameLogic(playerSelection) {
           break;
   }
 }
+// Spock Game Logic broken switch case related to || OR operator somehow.
+// function spockGameLogic(playerSelection) {
+//   let compSelection = getCompSelection();
+//   switch (playerSelection + compSelection) {
+//       case 'rockscissors' || 'rocklizard':
+//       case 'paperrock' || 'paperspock':
+//       case 'scissorspaper' || 'scissorslizard':
+//       case 'lizardspock' || 'lizardpaper':
+//       case 'spockscissors' || 'spockrock':
+//           playerWin(playerSelection, compSelection);
+//           break;
+//       case 'rockpaper' || 'rockspock':
+//       case 'paperscissors' || 'paperlizard':
+//       case 'scissorsspock' || 'scissorsrock':
+//       case 'lizardrock' || 'lizardscissors':
+//       case 'spocklizard' || 'spockpaper':
+//           playerLose(playerSelection, compSelection);
+//           break;
+//       case 'rockrock':
+//       case 'paperpaper':
+//       case 'scissorsscissors':
+//       case 'lizardlizard':
+//       case 'spockspock':
+//           playerDraw(playerSelection, compSelection);
+//           break;
+//   }
+// }
 // Computer move selection - Math.random for easy difficulty
 // Computer move selection - hard difficulty
 function getCompSelection() {
