@@ -521,6 +521,14 @@ function resetBoard(playerSelection) {
     }, 500);
 }
 
+//Reset hard mode variables
+
+function hardReset() {
+  previousPlayerChoice = "";
+  previousCompChoice = "";
+  previousResult = "";
+}
+
 // Player Win Game
 function playerOverallWin(){
   let playerScoreSpan = document.getElementById("player-score");
@@ -539,6 +547,7 @@ function playerOverallWin(){
     </div>`;
     let button = document.getElementById("end-back-to-menu-button");
     button.addEventListener('click', returnToMenu);
+    hardReset();
 }
 
 // Player lose game
@@ -559,6 +568,7 @@ function playerOverallLost(){
     </div>`;
     let button = document.getElementById("end-back-to-menu-button");
     button.addEventListener('click', returnToMenu);
+    hardReset();
 }
 
 // SPOCK GAME SCREEN
