@@ -1049,6 +1049,8 @@ function launchClassicGame() {
           <div id="comp-light-container"></div>
         </div>
       </div>
+<!-- grid spacer div -->
+      <div class="grid-spacer"></div>
 <!-- in game buttons -->
       <div class="game-button rules" id="classic-rules-button">Rules</div>
       <div class="game-button quit" id="quit-button">Quit</div>
@@ -1151,6 +1153,8 @@ function launchSpockGame() {
           <div id="comp-light-container"></div>
         </div>
       </div>
+<!-- grid spacer div -->
+      <div class="grid-spacer"></div>
 <!-- in game buttons -->
       <div class="game-button rules" id="spock-rules-button">Rules</div>
       <div class="game-button quit" id="quit-button">Quit</div>
