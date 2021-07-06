@@ -149,6 +149,7 @@ body {
   flex-shrink: 0;
   margin-bottom: 1%;
   /* background-color: green; */
+  z-index: 2;
 }
 
 .main-menu {
@@ -763,6 +764,7 @@ border-radius: 5px;
   color: var(--text-light);
   white-space: nowrap;
   animation: text-scroll 3s linear infinite;
+  z-index: 0;
 }
 
 @keyframes text-scroll {
@@ -1064,6 +1066,32 @@ border-radius: 5px;
     font-size: 1.5rem; /* reduced from 2.5rem */
     box-shadow: 1px 5px 5px var(--shadow-dark), /* half original values */
               inset 1px 2px 2px var(--shadow-light); /* half original values */
+  }
+
+  .endscreen-container {
+    width: 100%;
+    height: 80%;
+    z-index: 5;
+  }
+  
+  .endscreen-text-container {
+    width: 100%;
+    box-shadow: 1px 5px 5px var(--shadow-dark), /* half original values */
+              inset 1px 2px 2px var(--shadow-light); /* half original values */
+  }
+  
+  .endscreen-text-container > h2 {
+    font-size: 1.5rem; /* reduced from 2rem */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .endscreen-text-container > p {
+    padding: 15px;
+  }
+
+  #end-back-to-menu-button {
+    margin-top: 15px;
   }
 }
 
