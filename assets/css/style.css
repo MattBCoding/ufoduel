@@ -49,7 +49,7 @@ body {
   border-radius: 50%;
   z-index: -3;
   top: 5%;
-  left: 30%;
+  left: calc(50% - 325px);
   display: inline;
 }
 
@@ -61,7 +61,7 @@ body {
   border-radius: 50%;
   z-index: -3;
   top: 5%;
-  right: 30%;
+  right: calc(50% - 325px);
   display: none;
 }
 
@@ -105,7 +105,8 @@ body {
 .title-container {
   flex-grow: 1;
   flex-shrink: 1;
-  width: min(450px, 40%);
+  width: min(450px, 80%);
+  max-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +117,7 @@ body {
 }
 
 .title-container > h1 {
-  /* text-align: center; */
+  text-align: center;
   font-size: 3rem;
   color: var(--text);
   /* border: rgba(114,81,49,1) solid 2px; */
@@ -124,9 +125,10 @@ body {
 }
 
 .title-container i {
-  font-size: inherit;
+  font-size: 3rem;
   border: none;
   text-shadow: none;
+  color: var(--text);
 }
 
 .middle-container {
