@@ -203,7 +203,7 @@ function addScoreboard() {
         <span class="comp-score" id="comp-score">0</span>
       </div>
       <div id="round-message-div">
-        <p id="round-message">test text to be removed for auto update</p>
+        <p id="round-message"></p>
       </div>
     </div>`;
 }

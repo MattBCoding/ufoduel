@@ -761,7 +761,18 @@ border-radius: 5px;
 #round-message {
   font-size: 1rem;
   color: var(--text-light);
-  /*Add scrolling animation like sports ticker board*/
+  white-space: nowrap;
+  animation: text-scroll 3s linear infinite;
+}
+
+@keyframes text-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 #player-name {
@@ -866,6 +877,7 @@ border-radius: 5px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  z-index: 5;
 }
 
 .endscreen-text-container {
