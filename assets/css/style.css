@@ -368,7 +368,8 @@ border-radius: 5px;
 
 .form {
   width: clamp(200px, 80%, 600px);
-  height: 60%;
+  min-height: 60%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -398,6 +399,10 @@ border-radius: 5px;
   width: 90%;
   position: relative;
   top: -25px;
+}
+
+#start-button {
+  margin-top: 15px;
 }
 
 /* Styling for Game Screen*/
@@ -912,8 +917,123 @@ border-radius: 5px;
 ======================== Start of media queries section ======================================
 ============================================================================================*/
 
+@media screen and (max-width: 800px) {
+  * {
+    font-size: 16px;
+  }
+
+  /* Styling for Game Screen*/
+
+  .game-grid {
+    /* border-radius: 0; */
+    gap: 4px; /* adjusted down 1px for smaller screens*/
+  }
+
+  .ufo {
+    width: 160px; /* reduced from 250px */
+    height: 120px; /* reduced from 150px */
+  }
+  
+  .body{
+    width: 160px; /* reduced from 200px */
+    height: 40px; /* reduced from 50px */
+    padding: 0px 12px; /* reduced from 15px */
+  }
+  
+  .body-comp {
+    width: 160px; /* reduced from 200px */
+    height: 40px; /* reduced from 50px */
+    padding: 0px 12px; /* reduced from 15px */
+  }
+
+  .window {
+    width: 12px; /* reduced from 16px */
+    height: 12px; /* reduced from 16px */
+  }
+  
+  .small {
+    width: 9px; /* reduced from 12px */
+    height: 9px; /* reduced from 12px */
+  }
+  
+  .window-left {
+    top: -4px; /* adjusted from -5px */
+    right: 9px; /* adjusted from 12px */
+  }
+  
+  .window-right {
+    top: -4px; /* adjusted from -5px */
+    right: -9px; /* adjusted from -12px */
+  }
+  
+  .window-center{
+    top: 4px; /* adjusted from 5px */
+  }
+  
+  .glass {
+    width: 80px; /* reduced from 100px */
+    height: 40px; /* reduced from 50px */
+    border-radius: 40px 40px 0px 0px; /* reduced from 50px */
+    top: 12px; /* adjusted from 15px */
+  }
+  
+  .separator {
+    width: 77px; /* reduced from 96px */
+    height: 9px; /* reduced from 12px */
+    top: 38px; /* adjusted from 48px */
+  }
+  
+  .light {
+    top: 40px; /* reduced from 50px */
+    width: 12px; /* reduced from 15px */
+    /* reduced border values by 0.8, original values 25% larger than those below*/
+    border-right: 33px solid transparent;
+    border-left: 33px solid transparent;
+    border-bottom: 112px solid var(--ufo-light);
+  }
+  
+  .ufo i {
+    top: 68px; /* adjusted from 85px */
+  }
+  
+  .grid-spacer{
+    height: 15px; /* reduced from 25px */
+  }
+
+  .game-button {
+    font-size: 1.5rem; /* reduced from 2.5rem */
+    box-shadow: 1px 5px 5px var(--shadow-dark), /* half original values */
+              inset 1px 2px 2px var(--shadow-light); /* half original values */
+  }
+
+  .endscreen-container {
+    width: 100%;
+    height: 80%;
+    z-index: 5;
+  }
+  
+  .endscreen-text-container {
+    width: 100%;
+    box-shadow: 1px 5px 5px var(--shadow-dark), /* half original values */
+              inset 1px 2px 2px var(--shadow-light); /* half original values */
+  }
+  
+  .endscreen-text-container > h2 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .endscreen-text-container > p {
+    padding: 15px;
+  }
+
+  #end-back-to-menu-button {
+    margin-top: 15px;
+  }
+}
+
 /* Mobile Phone Styling Adjustments */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 510px) {
   * {
     font-size: 14px;
   }
@@ -984,14 +1104,14 @@ border-radius: 5px;
 
   /* Styling for Game Screen*/
 
-  .game-grid {
-    /* border-radius: 0; */
-    gap: 4px; /* adjusted down 1px for smaller screens*/
-  }
+  /* .game-grid {
+    border-radius: 0;
+    gap: 4px; adjusted down 1px for smaller screens
+  } */
 
   .ufo {
-    width:100px; /* reduced from 250px */
-    height:75px; /* reduced from 150px */
+    width: 100px; /* reduced from 250px */
+    height: 75px; /* reduced from 150px */
   }
   
   .body{
@@ -1007,17 +1127,16 @@ border-radius: 5px;
   }
 
   .window {
-    width:8px; /* reduced from 16px */
-    height:8px; /* reduced from 16px */
+    width: 8px; /* reduced from 16px */
+    height: 8px; /* reduced from 16px */
   }
   
   .small {
-    width:6px; /* reduced from 12px */
-    height:6px; /* reduced from 12px */
+    width: 6px; /* reduced from 12px */
+    height: 6px; /* reduced from 12px */
   }
   
   .window-left {
-    position: relative;
     top: -2px; /* adjusted from -5px */
     right: 6px; /* adjusted from 12px */
   }
@@ -1035,7 +1154,7 @@ border-radius: 5px;
     width: 50px; /* reduced from 100px */
     height: 25px; /* reduced from 50px */
     border-radius: 25px 25px 0px 0px; /* reduced from 50px */
-    top:8px; /* adjusted from 15px */
+    top: 8px; /* adjusted from 15px */
   }
   
   .separator {
@@ -1058,41 +1177,41 @@ border-radius: 5px;
     font-size: 2rem; /* reduced from 3rem */
   }
   
-  .grid-spacer{
-    height: 15px; /* reduced from 25px */
-  }
+  /* .grid-spacer{
+    height: 15px; reduced from 25px
+  } */
 
-  .game-button {
-    font-size: 1.5rem; /* reduced from 2.5rem */
-    box-shadow: 1px 5px 5px var(--shadow-dark), /* half original values */
-              inset 1px 2px 2px var(--shadow-light); /* half original values */
-  }
+  /* .game-button {
+    font-size: 1.5rem; reduced from 2.5rem
+    box-shadow: 1px 5px 5px var(--shadow-dark), half original values
+              inset 1px 2px 2px var(--shadow-light); half original values
+  } */
 
-  .endscreen-container {
+  /* .endscreen-container {
     width: 100%;
     height: 80%;
     z-index: 5;
-  }
+  } */
   
-  .endscreen-text-container {
+  /* .endscreen-text-container {
     width: 100%;
-    box-shadow: 1px 5px 5px var(--shadow-dark), /* half original values */
-              inset 1px 2px 2px var(--shadow-light); /* half original values */
-  }
+    box-shadow: 1px 5px 5px var(--shadow-dark), half original values
+              inset 1px 2px 2px var(--shadow-light); half original values
+  } */
   
   .endscreen-text-container > h2 {
     font-size: 1.5rem; /* reduced from 2rem */
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
   }
   
   .endscreen-text-container > p {
     padding: 15px;
   }
 
-  #end-back-to-menu-button {
+  /* #end-back-to-menu-button {
     margin-top: 15px;
-  }
+  } */
 }
 
 @media screen and (max-width: 325px){
