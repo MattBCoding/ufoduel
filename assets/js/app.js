@@ -853,7 +853,7 @@ function addClassicRulesModal() {
   <div class="modal-container" id="classic-rules-modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="modal-close" id="classic-rules-modal-close">&times;</span>
+        <span class="modal-close" id="classic-rules-modal-close" tabindex="0">&times;</span>
         <h2>Rules of the game</h2>
       </div>
       <div class="modal-body">
@@ -908,7 +908,7 @@ function addSpockRulesModal() {
   <div class="modal-container" id="spock-rules-modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="modal-close" id="spock-rules-modal-close">&times;</span>
+        <span class="modal-close" id="spock-rules-modal-close" tabindex="0">&times;</span>
         <h2>Rules of the game</h2>
       </div>
       <div class="modal-body">
@@ -973,7 +973,7 @@ function addQuitModal() {
   <div class="modal-container" id="quit-modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="modal-close" id="quit-modal-close">&times;</span>
+        <span class="modal-close" id="quit-modal-close" tabindex="0">&times;</span>
         <h2>Quit Game</h2>
       </div>
       <div class="modal-body">
@@ -1063,7 +1063,7 @@ function launchClassicGame() {
   <div class="game">
     <div class="game-grid">
 <!--rock game tile-->    
-      <div class="rock" id="rock-tile-classic">
+      <div class="rock" id="rock-tile-classic" tabindex="0">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1077,7 +1077,7 @@ function launchClassicGame() {
         </div>
       </div>
 <!-- paper game tile-->
-      <div class="paper" id="paper-tile-classic">
+      <div class="paper" id="paper-tile-classic" tabindex="0">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1091,7 +1091,7 @@ function launchClassicGame() {
         </div>
       </div>
 <!-- scissors game tile-->
-      <div class="scissors" id="scissors-tile-classic">
+      <div class="scissors" id="scissors-tile-classic" tabindex="0">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1122,8 +1122,8 @@ function launchClassicGame() {
 <!-- grid spacer div -->
       <div class="grid-spacer"></div>
 <!-- in game buttons -->
-      <div class="game-button rules" id="classic-rules-button">Rules</div>
-      <div class="game-button quit" id="quit-button">Quit</div>
+      <div class="game-button rules" id="classic-rules-button" tabindex="0">Rules</div>
+      <div class="game-button quit" id="quit-button" tabindex="0">Quit</div>
     </div>
   </div>
   `;
@@ -1139,7 +1139,7 @@ function launchSpockGame() {
   <div class="game">
     <div class="game-grid">
 <!-- lizard game tile-->
-    <div class="lizard" id="lizard-tile-spock">
+    <div class="lizard" id="lizard-tile-spock" tabindex="0">
       <div class="ufo slide-in-blurred-right">
         <div class="glass"></div>
         <div class="separator"></div>
@@ -1153,7 +1153,7 @@ function launchSpockGame() {
       </div>
     </div>
 <!-- spock game tile-->
-    <div class="spock" id="spock-tile-spock">
+    <div class="spock" id="spock-tile-spock" tabindex="0">
       <div class="ufo slide-in-blurred-right">
         <div class="glass"></div>
         <div class="separator"></div>
@@ -1167,7 +1167,7 @@ function launchSpockGame() {
       </div>
     </div>
 <!--rock game tile-->    
-      <div class="rock" id="rock-tile-spock">
+      <div class="rock" id="rock-tile-spock" tabindex="0">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1181,7 +1181,7 @@ function launchSpockGame() {
         </div>
       </div>
 <!-- paper game tile-->
-      <div class="paper" id="paper-tile-spock">
+      <div class="paper" id="paper-tile-spock" tabindex="0">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1195,7 +1195,7 @@ function launchSpockGame() {
         </div>
       </div>
 <!-- scissors game tile-->
-      <div class="scissors" id="scissors-tile-spock">
+      <div class="scissors" id="scissors-tile-spock" tabindex="0">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1226,8 +1226,8 @@ function launchSpockGame() {
 <!-- grid spacer div -->
       <div class="grid-spacer"></div>
 <!-- in game buttons -->
-      <div class="game-button rules" id="spock-rules-button">Rules</div>
-      <div class="game-button quit" id="quit-button">Quit</div>
+      <div class="game-button rules" id="spock-rules-button" tabindex="0">Rules</div>
+      <div class="game-button quit" id="quit-button" tabindex="0">Quit</div>
     </div>
   </div>
   `;
