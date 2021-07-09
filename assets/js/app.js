@@ -253,7 +253,10 @@ function spockGameLogic(playerSelection) {
       case 'lizardpaper':
       case 'spockscissors':
       case 'spockrock':
-          playerWin(playerSelection, compSelection);
+          // playerWin(playerSelection, compSelection);
+          setTimeout(function(){
+            playerWin(playerSelection, compSelection);
+          }, 2300);
           previousPlayerChoice = playerSelection;
           previousCompChoice = compSelection;
           previousResult = "playerWin";
@@ -268,7 +271,10 @@ function spockGameLogic(playerSelection) {
       case 'lizardscissors':
       case 'spocklizard':
       case 'spockpaper':
-          playerLose(playerSelection, compSelection);
+          // playerLose(playerSelection, compSelection);
+          setTimeout(function(){
+            playerLose(playerSelection, compSelection);
+          }, 2300);
           previousPlayerChoice = playerSelection;
           previousCompChoice = compSelection;
           previousResult = "playerLose";
@@ -278,7 +284,10 @@ function spockGameLogic(playerSelection) {
       case 'scissorsscissors':
       case 'lizardlizard':
       case 'spockspock':
-          playerDraw(playerSelection, compSelection);
+          // playerDraw(playerSelection, compSelection);
+          setTimeout(function(){
+            playerDraw(playerSelection, compSelection);
+          }, 2300);
           previousPlayerChoice = playerSelection;
           previousCompChoice = compSelection;
           previousResult = "playerDraw";
@@ -512,7 +521,7 @@ function playerWin(playerSelection, compSelection) {
     //reset board
     setTimeout(function() {
     resetBoard(playerSelection);
-    }, 3000);
+    }, 500);
 
     // setTimeout(function() {
     //   let playerGridIdentifier = "player-tile-" + gameMode;
@@ -555,7 +564,7 @@ function playerLose(playerSelection, compSelection) {
     //reset board
     setTimeout(function() {
     resetBoard(playerSelection);
-    }, 3000);
+    }, 500);
 
     // setTimeout(function() {
     //   let playerGridIdentifier = "player-tile-" + gameMode;
@@ -585,7 +594,7 @@ function playerDraw(playerSelection, compSelection) {
   //reset board
   setTimeout(function() {
     resetBoard(playerSelection);
-  }, 3000);
+  }, 500);
 
   // setTimeout(function() {
   //   let playerGridIdentifier = "player-tile-" + gameMode;
