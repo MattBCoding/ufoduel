@@ -1206,6 +1206,8 @@ function outsideModalClick(e) {
     mainSettingsModal.style.display = 'none';
   } if (e.target == classicRulesModal) {
     classicRulesModal.style.display = 'none';
+  } if (e.target == spockRulesModal) {
+    spockRulesModal.style.display = 'none';
   } if (e.target == quitModal) {
     quitModal.style.display = 'none';
   }
@@ -1214,7 +1216,7 @@ function outsideModalClick(e) {
 // M.M. Open Game Settings Screen Modal
 function openMainSettingsModal() {
   mainSettingsModal.style.display = 'block';
-  document.getElementById("rounds-slider").addEventListener('click', updateRoundsWanted);
+  document.getElementById("rounds-slider").addEventListener('input', updateRoundsWanted);
 }
 
 // M.M. Close Game Settings Screen Modal

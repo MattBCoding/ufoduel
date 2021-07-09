@@ -1074,6 +1074,10 @@ border-radius: 5px;
     gap: 4px; adjusted down 1px for smaller screens
   } */
 
+  .ufo i {
+    top: 75%;
+    font-size: 2.0rem;
+  }
  
   
   /* .grid-spacer{
@@ -1127,4 +1131,10 @@ border-radius: 5px;
   #round-message {
     font-size: .8rem; /* reduced from 1rem */
   }
+
+  .ufo i {
+    top: 68%;
+    font-size: 1.8rem;
+  }
+
 }
