@@ -8,6 +8,7 @@ let previousPlayerChoice = "";
 let previousCompChoice = "";
 let previousResult = "";
 let classicRulesModal;
+let spockRulesModal;
 let quitModal;
 let roundsWanted = 5;
 let menu = `<div class="main-menu">
@@ -321,34 +322,35 @@ function getCompSelection() {
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
 // need to move this out into its own function. causing error when game ended by overall win or lose.
-    setTimeout(function(){
-      document.getElementById("comp-light-container").innerHTML = `
-        <div class="light" id="${compMove}-light-classic"></div>
-        <i class="far fa-hand-${compMove}"></i>`;
-    }, 800);
+    compAssignLight(compMove);
+    // setTimeout(function(){
+    //   document.getElementById("comp-light-container").innerHTML = `
+    //     <div class="light" id="${compMove}-light-classic"></div>
+    //     <i class="far fa-hand-${compMove}"></i>`;
+    // }, 800);
     return compMove;  
   } else if (gameIsHard === false && gameMode === "spock") {
     let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
-
-    setTimeout(function(){
-      document.getElementById("comp-light-container").innerHTML = `
-        <div class="light" id="${compMove}-light-classic"></div>
-        <i class="far fa-hand-${compMove}"></i>`;
-    }, 800);
+    compAssignLight(compMove);
+    // setTimeout(function(){
+    //   document.getElementById("comp-light-container").innerHTML = `
+    //     <div class="light" id="${compMove}-light-classic"></div>
+    //     <i class="far fa-hand-${compMove}"></i>`;
+    // }, 800);
     return compMove;  
   } else if (gameIsHard === true && gameMode === "classic") { //start of hard mode comp selection
       if (previousResult === "" || previousResult === "playerDraw") {
         let compOptions = ['rock', 'paper', 'scissors'];
         let randomChoice = Math.floor(Math.random() * compOptions.length);
         let compMove = compOptions[randomChoice];
-
-        setTimeout(function(){
-          document.getElementById("comp-light-container").innerHTML = `
-            <div class="light" id="${compMove}-light-classic"></div>
-            <i class="far fa-hand-${compMove}"></i>`;
-        }, 800);
+        compAssignLight(compMove);
+        // setTimeout(function(){
+        //   document.getElementById("comp-light-container").innerHTML = `
+        //     <div class="light" id="${compMove}-light-classic"></div>
+        //     <i class="far fa-hand-${compMove}"></i>`;
+        // }, 800);
 
         return compMove;
 
@@ -365,12 +367,12 @@ function getCompSelection() {
               compMove = "rock";
               break;}
           } 
-          
-          setTimeout(function(){
-            document.getElementById("comp-light-container").innerHTML = `
-              <div class="light" id="${compMove}-light-classic"></div>
-              <i class="far fa-hand-${compMove}"></i>`;
-          }, 800);
+          compAssignLight(compMove);
+          // setTimeout(function(){
+          //   document.getElementById("comp-light-container").innerHTML = `
+          //     <div class="light" id="${compMove}-light-classic"></div>
+          //     <i class="far fa-hand-${compMove}"></i>`;
+          // }, 800);
           
           return compMove;
 
@@ -387,12 +389,12 @@ function getCompSelection() {
               compMove = "paper";
               break;}
           } 
-          
-          setTimeout(function(){
-            document.getElementById("comp-light-container").innerHTML = `
-              <div class="light" id="${compMove}-light-classic"></div>
-              <i class="far fa-hand-${compMove}"></i>`;
-          }, 800);
+          compAssignLight(compMove);
+          // setTimeout(function(){
+          //   document.getElementById("comp-light-container").innerHTML = `
+          //     <div class="light" id="${compMove}-light-classic"></div>
+          //     <i class="far fa-hand-${compMove}"></i>`;
+          // }, 800);
           
           return compMove;
 
@@ -404,12 +406,12 @@ function getCompSelection() {
       let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
       let randomChoice = Math.floor(Math.random() * compOptions.length);
       let compMove = compOptions[randomChoice];
-
-      setTimeout(function(){
-        document.getElementById("comp-light-container").innerHTML = `
-          <div class="light" id="${compMove}-light-classic"></div>
-          <i class="far fa-hand-${compMove}"></i>`;
-      }, 800);
+      compAssignLight(compMove);
+      // setTimeout(function(){
+      //   document.getElementById("comp-light-container").innerHTML = `
+      //     <div class="light" id="${compMove}-light-classic"></div>
+      //     <i class="far fa-hand-${compMove}"></i>`;
+      // }, 800);
 
       return compMove;
     } else if (previousResult === "playerWin") {
@@ -441,12 +443,12 @@ function getCompSelection() {
             compMove = compOptions[randomChoice];
             break;}
         } 
-        
-        setTimeout(function(){
-          document.getElementById("comp-light-container").innerHTML = `
-            <div class="light" id="${compMove}-light-classic"></div>
-            <i class="far fa-hand-${compMove}"></i>`;
-        }, 800);
+        compAssignLight(compMove);
+        // setTimeout(function(){
+        //   document.getElementById("comp-light-container").innerHTML = `
+        //     <div class="light" id="${compMove}-light-classic"></div>
+        //     <i class="far fa-hand-${compMove}"></i>`;
+        // }, 800);
         
         return compMove;
     } else if (previousResult === "playerLose") {
@@ -467,16 +469,25 @@ function getCompSelection() {
           case "spock":{
             compMove = "scissors";
             break;}
-        } 
-        setTimeout(function(){
-          document.getElementById("comp-light-container").innerHTML = `
-            <div class="light" id="${compMove}-light-classic"></div>
-            <i class="far fa-hand-${compMove}"></i>`;
-        }, 800);
+        }
+        compAssignLight(compMove);
+        // setTimeout(function(){
+        //   document.getElementById("comp-light-container").innerHTML = `
+        //     <div class="light" id="${compMove}-light-classic"></div>
+        //     <i class="far fa-hand-${compMove}"></i>`;
+        // }, 800);
         return compMove;
       }
 }
 } //end of comp selection function
+
+function compAssignLight(compMove){
+  setTimeout(function(){
+    document.getElementById("comp-light-container").innerHTML = `
+      <div class="light" id="${compMove}-light-classic"></div>
+      <i class="far fa-hand-${compMove}"></i>`;
+  }, 800);
+}
 
 // Player win round comp loses
 function playerWin(playerSelection, compSelection) {
@@ -783,6 +794,7 @@ function playerSelectionClassic() {
     classicGameLogic('scissors');
   });
 }
+
 
 // In game rules modal
 function addClassicRulesModal() {
