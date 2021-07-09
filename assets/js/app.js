@@ -216,7 +216,10 @@ function classicGameLogic(playerSelection) {
     case 'rockscissors':
     case 'paperrock':
     case 'scissorspaper':
-        playerWin(playerSelection, compSelection);
+        // playerWin(playerSelection, compSelection);
+        setTimeout(function(){
+          playerWin(playerSelection, compSelection);
+        }, 2300);
         previousPlayerChoice = playerSelection;
         previousCompChoice = compSelection;
         previousResult = "playerWin";
@@ -224,7 +227,10 @@ function classicGameLogic(playerSelection) {
     case 'rockpaper':
     case 'paperscissors':
     case 'scissorsrock':
-        playerLose(playerSelection, compSelection);
+        // playerLose(playerSelection, compSelection);
+        setTimeout(function(){
+          playerLose(playerSelection, compSelection);
+        }, 2300);
         previousPlayerChoice = playerSelection;
         previousCompChoice = compSelection;
         previousResult = "playerLose";
@@ -232,7 +238,10 @@ function classicGameLogic(playerSelection) {
     case 'rockrock':
     case 'paperpaper':
     case 'scissorsscissors':
-        playerDraw(playerSelection, compSelection);
+        // playerDraw(playerSelection, compSelection);
+        setTimeout(function(){
+          playerDraw(playerSelection, compSelection);
+        }, 2300);
         previousPlayerChoice = playerSelection;
         previousCompChoice = compSelection;
         previousResult = "playerDraw";
