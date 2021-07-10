@@ -374,9 +374,9 @@ input[type=range]#rounds-slider {
   -webkit-appearance: none;
 }
 
-input[type=range]#rounds-slider:focus {
+/* input[type=range]#rounds-slider:focus {
   outline: none;
-}
+} */
 
 input[type=range]#rounds-slider::-webkit-slider-runnable-track {
   background: var(--dark);

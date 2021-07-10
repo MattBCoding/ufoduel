@@ -34,6 +34,15 @@ colourModeToggle.addEventListener('change', function(e) {
   changeColour();
 });
 
+// Event Listener for enter key press on colour-mode span to simulate click
+let colourModeSpan = document.getElementById('colour-mode-span');
+colourModeSpan.addEventListener('keydown', function(e){
+  if (e.key === 'Enter') {
+    colourModeToggle.click();
+    console.log(colourMode);
+  }
+});
+
 // Capture game difficulty setting
 let gameDifficultyToggle = document.getElementById('difficulty-checkbox');
 
@@ -54,7 +63,7 @@ gameDifficultySpan.addEventListener('keydown', function(e){
     gameDifficultyToggle.click();
     console.log(gameIsHard);
   }
-})
+});
 
 // FUNCTIONS
 
