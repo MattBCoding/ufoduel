@@ -921,6 +921,7 @@ function addClassicRulesModal() {
   
   let rulesButton = document.getElementById("classic-rules-button");
   rulesButton.addEventListener('click', openClassicRulesModal);
+  //keyboard functionality
   rulesButton.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       rulesButton.click();
@@ -930,6 +931,7 @@ function addClassicRulesModal() {
   
   let classicRulesModalClose = document.getElementById("classic-rules-modal-close");
   classicRulesModalClose.addEventListener('click', closeClassicRulesModal);
+  //keyboard functionality
   classicRulesModalClose.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       classicRulesModalClose.click();
@@ -999,10 +1001,23 @@ function addSpockRulesModal() {
   
   let rulesButton = document.getElementById("spock-rules-button");
   rulesButton.addEventListener('click', openSpockRulesModal);
+  //keyboard functionality
+  rulesButton.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      rulesButton.click();
+      console.log("rules button selected by enter key click function activated");
+    }
+  });
   
   let spockRulesModalClose = document.getElementById("spock-rules-modal-close");
   spockRulesModalClose.addEventListener('click', closeSpockRulesModal);
-
+  //keyboard functionality
+  spockRulesModalClose.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      spockRulesModalClose.click();
+      console.log("spock rules modal close button selected by enter key click function activated");
+    }
+  });
   spockRulesModal = document.getElementById("spock-rules-modal");
 
   // Spock Rules modal open
