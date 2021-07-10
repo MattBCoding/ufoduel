@@ -782,6 +782,41 @@ function playerSelectionSpock() {
     // }, 800);
     spockGameLogic('spock');
   });
+
+  rock.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      rock.click();
+      console.log("rock tile selected by enter key click function activated");
+    }
+  });
+
+  paper.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      paper.click();
+      console.log("paper tile selected by enter key click function activated");
+    }
+  });
+
+  scissors.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      scissors.click();
+      console.log("scissors tile selected by enter key click function activated");
+    }
+  });
+
+  lizard.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      lizard.click();
+      console.log("lizard tile selected by enter key click function activated");
+    }
+  });
+
+  spock.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      spock.click();
+      console.log("spock tile selected by enter key click function activated");
+    }
+  });
 }
 
 /**
