@@ -1038,9 +1038,23 @@ function addQuitModal() {
   
   let quitGameButton = document.getElementById("quit-button");
   quitGameButton.addEventListener('click', openQuitModal);
+  // keyboard functionality
+  quitGameButton.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      quitGameButton.click();
+      console.log("quit game button selected by enter key click function activated");
+    }
+  });
   
   let quitGameModalClose = document.getElementById("quit-modal-close");
   quitGameModalClose.addEventListener('click', closeQuitModal);
+  // keyboard functionality
+  quitGameModalClose.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      quitGameModalClose.click();
+      console.log("Quit game modal close selected by enter key click function activated");
+    }
+  });
   
   let quitGameCancelButton = document.getElementById("quit-modal-cancel-button");
   quitGameCancelButton.addEventListener('click', closeQuitModal);
