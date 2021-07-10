@@ -811,7 +811,6 @@ function playerSelectionClassic() {
   let paper = document.getElementById("paper-tile-classic");
   let scissors = document.getElementById("scissors-tile-classic");
   
-  
   //event listeners for game tiles
   rock.addEventListener('click', function() {
     //temp needs animation added. phase original location out and phase in on new location
@@ -847,6 +846,28 @@ function playerSelectionClassic() {
     //   player.innerHTML = tileCapture;
     // }, 800);
     classicGameLogic('scissors');
+  });
+
+  //keyboard event listeners
+  rock.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      rock.click();
+      console.log("rock tile selected by enter key click function activated");
+    }
+  });
+
+  paper.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      paper.click();
+      console.log("paper tile selected by enter key click function activated");
+    }
+  });
+
+  scissors.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      scissors.click();
+      console.log("scissors tile selected by enter key click function activated");
+    }
   });
 }
 
