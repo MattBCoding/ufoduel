@@ -1263,6 +1263,7 @@ function openNameScreen() {
   <div class="main-menu">
     <form action="#">  
       <div class="form">
+        <span id="name-input-back-button" tabindex="0"></span>
         <span id="error-message"></span>
         <label for="name">Enter name:</label>
         <input type="text" id="name" name="name" pattern="[A-Za-z0-9]{1,15}" maxlength="15">
@@ -1332,6 +1333,14 @@ function mainMenuElements() {
   mainRulesModalButton.addEventListener('click', openMainRulesModal);
   mainRulesModalCloseButton.addEventListener('click', closeMainRulesModal);
   window.addEventListener('click', outsideModalClick);
+
+  // Main Menu Rules Modal event listener for enter key press on rules close button to simulate click
+  mainRulesModalCloseButton.addEventListener('keydown', function(e){
+    if (e.key === 'Enter') {
+      mainRulesModalCloseButton.click();
+      console.log("main rules modal close button clicked");
+    }
+  });
     
   // Main Menu Settings Modal elements - getElementById
   let mainSettingsModalButton = document.getElementById("main-settings-button");
@@ -1339,7 +1348,15 @@ function mainMenuElements() {
   
   // Main Menu Settings Modal Event Listeners - capture player click events
   mainSettingsModalButton.addEventListener('click', openMainSettingsModal);
-  mainSettingsModalCloseButton.addEventListener('click', closeMainSettingsModal); 
+  mainSettingsModalCloseButton.addEventListener('click', closeMainSettingsModal);
+
+  // Event listener for enter key press on main settings close button to simulate click
+  mainSettingsModalCloseButton.addEventListener('keydown', function(e){
+    if (e.key === 'Enter') {
+      mainSettingsModalCloseButton.click();
+      console.log("main settings modal close button clicked");
+    }
+  });
 }
 
 window.onload = returnToMenu();
