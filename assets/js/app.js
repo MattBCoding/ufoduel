@@ -1073,6 +1073,15 @@ function nameScreen() {
       launchGame();
     }
   }
+  // get back button
+  let backButton = document.getElementById("name-input-back-button");
+  // listen for click
+  backButton.addEventListener('click', returnToMenu);
+  backButton.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      backButton.click();
+    }
+  });
 }
 
 // Change to Game Screen - Classic
@@ -1263,7 +1272,7 @@ function openNameScreen() {
   <div class="main-menu">
     <form action="#">  
       <div class="form">
-        <span id="name-input-back-button" tabindex="0"></span>
+        <span id="name-input-back-button" tabindex="0"><i class="far fa-caret-square-left"></i></span>
         <span id="error-message"></span>
         <label for="name">Enter name:</label>
         <input type="text" id="name" name="name" pattern="[A-Za-z0-9]{1,15}" maxlength="15">

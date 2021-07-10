@@ -488,7 +488,23 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
   border: 5px solid var(--border);
   box-shadow: 2px 10px 10px var(--shadow-dark),
               inset 1px 5px 5px var(--shadow-light);
-  
+  position: relative;
+}
+
+#name-input-back-button {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  color: var(--dark);
+  margin-bottom: 1%;
+}
+
+#name-input-back-button > i {
+  font-size: 2rem;
+}
+
+#name-input-back-button > i:hover {
+  color: var(--error);
 }
 
 .form > label {
@@ -506,7 +522,7 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
 #error-message {
   width: 90%;
   position: relative;
-  top: -25px;
+  top: 5px;
 }
 
 #start-button {
@@ -1162,8 +1178,10 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
   }
 
   #error-message {
-    width: 98%;
-    font-size: .8rem;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 2%;
+    box-sizing: border-box;
   }
 
   /* Styling for Game Screen*/
