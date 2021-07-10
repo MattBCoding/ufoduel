@@ -921,9 +921,21 @@ function addClassicRulesModal() {
   
   let rulesButton = document.getElementById("classic-rules-button");
   rulesButton.addEventListener('click', openClassicRulesModal);
+  rulesButton.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      rulesButton.click();
+      console.log("rules button selected by enter key click function activated");
+    }
+  });
   
   let classicRulesModalClose = document.getElementById("classic-rules-modal-close");
   classicRulesModalClose.addEventListener('click', closeClassicRulesModal);
+  classicRulesModalClose.addEventListener('keydown', function(e){
+    if (e.key === 'Enter'){
+      classicRulesModalClose.click();
+      console.log("classic rules modal close selected by enter key click function activated");
+    }
+  });
 
   classicRulesModal = document.getElementById("classic-rules-modal");
 
