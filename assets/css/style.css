@@ -113,7 +113,7 @@ body {
   justify-content: center;
   margin: 1% auto;
   background-image: repeating-linear-gradient(180deg, var(--light), var(--light-highlight) 8%, var(--light-highlight) 10%); /* wood effect created in Adobe XD*/
-  border: var(--border) dashed 8px;
+  border: var(--border) solid 5px;
   border-radius: 15px;
 }
 
