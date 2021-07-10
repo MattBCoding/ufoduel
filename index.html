@@ -106,7 +106,7 @@
             <div class="slider-container">
               <p class="left-label">Easy</p>
               <input type="checkbox" id="difficulty-checkbox" class="checkbox">
-              <span class="toggle round"></span>
+              <span class="toggle round" tabindex="0" id="difficulty-span"></span>
               <p class="right-label">Hard</p>
             </div>
           </label>
@@ -114,7 +114,7 @@
         <div class="settings-modal-column"> 
           <h4>Rounds Needed To Win</h4>
           <label class="switch">
-            <input type="range" min="3" max="33" step="1" id="rounds-slider" value="5">
+            <input type="range" min="3" max="33" step="1" id="rounds-slider" value="5" tabindex="0">
             <span class="slider round"></span>
           </label>
           <p id="rounds-wanted">5</p>
@@ -125,7 +125,7 @@
             <div class="slider-container">
               <p class="left-label">Light</p>
               <input type="checkbox" id="colour-mode-checkbox"class="checkbox">
-              <span class="toggle round"></span>
+              <span class="toggle round" tabindex="0"></span>
               <p class="right-label">Dark</p>
             </div>
           </label>

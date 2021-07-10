@@ -47,6 +47,15 @@ gameDifficultyToggle.addEventListener('change', function(e){
   }
 });
 
+// Event listener for enter key press on difficulty toggle span to simulate click
+let gameDifficultySpan = document.getElementById('difficulty-span');
+gameDifficultySpan.addEventListener('keydown', function(e){
+  if (e.key === 'Enter') {
+    gameDifficultyToggle.click();
+    console.log(gameIsHard);
+  }
+})
+
 // FUNCTIONS
 
 // SETTINGS
