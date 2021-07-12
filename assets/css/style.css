@@ -953,11 +953,11 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
 
 @-webkit-keyframes text-scroll {
   0% {
-    transform: translateX(100%);
+    transform: translate(100%, 0);
   }
 
   100% {
-    transform: translateX(-100%);
+    transform: translate(-100%, 0);
   }
 }
 
