@@ -544,6 +544,7 @@ function playerWin(playerSelection, compSelection) {
   resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} beats ${compSelection}. You win this round!</p>`;
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = 'green';
+  resultMessage.classList.toggle('round-message');
 
   // check for overall win else reset board
   if (playerScore == roundsWanted) {
@@ -592,6 +593,7 @@ function playerLose(playerSelection, compSelection) {
   resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} loses to ${compSelection}. You lost this round!</p>`;
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = 'red';
+  resultMessage.classList.toggle('round-message');
 
   //check for overall loss else reset board
   if (compScore == roundsWanted) {
@@ -632,6 +634,7 @@ function playerDraw(playerSelection, compSelection) {
   resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} draws with ${compSelection}. This round is a draw!</p>`;
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = 'var(--text-light)';
+  resultMessage.classList.toggle('round-message');
 
   //reset board
   setTimeout(function() {
