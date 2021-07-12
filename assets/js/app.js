@@ -657,8 +657,9 @@ function resetBoard(playerSelection) {
     }, 500);
 }
 
-//Reset hard mode variables
-
+/**
+ * Resets variables used in hard difficulty back to starting values
+ */
 function hardReset() {
   previousPlayerChoice = "";
   previousCompChoice = "";
@@ -698,7 +699,7 @@ function playerOverallLost(){
     <div class="endscreen-container">
       <div class="endscreen-text-container">
         <h2>You Lost!</h2>
-        <p>"Commander ${playerName} you have lost to the aliens ${playerScore}:${compScore}! I suggest you try again, military personnel in this conflict do not have permission to lose.<br>All unaddressed losses will be dealt with through court martial with punishment being dealt swiftly and severely.<br>Between you and me, I've heard on the grapevine that the last commander who refused to try again, was made to enter the Eurovision Song Contest!"</p>
+        <p>"Commander ${playerName} you have lost to the aliens ${playerScore}:${compScore}! I suggest you try again! Military personnel in this conflict do not have permission to lose.<br>All unaddressed losses will be dealt with through court martial with punishment being dealt swiftly and severely.<br>Between you and me, I've heard on the grapevine that the last commander who refused to try again, was made to enter the Eurovision Song Contest!"</p>
       </div>
       <button class="main-menu-button" id="end-back-to-menu-button">Back to Menu</button>
     </div>`;
