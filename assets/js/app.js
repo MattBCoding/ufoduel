@@ -222,11 +222,11 @@ function addScoreboard() {
         <span class="comp-score" id="comp-score">0</span>
       </div>
       <div id="round-message-div">
-        <p id="round-message"></p>
+        
       </div>
     </div>`;
 }
-
+/* <p id="round-message"></p> needs to be inserted back into round-message-div if test doesn't work*/
 // Classic Game Logic
 function classicGameLogic(playerSelection) {
   let compSelection = getCompSelection();
@@ -536,9 +536,14 @@ function playerWin(playerSelection, compSelection) {
   playerScoreSpan.innerHTML = playerScore;
 
   //display round result message
+  // let resultMessage = document.getElementById("round-message");
+  // resultMessage.style.color = 'green';
+  // resultMessage.innerHTML = `${playerSelection} beats ${compSelection}. You win this round!`;
+
+  let resultMessageDiv = document.getElementById("round-message-div");
+  resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} beats ${compSelection}. You win this round!</p>`;
   let resultMessage = document.getElementById("round-message");
   resultMessage.style.color = 'green';
-  resultMessage.innerHTML = `${playerSelection} beats ${compSelection}. You win this round!`;
 
   // check for overall win else reset board
   if (playerScore == roundsWanted) {
@@ -579,9 +584,14 @@ function playerLose(playerSelection, compSelection) {
   compScoreSpan.innerHTML = compScore;
 
   //display round result message
+  // let resultMessage = document.getElementById("round-message");
+  // resultMessage.style.color = "red";
+  // resultMessage.innerHTML = `${playerSelection} loses to ${compSelection}. You lost this round!`;
+
+  let resultMessageDiv = document.getElementById("round-message-div");
+  resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} loses to ${compSelection}. You lost this round!</p>`;
   let resultMessage = document.getElementById("round-message");
-  resultMessage.style.color = "red";
-  resultMessage.innerHTML = `${playerSelection} loses to ${compSelection}. You lost this round!`;
+  resultMessage.style.color = 'red';
 
   //check for overall loss else reset board
   if (compScore == roundsWanted) {
@@ -614,9 +624,14 @@ function playerLose(playerSelection, compSelection) {
 // Round is a draw
 function playerDraw(playerSelection, compSelection) {
   //display round result message
+  // let resultMessage = document.getElementById("round-message");
+  // resultMessage.style.color = "var(--text-light)";
+  // resultMessage.innerHTML = `${playerSelection} draws with ${compSelection}. This round is a draw!`;
+
+  let resultMessageDiv = document.getElementById("round-message-div");
+  resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} draws with ${compSelection}. This round is a draw!</p>`;
   let resultMessage = document.getElementById("round-message");
-  resultMessage.style.color = "var(--text-light)";
-  resultMessage.innerHTML = `${playerSelection} draws with ${compSelection}. This round is a draw!`;
+  resultMessage.style.color = 'var(--text-light)';
 
   //reset board
   setTimeout(function() {
