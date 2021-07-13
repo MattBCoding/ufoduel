@@ -172,8 +172,6 @@ function stars(background) {
   }
 }
 
-// Change Game Difficulty
-
 // Change Game Winning Condition
 function updateRoundsWanted(){
   roundsWanted = document.getElementById("rounds-slider").value;
@@ -222,11 +220,10 @@ function addScoreboard() {
         <span class="comp-score" id="comp-score">0</span>
       </div>
       <div id="round-message-div">
-        
       </div>
     </div>`;
 }
-/* <p id="round-message"></p> needs to be inserted back into round-message-div if test doesn't work*/
+
 // Classic Game Logic
 function classicGameLogic(playerSelection) {
   let compSelection = getCompSelection();
@@ -234,147 +231,106 @@ function classicGameLogic(playerSelection) {
     case 'rockscissors':
     case 'paperrock':
     case 'scissorspaper':
-        // playerWin(playerSelection, compSelection);
-        setTimeout(function(){
-          playerWin(playerSelection, compSelection);
-        }, 2300);
-        previousPlayerChoice = playerSelection;
-        previousCompChoice = compSelection;
-        previousResult = "playerWin";
-        break;
+      setTimeout(function(){
+        playerWin(playerSelection, compSelection);
+      }, 2300);
+      previousPlayerChoice = playerSelection;
+      previousCompChoice = compSelection;
+      previousResult = "playerWin";
+      break;
     case 'rockpaper':
     case 'paperscissors':
     case 'scissorsrock':
-        // playerLose(playerSelection, compSelection);
-        setTimeout(function(){
-          playerLose(playerSelection, compSelection);
-        }, 2300);
-        previousPlayerChoice = playerSelection;
-        previousCompChoice = compSelection;
-        previousResult = "playerLose";
-        break;
+      setTimeout(function(){
+        playerLose(playerSelection, compSelection);
+      }, 2300);
+      previousPlayerChoice = playerSelection;
+      previousCompChoice = compSelection;
+      previousResult = "playerLose";
+      break;
     case 'rockrock':
     case 'paperpaper':
     case 'scissorsscissors':
-        // playerDraw(playerSelection, compSelection);
-        setTimeout(function(){
-          playerDraw(playerSelection, compSelection);
-        }, 2300);
-        previousPlayerChoice = playerSelection;
-        previousCompChoice = compSelection;
-        previousResult = "playerDraw";
-        break;
+      setTimeout(function(){
+        playerDraw(playerSelection, compSelection);
+      }, 2300);
+      previousPlayerChoice = playerSelection;
+      previousCompChoice = compSelection;
+      previousResult = "playerDraw";
+      break;
   }
 }
-// Spock Game Logic 2
+// Spock Game Logic
 function spockGameLogic(playerSelection) {
   let compSelection = getCompSelection();
   switch (playerSelection + compSelection) {
-      case 'rockscissors':
-      case 'rocklizard':
-      case 'paperrock':
-      case 'paperspock':
-      case 'scissorspaper':
-      case 'scissorslizard':
-      case 'lizardspock':
-      case 'lizardpaper':
-      case 'spockscissors':
-      case 'spockrock':
-          // playerWin(playerSelection, compSelection);
-          setTimeout(function(){
-            playerWin(playerSelection, compSelection);
-          }, 2300);
-          previousPlayerChoice = playerSelection;
-          previousCompChoice = compSelection;
-          previousResult = "playerWin";
-          break;
-      case 'rockpaper':
-      case 'rockspock':
-      case 'paperscissors':
-      case 'paperlizard':
-      case 'scissorsspock':
-      case 'scissorsrock':
-      case 'lizardrock':
-      case 'lizardscissors':
-      case 'spocklizard':
-      case 'spockpaper':
-          // playerLose(playerSelection, compSelection);
-          setTimeout(function(){
-            playerLose(playerSelection, compSelection);
-          }, 2300);
-          previousPlayerChoice = playerSelection;
-          previousCompChoice = compSelection;
-          previousResult = "playerLose";
-          break;
-      case 'rockrock':
-      case 'paperpaper':
-      case 'scissorsscissors':
-      case 'lizardlizard':
-      case 'spockspock':
-          // playerDraw(playerSelection, compSelection);
-          setTimeout(function(){
-            playerDraw(playerSelection, compSelection);
-          }, 2300);
-          previousPlayerChoice = playerSelection;
-          previousCompChoice = compSelection;
-          previousResult = "playerDraw";
-          break;
+    case 'rockscissors':
+    case 'rocklizard':
+    case 'paperrock':
+    case 'paperspock':
+    case 'scissorspaper':
+    case 'scissorslizard':
+    case 'lizardspock':
+    case 'lizardpaper':
+    case 'spockscissors':
+    case 'spockrock':
+      setTimeout(function(){
+        playerWin(playerSelection, compSelection);
+      }, 2300);
+      previousPlayerChoice = playerSelection;
+      previousCompChoice = compSelection;
+      previousResult = "playerWin";
+      break;
+    case 'rockpaper':
+    case 'rockspock':
+    case 'paperscissors':
+    case 'paperlizard':
+    case 'scissorsspock':
+    case 'scissorsrock':
+    case 'lizardrock':
+    case 'lizardscissors':
+    case 'spocklizard':
+    case 'spockpaper':
+      setTimeout(function(){
+        playerLose(playerSelection, compSelection);
+      }, 2300);
+      previousPlayerChoice = playerSelection;
+      previousCompChoice = compSelection;
+      previousResult = "playerLose";
+      break;
+    case 'rockrock':
+    case 'paperpaper':
+    case 'scissorsscissors':
+    case 'lizardlizard':
+    case 'spockspock':
+      setTimeout(function(){
+        playerDraw(playerSelection, compSelection);
+      }, 2300);
+      previousPlayerChoice = playerSelection;
+      previousCompChoice = compSelection;
+      previousResult = "playerDraw";
+      break;
   }
 }
-// Spock Game Logic broken switch case related to || OR operator somehow.
-// function spockGameLogic(playerSelection) {
-//   let compSelection = getCompSelection();
-//   switch (playerSelection + compSelection) {
-//       case 'rockscissors' || 'rocklizard':
-//       case 'paperrock' || 'paperspock':
-//       case 'scissorspaper' || 'scissorslizard':
-//       case 'lizardspock' || 'lizardpaper':
-//       case 'spockscissors' || 'spockrock':
-//           playerWin(playerSelection, compSelection);
-//           break;
-//       case 'rockpaper' || 'rockspock':
-//       case 'paperscissors' || 'paperlizard':
-//       case 'scissorsspock' || 'scissorsrock':
-//       case 'lizardrock' || 'lizardscissors':
-//       case 'spocklizard' || 'spockpaper':
-//           playerLose(playerSelection, compSelection);
-//           break;
-//       case 'rockrock':
-//       case 'paperpaper':
-//       case 'scissorsscissors':
-//       case 'lizardlizard':
-//       case 'spockspock':
-//           playerDraw(playerSelection, compSelection);
-//           break;
-//   }
-// }
 
-// Computer move selection - Math.random for easy difficulty
-// Computer move selection - hard difficulty
 
+/**
+ * Generates computer move, if easy mode move is random, if hard mode move is calculated on prior rounds.
+ * Calls compAssignLight function and passes through compMove variable to generate correct icon in comp tile
+ * @returns compMove
+ */
 function getCompSelection() {
   if (gameIsHard === false && gameMode === "classic") {
     let compOptions = ['rock', 'paper', 'scissors'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
-// need to move this out into its own function. causing error when game ended by overall win or lose.
     compAssignLight(compMove);
-    // setTimeout(function(){
-    //   document.getElementById("comp-light-container").innerHTML = `
-    //     <div class="light" id="${compMove}-light-classic"></div>
-    //     <i class="far fa-hand-${compMove}"></i>`;
-    // }, 800);
     return compMove;  
   } else if (gameIsHard === false && gameMode === "spock") {
     let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let randomChoice = Math.floor(Math.random() * compOptions.length);
     let compMove = compOptions[randomChoice];
     compAssignLight(compMove);
-    // setTimeout(function(){
-    //   document.getElementById("comp-light-container").innerHTML = `
-    //     <div class="light" id="${compMove}-light-classic"></div>
-    //     <i class="far fa-hand-${compMove}"></i>`;
-    // }, 800);
     return compMove;  
   } else if (gameIsHard === true && gameMode === "classic") { //start of hard mode comp selection
       if (previousResult === "" || previousResult === "playerDraw") {
@@ -382,14 +338,7 @@ function getCompSelection() {
         let randomChoice = Math.floor(Math.random() * compOptions.length);
         let compMove = compOptions[randomChoice];
         compAssignLight(compMove);
-        // setTimeout(function(){
-        //   document.getElementById("comp-light-container").innerHTML = `
-        //     <div class="light" id="${compMove}-light-classic"></div>
-        //     <i class="far fa-hand-${compMove}"></i>`;
-        // }, 800);
-
         return compMove;
-
       } else if (previousResult === "playerWin") {
           let compMove ="";
           switch (previousPlayerChoice) {
@@ -403,15 +352,8 @@ function getCompSelection() {
               compMove = "rock";
               break;}
           } 
-          compAssignLight(compMove);
-          // setTimeout(function(){
-          //   document.getElementById("comp-light-container").innerHTML = `
-          //     <div class="light" id="${compMove}-light-classic"></div>
-          //     <i class="far fa-hand-${compMove}"></i>`;
-          // }, 800);
-          
+          compAssignLight(compMove);          
           return compMove;
-
       } else if (previousResult === "playerLose") {
           let compMove ="";
           switch (previousCompChoice) {
@@ -424,97 +366,71 @@ function getCompSelection() {
             case "scissors":{
               compMove = "paper";
               break;}
-          } 
+          }
           compAssignLight(compMove);
-          // setTimeout(function(){
-          //   document.getElementById("comp-light-container").innerHTML = `
-          //     <div class="light" id="${compMove}-light-classic"></div>
-          //     <i class="far fa-hand-${compMove}"></i>`;
-          // }, 800);
-          
           return compMove;
-
-      } 
-    // need to add options for when gameIsHard === true for hard difficulty mode.
-  }
-  else if (gameIsHard === true && gameMode === "spock") {
+      }
+  } else if (gameIsHard === true && gameMode === "spock") {
     if (previousResult === "" || previousResult === "playerDraw") {
       let compOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
       let randomChoice = Math.floor(Math.random() * compOptions.length);
       let compMove = compOptions[randomChoice];
       compAssignLight(compMove);
-      // setTimeout(function(){
-      //   document.getElementById("comp-light-container").innerHTML = `
-      //     <div class="light" id="${compMove}-light-classic"></div>
-      //     <i class="far fa-hand-${compMove}"></i>`;
-      // }, 800);
-
       return compMove;
     } else if (previousResult === "playerWin") {
-        let compMove ="";
-        switch (previousPlayerChoice) {
-          case "rock":{
-            let compOptions = ['paper', 'spock'];
-            let randomChoice = Math.floor(Math.random() * compOptions.length);
-            compMove = compOptions[randomChoice];
-            break;}
-          case "paper":{
-            let compOptions = ['scissors', 'lizard'];
-            let randomChoice = Math.floor(Math.random() * compOptions.length);
-            compMove = compOptions[randomChoice];
-            break;}
-          case "scissors":{
-            let compOptions = ['rock', 'spock'];
-            let randomChoice = Math.floor(Math.random() * compOptions.length);
-            compMove = compOptions[randomChoice];
-            break;}
-          case "lizard":{
-            let compOptions = ['rock', 'scissors'];
-            let randomChoice = Math.floor(Math.random() * compOptions.length);
-            compMove = compOptions[randomChoice];
-            break;}
-          case "spock":{
-            let compOptions = ['paper', 'lizard'];
-            let randomChoice = Math.floor(Math.random() * compOptions.length);
-            compMove = compOptions[randomChoice];
-            break;}
-        } 
-        compAssignLight(compMove);
-        // setTimeout(function(){
-        //   document.getElementById("comp-light-container").innerHTML = `
-        //     <div class="light" id="${compMove}-light-classic"></div>
-        //     <i class="far fa-hand-${compMove}"></i>`;
-        // }, 800);
-        
-        return compMove;
+      let compMove ="";
+      switch (previousPlayerChoice) {
+        case "rock":{
+          let compOptions = ['paper', 'spock'];
+          let randomChoice = Math.floor(Math.random() * compOptions.length);
+          compMove = compOptions[randomChoice];
+          break;}
+        case "paper":{
+          let compOptions = ['scissors', 'lizard'];
+          let randomChoice = Math.floor(Math.random() * compOptions.length);
+          compMove = compOptions[randomChoice];
+          break;}
+        case "scissors":{
+          let compOptions = ['rock', 'spock'];
+          let randomChoice = Math.floor(Math.random() * compOptions.length);
+          compMove = compOptions[randomChoice];
+          break;}
+        case "lizard":{
+          let compOptions = ['rock', 'scissors'];
+          let randomChoice = Math.floor(Math.random() * compOptions.length);
+          compMove = compOptions[randomChoice];
+          break;}
+        case "spock":{
+          let compOptions = ['paper', 'lizard'];
+          let randomChoice = Math.floor(Math.random() * compOptions.length);
+          compMove = compOptions[randomChoice];
+          break;}
+      } 
+      compAssignLight(compMove);
+      return compMove;
     } else if (previousResult === "playerLose") {
-        let compMove ="";
-        switch (previousCompChoice) {
-          case "rock":{
-            compMove = "lizard";
-            break;}
-          case "paper":{
-            compMove = "rock";
-            break;}
-          case "scissors":{
-            compMove = "paper";
-            break;}
-          case "lizard":{
-            compMove = "spock";
-            break;}
-          case "spock":{
-            compMove = "scissors";
-            break;}
-        }
-        compAssignLight(compMove);
-        // setTimeout(function(){
-        //   document.getElementById("comp-light-container").innerHTML = `
-        //     <div class="light" id="${compMove}-light-classic"></div>
-        //     <i class="far fa-hand-${compMove}"></i>`;
-        // }, 800);
-        return compMove;
+      let compMove ="";
+      switch (previousCompChoice) {
+        case "rock":{
+          compMove = "lizard";
+          break;}
+        case "paper":{
+          compMove = "rock";
+          break;}
+        case "scissors":{
+          compMove = "paper";
+          break;}
+        case "lizard":{
+          compMove = "spock";
+          break;}
+        case "spock":{
+          compMove = "scissors";
+          break;}
       }
-}
+      compAssignLight(compMove);
+      return compMove;
+    }
+  }
 } //end of comp selection function
 
 function compAssignLight(compMove){
@@ -535,11 +451,7 @@ function playerWin(playerSelection, compSelection) {
   playerScore++;
   playerScoreSpan.innerHTML = playerScore;
 
-  //display round result message
-  // let resultMessage = document.getElementById("round-message");
-  // resultMessage.style.color = 'green';
-  // resultMessage.innerHTML = `${playerSelection} beats ${compSelection}. You win this round!`;
-
+  // gets rounds message div in scoreboard, inserts <p> element and populates with text, then assigns color and toggles class for animation. required for animation to work on iOS
   let resultMessageDiv = document.getElementById("round-message-div");
   resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} beats ${compSelection}. You win this round!</p>`;
   let resultMessage = document.getElementById("round-message");
@@ -550,27 +462,10 @@ function playerWin(playerSelection, compSelection) {
   if (playerScore == roundsWanted) {
     playerOverallWin();
   } else {
-
     //reset board
     setTimeout(function() {
     resetBoard(playerSelection);
     }, 500);
-
-    // setTimeout(function() {
-    //   let playerGridIdentifier = "player-tile-" + gameMode;
-    //   document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
-
-    //   let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
-    //   let playerTile = document.getElementById(tileIdentifier); //grabs original tile
-      
-    //   playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
-    //   playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
-
-    //   setTimeout(function() {
-    //     document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
-    //     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
-    //   }, 500);
-    // }, 3000);
   } 
 }
 
@@ -584,11 +479,7 @@ function playerLose(playerSelection, compSelection) {
   compScore++;
   compScoreSpan.innerHTML = compScore;
 
-  //display round result message
-  // let resultMessage = document.getElementById("round-message");
-  // resultMessage.style.color = "red";
-  // resultMessage.innerHTML = `${playerSelection} loses to ${compSelection}. You lost this round!`;
-
+  // gets rounds message div in scoreboard, inserts <p> element and populates with text, then assigns color and toggles class for animation. required for animation to work on iOS
   let resultMessageDiv = document.getElementById("round-message-div");
   resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} loses to ${compSelection}. You lost this round!</p>`;
   let resultMessage = document.getElementById("round-message");
@@ -599,37 +490,16 @@ function playerLose(playerSelection, compSelection) {
   if (compScore == roundsWanted) {
     playerOverallLost();
   } else {
-
     //reset board
     setTimeout(function() {
     resetBoard(playerSelection);
     }, 500);
-
-    // setTimeout(function() {
-    //   let playerGridIdentifier = "player-tile-" + gameMode;
-    //   document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
-
-    //   let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
-    //   let playerTile = document.getElementById(tileIdentifier); //grabs original tile
-      
-    //   playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
-    //   playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
-
-    //   setTimeout(function() {
-    //     document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
-    //     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
-    //   }, 500);
-    // }, 3000);
   }
 }
 
 // Round is a draw
 function playerDraw(playerSelection, compSelection) {
-  //display round result message
-  // let resultMessage = document.getElementById("round-message");
-  // resultMessage.style.color = "var(--text-light)";
-  // resultMessage.innerHTML = `${playerSelection} draws with ${compSelection}. This round is a draw!`;
-
+  // gets rounds message div in scoreboard, inserts <p> element and populates with text, then assigns color and toggles class for animation. required for animation to work on iOS
   let resultMessageDiv = document.getElementById("round-message-div");
   resultMessageDiv.innerHTML = `<p id="round-message">${playerSelection} draws with ${compSelection}. This round is a draw!</p>`;
   let resultMessage = document.getElementById("round-message");
@@ -640,25 +510,12 @@ function playerDraw(playerSelection, compSelection) {
   setTimeout(function() {
     resetBoard(playerSelection);
   }, 500);
-
-  // setTimeout(function() {
-  //   let playerGridIdentifier = "player-tile-" + gameMode;
-  //   document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
-
-  //   let tileIdentifier = playerSelection + "-tile-" + gameMode; //identifies original tile
-  //   let playerTile = document.getElementById(tileIdentifier); //grabs original tile
-    
-  //   playerTile.classList.toggle("slide-out-blurred-left"); //removes class that made it slide out
-  //   playerTile.classList.toggle("slide-in-blurred-right"); //adds class that makes it slide in
-    
-  //   setTimeout(function() {
-  //     document.getElementById(playerGridIdentifier).innerHTML = ``; //clears player tile
-  //     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");//removes the slide out class once the tile has been cleared allowing for next move to enter ok.
-  //   }, 500);
-  // }, 3000);
 }
 
-//Reset Board function
+/**
+ * Resets the playing board. Identifies original tile, toggles classes to reinsert original tile and clears player tile location.
+ * @param {*} playerSelection 
+ */
 function resetBoard(playerSelection) {
   let playerGridIdentifier = "player-tile-" + gameMode;
     document.getElementById(playerGridIdentifier).classList.toggle("slide-out-blurred-left");
@@ -684,7 +541,9 @@ function hardReset() {
   previousResult = "";
 }
 
-// Player Win Game
+/**
+ * Activates end game screen for overall win and populates message to player
+ */
 function playerOverallWin(){
   let playerScoreSpan = document.getElementById("player-score");
   let playerScore = playerScoreSpan.innerHTML;
@@ -705,7 +564,9 @@ function playerOverallWin(){
     hardReset();
 }
 
-// Player lose game
+/**
+ * Activates end game screen for overall loss and populates message to player
+ */
 function playerOverallLost(){
   let playerScoreSpan = document.getElementById("player-score");
   let playerScore = playerScoreSpan.innerHTML;
@@ -739,101 +600,75 @@ function playerSelectionSpock() {
   let scissors = document.getElementById("scissors-tile-spock");
   let lizard = document.getElementById("lizard-tile-spock");
   let spock = document.getElementById("spock-tile-spock");
-  // let player = document.getElementById("player-tile-spock");
   
   //event listeners for game tiles
   rock.addEventListener('click', function() {
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileSpock(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     spockGameLogic('rock');
   });
 
   paper.addEventListener('click', function() {
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileSpock(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     spockGameLogic('paper');
   });
 
   scissors.addEventListener('click', function() {
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileSpock(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     spockGameLogic('scissors');
   });
 
   lizard.addEventListener('click', function() {
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileSpock(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     spockGameLogic('lizard');
   });
 
   spock.addEventListener('click', function() {
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileSpock(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     spockGameLogic('spock');
   });
 
   rock.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       rock.click();
-      console.log("rock tile selected by enter key click function activated");
     }
   });
 
   paper.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       paper.click();
-      console.log("paper tile selected by enter key click function activated");
     }
   });
 
   scissors.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       scissors.click();
-      console.log("scissors tile selected by enter key click function activated");
     }
   });
 
   lizard.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       lizard.click();
-      console.log("lizard tile selected by enter key click function activated");
     }
   });
 
   spock.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       spock.click();
-      console.log("spock tile selected by enter key click function activated");
     }
   });
 }
@@ -848,11 +683,6 @@ function playerSelectionSpock() {
     player.innerHTML = tileCapture;
   }, 800);
 }
-// Spock Game Event Capture
-// In game rules modal
-// Spock Rules modal open
-// Spock Rules modal close
-// Quit Game button - Spock
 
 /**
  * Captures the player tile selection on the classic game mode screen,
@@ -867,38 +697,26 @@ function playerSelectionClassic() {
   
   //event listeners for game tiles
   rock.addEventListener('click', function() {
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileClassic(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     classicGameLogic('rock');
   });
 
   paper.addEventListener('click', function(){
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileClassic(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     classicGameLogic('paper');
   });
 
   scissors.addEventListener('click', function(){
-    //temp needs animation added. phase original location out and phase in on new location
     let tileCapture = this.innerHTML;
     this.classList.toggle("slide-in-blurred-right");
     this.classList.toggle("slide-out-blurred-left");
     moveCapturedTileToPlayerTileClassic(tileCapture);
-    // setTimeout(function() {
-    //   player.innerHTML = tileCapture;
-    // }, 800);
     classicGameLogic('scissors');
   });
 
@@ -906,21 +724,18 @@ function playerSelectionClassic() {
   rock.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       rock.click();
-      console.log("rock tile selected by enter key click function activated");
     }
   });
 
   paper.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       paper.click();
-      console.log("paper tile selected by enter key click function activated");
     }
   });
 
   scissors.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       scissors.click();
-      console.log("scissors tile selected by enter key click function activated");
     }
   });
 }
@@ -979,7 +794,6 @@ function addClassicRulesModal() {
   rulesButton.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       rulesButton.click();
-      console.log("rules button selected by enter key click function activated");
     }
   });
   
@@ -989,7 +803,6 @@ function addClassicRulesModal() {
   classicRulesModalClose.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       classicRulesModalClose.click();
-      console.log("classic rules modal close selected by enter key click function activated");
     }
   });
 
@@ -1059,7 +872,6 @@ function addSpockRulesModal() {
   rulesButton.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       rulesButton.click();
-      console.log("rules button selected by enter key click function activated");
     }
   });
   
@@ -1069,7 +881,6 @@ function addSpockRulesModal() {
   spockRulesModalClose.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       spockRulesModalClose.click();
-      console.log("spock rules modal close button selected by enter key click function activated");
     }
   });
   spockRulesModal = document.getElementById("spock-rules-modal");
@@ -1111,7 +922,6 @@ function addQuitModal() {
   quitGameButton.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       quitGameButton.click();
-      console.log("quit game button selected by enter key click function activated");
     }
   });
   
@@ -1121,7 +931,6 @@ function addQuitModal() {
   quitGameModalClose.addEventListener('keydown', function(e){
     if (e.key === 'Enter'){
       quitGameModalClose.click();
-      console.log("Quit game modal close selected by enter key click function activated");
     }
   });
   
@@ -1143,6 +952,7 @@ function addQuitModal() {
     quitModal.style.display = 'none';
   }
 }
+
 /**
  * sets quit modal display to none and calls return to menu function
  */
@@ -1159,8 +969,6 @@ function returnToMenu() {
   document.getElementById("middle-container").innerHTML = ``;
   mainMenuElements();
 }
-
-// Quit Game button - Classic
 
 // ENTER NAME SCREEN
 
@@ -1379,7 +1187,6 @@ function launchSpockGame() {
   addScoreboard();
   playerSelectionSpock();
 }
-// Back or Quit button - name screen
 
 // HOME SCREEN
 // Change to Name Screen
@@ -1463,7 +1270,6 @@ function mainMenuElements() {
   mainRulesModalCloseButton.addEventListener('keydown', function(e){
     if (e.key === 'Enter') {
       mainRulesModalCloseButton.click();
-      console.log("main rules modal close button clicked");
     }
   });
     
@@ -1479,7 +1285,6 @@ function mainMenuElements() {
   mainSettingsModalCloseButton.addEventListener('keydown', function(e){
     if (e.key === 'Enter') {
       mainSettingsModalCloseButton.click();
-      console.log("main settings modal close button clicked");
     }
   });
 }
