@@ -1225,3 +1225,27 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
     font-size: 1.8rem;
   }
 }
+
+/* The media query below prevents the responsive design compressing too much when the screen height is adjusted
+    As the responsive elements adjust based on the width the MQ is only needed for landscape orientations*/
+@media screen and (max-height: 900px) and (orientation: landscape) {
+  .screen-container {
+    min-height: 900px;
+  }
+  
+  .game-container {
+    min-height: 900px;
+  }
+  
+  .title-container {
+    min-height: 100px;
+  }
+  
+  .middle-container {
+    min-height: 125px;
+  }
+  
+  .main-container {
+    min-height: 540px;
+  }
+}
