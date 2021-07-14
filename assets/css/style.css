@@ -162,6 +162,27 @@ body {
   margin-top: 5%;
 }
 
+.no-js {
+  width: 100%;
+  min-height: 60%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-highlight);
+  color: var(--text);
+  border-radius: 15px;
+  border: 5px solid var(--border);
+  box-shadow: 2px 10px 10px var(--shadow-dark),
+              inset 1px 5px 5px var(--shadow-light);
+  position: relative;
+}
+
+.no-js > p {
+  padding: 0 15px;
+}
+
 .main-menu {
   height: 100%;
   width: 100%;
