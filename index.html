@@ -112,10 +112,10 @@
       </div>
       <div class="modal-body settings-modal-body">
         <div class="settings-modal-column">
-          <h4>Game Difficulty</h4>
+          <h4 id="game-difficulty-heading">Game Difficulty</h4>
           <div class="slider-container">
             <p class="left-label">Easy</p>
-            <label for="difficulty-checkbox">
+            <label for="difficulty-checkbox" aria-labelledby="game-difficulty-heading">
               <input type="checkbox" id="difficulty-checkbox" class="checkbox">
               <span class="toggle round" tabindex="0" id="difficulty-span"></span>
             </label>
@@ -123,18 +123,18 @@
           </div>
         </div>
         <div class="settings-modal-column"> 
-          <h4>Rounds Needed To Win</h4>
-          <label for="rounds-slider" class="switch">
+          <h4 id="rounds-needed-heading">Rounds Needed To Win</h4>
+          <label for="rounds-slider" class="switch" aria-labelledby="rounds-needed-heading">
             <input type="range" min="3" max="33" step="1" id="rounds-slider" value="5" tabindex="0">
             <span class="slider round"></span>
           </label>
           <p id="rounds-wanted">5</p>
         </div>
         <div class="settings-modal-column">
-          <h4>Colour Mode</h4>
+          <h4 id="colour-mode-heading">Colour Mode</h4>
           <div class="slider-container">
             <p class="left-label">Light</p>
-            <label for="colour-mode-checkbox">
+            <label for="colour-mode-checkbox" aria-labelledby="colour-mode-heading">
               <input type="checkbox" id="colour-mode-checkbox" class="checkbox">
               <span class="toggle round" tabindex="0" id="colour-mode-span"></span>
             </label>

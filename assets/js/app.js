@@ -1016,7 +1016,7 @@ function launchClassicGame() {
   <div class="game">
     <div class="game-grid">
 <!--rock game tile-->    
-      <div class="rock" id="rock-tile-classic" tabindex="0">
+      <div class="rock" id="rock-tile-classic" tabindex="0" aria-label="rock">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1030,7 +1030,7 @@ function launchClassicGame() {
         </div>
       </div>
 <!-- paper game tile-->
-      <div class="paper" id="paper-tile-classic" tabindex="0">
+      <div class="paper" id="paper-tile-classic" tabindex="0" aria-label="paper">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1044,7 +1044,7 @@ function launchClassicGame() {
         </div>
       </div>
 <!-- scissors game tile-->
-      <div class="scissors" id="scissors-tile-classic" tabindex="0">
+      <div class="scissors" id="scissors-tile-classic" tabindex="0" aria-label="scissors">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1075,8 +1075,8 @@ function launchClassicGame() {
 <!-- grid spacer div -->
       <div class="grid-spacer"></div>
 <!-- in game buttons -->
-      <div class="game-button rules" id="classic-rules-button" tabindex="0">Rules</div>
-      <div class="game-button quit" id="quit-button" tabindex="0">Quit</div>
+      <div class="game-button rules" id="classic-rules-button" tabindex="0" role="button">Rules</div>
+      <div class="game-button quit" id="quit-button" tabindex="0" role="button">Quit</div>
     </div>
   </div>
   `;
@@ -1092,7 +1092,7 @@ function launchSpockGame() {
   <div class="game">
     <div class="game-grid">
 <!-- lizard game tile-->
-    <div class="lizard" id="lizard-tile-spock" tabindex="0">
+    <div class="lizard" id="lizard-tile-spock" tabindex="0" aria-label="lizard">
       <div class="ufo slide-in-blurred-right">
         <div class="glass"></div>
         <div class="separator"></div>
@@ -1106,7 +1106,7 @@ function launchSpockGame() {
       </div>
     </div>
 <!-- spock game tile-->
-    <div class="spock" id="spock-tile-spock" tabindex="0">
+    <div class="spock" id="spock-tile-spock" tabindex="0" aria-label="spock">
       <div class="ufo slide-in-blurred-right">
         <div class="glass"></div>
         <div class="separator"></div>
@@ -1120,7 +1120,7 @@ function launchSpockGame() {
       </div>
     </div>
 <!--rock game tile-->    
-      <div class="rock" id="rock-tile-spock" tabindex="0">
+      <div class="rock" id="rock-tile-spock" tabindex="0" aria-label="rock">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1134,7 +1134,7 @@ function launchSpockGame() {
         </div>
       </div>
 <!-- paper game tile-->
-      <div class="paper" id="paper-tile-spock" tabindex="0">
+      <div class="paper" id="paper-tile-spock" tabindex="0" aria-label="paper">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1148,7 +1148,7 @@ function launchSpockGame() {
         </div>
       </div>
 <!-- scissors game tile-->
-      <div class="scissors" id="scissors-tile-spock" tabindex="0">
+      <div class="scissors" id="scissors-tile-spock" tabindex="0" aria-label="scissors">
         <div class="ufo slide-in-blurred-right">
           <div class="glass"></div>
           <div class="separator"></div>
@@ -1179,8 +1179,8 @@ function launchSpockGame() {
 <!-- grid spacer div -->
       <div class="grid-spacer"></div>
 <!-- in game buttons -->
-      <div class="game-button rules" id="spock-rules-button" tabindex="0">Rules</div>
-      <div class="game-button quit" id="quit-button" tabindex="0">Quit</div>
+      <div class="game-button rules" id="spock-rules-button" tabindex="0" role="button">Rules</div>
+      <div class="game-button quit" id="quit-button" tabindex="0" role="button">Quit</div>
     </div>
   </div>
   `;
