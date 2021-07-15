@@ -74,19 +74,15 @@ function changeColour() {
     //change colours to dark mode
     let r = document.querySelector(':root');
     r.style.setProperty('--dark', '#232323');
-    r.style.setProperty('--light', '#2f2f2f');
     r.style.setProperty('--light-highlight', '#353535');
     r.style.setProperty('--shadow-light', '#353535');
     r.style.setProperty('--shadow-dark', '#121212');
     r.style.setProperty('--border', '#232323');
-    r.style.setProperty('--sky-light', '#4e667c8e');
-    r.style.setProperty('--sky-dark', '#0b3564');
     r.style.setProperty('--text', '#f0d471');
     r.style.setProperty('--text-light', '#f9f9f9');
     r.style.setProperty('--toggle-button', '#f0d471');
     r.style.setProperty('--error', '#f18988');
     r.style.setProperty('--ufo-body', '#353535');
-    r.style.setProperty('--ufo-body-shadow', '#232323');
     r.style.setProperty('--ufo-glass', '#ffffff');
     r.style.setProperty('--ufo-light', '#72ded4');
     
@@ -114,19 +110,15 @@ function changeColour() {
     //change colours back to light mode
     let r = document.querySelector(':root');
     r.style.setProperty('--dark', 'rgba(43,32,18,1)');
-    r.style.setProperty('--light', 'rgba(229,177,116,1)');
     r.style.setProperty('--light-highlight', 'rgba(230,191,144,1)');
     r.style.setProperty('--shadow-light', 'rgba(159,123,94,1)');
     r.style.setProperty('--shadow-dark', 'rgba(97,58,28,1)');
     r.style.setProperty('--border', 'rgba(168,103,50,1)');
-    r.style.setProperty('--sky-light', '#9bcaf58e');
-    r.style.setProperty('--sky-dark', '#1876e2');
     r.style.setProperty('--text', 'rgba(43,32,18,1)');
     r.style.setProperty('--text-light', 'rgba(229,177,116,1)');
     r.style.setProperty('--toggle-button', 'rgba(230,191,144,1)');
     r.style.setProperty('--error', '#FF312E');
     r.style.setProperty('--ufo-body', '#b8b8b8');
-    r.style.setProperty('--ufo-body-shadow', '#2f2f2f');
     r.style.setProperty('--ufo-glass', '#ffffff');
     r.style.setProperty('--ufo-light', '#f0d471');
     
