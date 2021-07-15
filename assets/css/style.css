@@ -128,9 +128,14 @@
   align-items: center;
   justify-content: center;
   margin: 1% auto;
-  background-image: repeating-linear-gradient(180deg, var(--light), var(--light-highlight) 8%, var(--light-highlight) 10%); /* wood effect created in Adobe XD*/
+  background-image: repeating-linear-gradient(180deg, rgba(229,177,116,1), rgba(230,191,144,1) 8%, rgba(230,191,144,1) 10%); /* wood effect created in Adobe XD*/
   border: var(--border) solid 5px;
   border-radius: 15px;
+}
+
+.night .title-container,
+.night .scoreboard {
+  background-image: repeating-linear-gradient(180deg, #2f2f2f, #353535 8%, #353535 10%); /* wood effect created in Adobe XD*/
 }
 
 .title-container > h1 {
@@ -877,7 +882,7 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  background-image: repeating-linear-gradient(180deg, var(--light), var(--light-highlight) 8%, var(--light-highlight) 10%);
+  background-image: repeating-linear-gradient(180deg, rgba(229,177,116,1), rgba(230,191,144,1) 8%, rgba(230,191,144,1) 10%); /* wood effect created in Adobe XD*/
   border: 5px solid var(--border);
   border-radius: 15px;
 }
