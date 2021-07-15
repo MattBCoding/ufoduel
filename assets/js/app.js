@@ -93,6 +93,11 @@ function changeColour() {
     //change background image to darker version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/night.svg)';
+
+    //toggle night class onto body
+    let body = document.body;
+    body.classList.toggle('night');
+    body.classList.toggle('day');
     
     // call star function
     starsOn = true;
@@ -128,6 +133,11 @@ function changeColour() {
     //change background image to lighter version
     let background = document.getElementById('screen-container');
     background.style.backgroundImage = 'url(./assets/images/day.svg)';
+
+    //toggle day class onto body
+    let body = document.body;
+    body.classList.toggle('day');
+    body.classList.toggle('night');
     
     // call star function
     starsOn = false;

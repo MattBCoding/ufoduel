@@ -28,8 +28,12 @@
   --ufo-light: #f0d471;
 }
 
-body {
-  background: linear-gradient(var(--sky-dark), var(--sky-light));
+.day {
+  background: linear-gradient(#1876e2, #9bcaf58e);
+}
+
+.night {
+  background: linear-gradient(#0b3564, #4e667c8e);
 }
 
 .screen-container {
@@ -646,7 +650,7 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
 	padding: 0px 15px;
 	border-radius: 50%;
 	background-color: var(--ufo-body);
-  background-image: radial-gradient(farthest-corner at 60% 30%,var(--ufo-glass), var(--ufo-body) 7%, var(--ufo-body) 60%, var(--ufo-body-shadow) 98%);
+  background-image: radial-gradient(farthest-corner at 60% 30%, var(--ufo-glass), var(--ufo-body) 7%, var(--ufo-body) 60%, var(--ufo-body-shadow) 98%);
 	z-index: 1;
 	display: flex;
 	justify-content: space-around;
