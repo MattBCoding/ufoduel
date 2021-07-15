@@ -655,13 +655,17 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
 	padding: 0px 15px;
 	border-radius: 50%;
 	background-color: var(--ufo-body);
-  background-image: radial-gradient(farthest-corner at 60% 30%, var(--ufo-glass), var(--ufo-body) 7%, var(--ufo-body) 60%, var(--ufo-body-shadow) 98%);
+  background-image: radial-gradient(farthest-corner at 60% 30%, #ffffff, #b8b8b8 7%, #b8b8b8 60%, #2f2f2f 98%);
 	z-index: 1;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	position: absolute;
   top: 20%;
+}
+
+.night .body {
+  background-image: radial-gradient(farthest-corner at 60% 30%, #ffffff, #353535 7%, #353535 60%, #232323 98%);
 }
 
 .body-comp {
@@ -671,13 +675,17 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
 	padding: 0px 15px;
 	border-radius: 50%;
 	background-color: var(--ufo-body-comp);
-  background-image: radial-gradient(farthest-corner at 60% 30%,var(--ufo-glass), var(--ufo-body-comp) 7%, var(--ufo-body-comp) 60%, var(--ufo-body-shadow) 98%);
+  background-image: radial-gradient(farthest-corner at 60% 30%, #ffffff, #ff312e 7%, #ff312e 60%, #2f2f2f 98%);
 	z-index: 1;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	position: absolute;
   top: 20%;
+}
+
+.night .body-comp {
+  background-image: radial-gradient(farthest-corner at 60% 30%, #ffffff, #ff312e 7%, #ff312e 60%, #232323 98%)
 }
 
 #comp-light-container {
