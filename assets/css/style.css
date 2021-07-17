@@ -774,6 +774,7 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
 .game-button {
   width: 100%;
   height: 100%;
+  max-height: 125px;
   border-radius: 15px;
   border: 5px solid var(--border);
   background-color: var(--light-highlight);
