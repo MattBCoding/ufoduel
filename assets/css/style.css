@@ -420,17 +420,19 @@ input[type=range]#rounds-slider:focus::-webkit-slider-runnable-track {
 input[type=range]#rounds-slider::-moz-range-track {
   background: var(--dark);
   border: 0;
-  width: 80%;
+  border-radius: 15px;
+  width: 102%;
   height: 30px;
   cursor: pointer;
 }
 
 input[type=range]#rounds-slider::-moz-range-thumb {
   margin: 2px;
-  width: 26px;
-  height: 26px;
+  width: 25px;
+  height: 25px;
   background: var(--toggle-button);
   border-radius: 50%;
+  border: 1px solid var(--toggle-button);
   cursor: pointer;
 }
 
