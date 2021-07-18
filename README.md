@@ -11,16 +11,23 @@ Please note: To open any links in this document in a new browser tab, please pre
 * [User Experience Design (UX)](#UX)
     * [The Strategy Plane](#The-Strategy-Plane)
         * [Site Goals](#Site-Goals)
-        * [User stories](#User-Stories)
+        * [User Stories](#User-Stories)
     * [The Scope Plane](#The-Scope-Plane)
     * [The Structure Plane](#The-Structure-Plane)
+        * [Opportunities](#Opportunities)
     * [The Skeleton Plane](#The-Skeleton-Plane)
-        * [Wireframes](#Wireframes)
+        * [Wireframes](#Wireframe-mockups)
     * [The Surface Plane](#The-Surface-Plane)
         * [Design](#Design)
+            * [Background Image](#background-image)
             * [Colour Scheme](#Colour-Scheme)
             * [Typography](#Typography)
-            * [Imagery](#Imagery)
+            * [UFO Characters](#ufo-characters)
+* [Features](#features)
+* [Future Enhancements](#future-enhancements)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
 ## UX
 ### The Strategy Plane
@@ -54,7 +61,7 @@ Please note: To open any links in this document in a new browser tab, please pre
 * The site should be fully accessible for keyboard users
 * The site should be fully accessible for screen reader users
 
-### **The Structure Plane**
+### The Structure Plane
 
 User Story:
 
@@ -125,7 +132,7 @@ Acceptance Criteria:
 Implementation:
 * All none text elements that need to be understood by the user will also include aria-labels to provide the information to screen readers.
 
-### Opportunities
+#### Opportunities
 Arising from user stories
 | Opportunities | Importance | Viability / Feasibility
 | ------ | :------: | :------: |
@@ -137,7 +144,7 @@ Arising from user stories
 | ** Provide a fully accessible game for keyboard users ** | 5 | 5 |
 
 ### The Skeleton Plane
-## Wireframe mockups
+#### Wireframe mockups
 I initially utilised Balsamiq to produce low fidelity wireframes of how the game would appear across different devices. Although the game was intended to be contained within one page, wireframes were produced for the different content that would appear on the page. Utilising Balsamiq enabled me to consider multiple layouts for the game elements before settling on the final design.
 
 #### Main Menu
@@ -252,8 +259,29 @@ Losing Message
 
 I took a two stage approach to testing the site. The first stage was continuous testing as the site was being developed. This was especially important to do during development of the JavaScript logic to ensure that the different functions and variables contained or returned the correct data type or values. During the styling of the site I would check the visual appearence within a live server window to preview the changes before they were committed.
 
-link to testing.md file with full testing descriptions
+For the second stage of testing, I utilised a more formal structured approach and created a test schedule for the site and each logical cycle. I then proceeded to run through the tests individually making a note of any errors or changes to the designed behaviour. Any errors were corrected and then the tests repeated.
 
+A full detailed breakdown of the testing proceedures and methodology can be found in the testing.md file [here](TESTING.md)
+
+The full testing excel file can be accessed [here](/assets/documents/testing-schedule.xlsx). A Pdf version of the completed file can be accessed [here](/assets/documents/ufoduel-site-testing-report.pdf).
+
+#### Testing Overview
+Testing was divided into different sections to ensure everything was tested individually with test cases developed for each area.
+![Test Overview](/assets/readme-images/test-report-headings.png)
+
+#### Validator Testing
+* HTML
+  * No errors were returned when passing through the official W3C Validator. [View Report](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2F)
+* CSS
+  * No errors were returned when passing through the official W3C CSS Validation Service - Jigsaw. [View Report](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* JavaScript
+  * No errors were returned when passing through the validator service at JSHint.com. ![View Image of Report](/assets/readme-images/jshint-report.png)
+
+* WAVE Web Accessibility
+  * Three errors were returned in the WAVE web accessibility report which are detailed in the TESTING.md file along with the resolution. [View Report](https://wave.webaim.org/report#/mattbcoding.github.io/ufoduel/)
+
+* Lighthouse 
+  * The lighthouse report gave an almost perfect score of 99, 100, 100, 100. ![View Image of Report](/assets/readme-images/lighthouse-report.png)
 
 ## Deployment
 
@@ -268,7 +296,17 @@ The live link can be found here - [UFO Duel Live Site](https://mattbcoding.githu
 ## Credits
 
 ### Media
+* The background image of the trees was obtained from [Vecteezy.com](https://www.vecteezy.com/vector-art/295017-background-scene-with-pine-forest)
 
-
+### Content
+* CSS Styling
+  ** The styling for the custom slider used in the settings modal was amended from the code generated from a [range.css generator](http://danielstern.ca/range.css/#/). I discovered the site from an article on css-tricks.com.
+  ** The animation for the UFO's sliding in and out of the screen was initially generated on [animista.net](http://animista.net). Whilst I subsequently created several other animations I utilised the original code generated from the site as a reference point.
+  ** How to create the custom toggle switches used in the settings modal were developed from a tutorial on [w3schools](https://www.w3schools.com/howto/howto_css_switch.asp).
+ 
 ### Reference Material
+* W3 Schools was used as a reference point for HTML, CSS and JavaScript
+* MDN Web Docs was also used as a reference point for HTML, CSS and JavaScript
 
+### Acknowledgements
+I'd like to thank my mentor Rahul Lakhanpal for encouraging me to be more ambitious than my original design for the project. The more ambitious design was a lot of fun to create.
