@@ -283,6 +283,9 @@ Testing was divided into different sections to ensure everything was tested indi
 * Lighthouse 
   * The lighthouse report gave an almost perfect score of 99, 100, 100, 100. ![View Image of Report](/assets/readme-images/lighthouse-report.png)
 
+#### Notable Bugs
+No bugs of note were discovered during the development or testing of the site. However frustration with the different requirements from different browsers was experienced.
+
 ## Deployment
 
 * The site was deployed to GitHub pages. The steps to deploy are as follows:
@@ -297,6 +300,7 @@ The live link can be found here - [UFO Duel Live Site](https://mattbcoding.githu
 
 ### Media
 * The background image of the trees was obtained from [Vecteezy.com](https://www.vecteezy.com/vector-art/295017-background-scene-with-pine-forest)
+* The favicon was created by using [favicon-generator.org](https://www.favicon-generator.org/). The generator created both the image file and the link tag code for the head of the HTML file.
 
 ### Content
 * CSS Styling

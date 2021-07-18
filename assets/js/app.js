@@ -972,7 +972,10 @@ function returnToMenu() {
 
 // ENTER NAME SCREEN
 
-// Capture Name Entry by player
+/**
+ * controls the elements on the enter name screen, captures the user entry into the input field, triggers
+ * the warning message if appropriate and starts the game when required.
+ */
 function nameScreen() {
   //get button
   let start = document.getElementById("start-button");
@@ -1008,7 +1011,10 @@ function nameScreen() {
   });
 }
 
-// Change to Game Screen - Classic
+/**
+ * launches the classic game. inserts the HTML code into the main container to display the game.
+ * Runs the scoreboard, classic rules modal, quit modal and player selection functions
+ */
 function launchClassicGame() {
   document.getElementById("main-container").innerHTML=`
   <div class="game">
@@ -1084,7 +1090,10 @@ function launchClassicGame() {
   playerSelectionClassic();
 }
 
-// Change to Game Screen - Spock
+/**
+ * launches the spock game. inserts the HTML code into the main container to display the game.
+ * Runs the scoreboard, spock rules modal, quit modal and player selection functions
+ */
 function launchSpockGame() {
   document.getElementById("main-container").innerHTML=`
   <div class="game">
