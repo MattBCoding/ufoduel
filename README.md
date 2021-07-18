@@ -243,9 +243,14 @@ Losing Message
   * It would be nice to include a leaderboard so that users can compare their score or results with other players, or with themselves over a period of time. This could increase the challenge for users to try and beat other players or their previous scores.
 * Different Levels
   * The game could be extended through the implementation of a level structure which would require the player to work their way through the levels to reach the final Boss.
+* Multiplayer
   * Network play mode. It would be nice to include an online multiplayer option to the game to enable users to play the game against another person rather than the computer.
 
 ## Testing
+
+### Testing Strategy
+
+I took a two stage approach to testing the site. The first stage was continuous testing as the site was being developed. This was especially important to do during development of the JavaScript logic to ensure that the different functions and variables contained or returned the correct data type or values. During the styling of the site I would check the visual appearence within a live server window to preview the changes before they were committed.
 
 link to testing.md file with full testing descriptions
 
