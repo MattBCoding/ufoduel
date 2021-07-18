@@ -304,9 +304,9 @@ The live link can be found here - [UFO Duel Live Site](https://mattbcoding.githu
 
 ### Content
 * CSS Styling
-  ** The styling for the custom slider used in the settings modal was amended from the code generated from a [range.css generator](http://danielstern.ca/range.css/#/). I discovered the site from an article on css-tricks.com.
-  ** The animation for the UFO's sliding in and out of the screen was initially generated on [animista.net](http://animista.net). Whilst I subsequently created several other animations I utilised the original code generated from the site as a reference point.
-  ** How to create the custom toggle switches used in the settings modal were developed from a tutorial on [w3schools](https://www.w3schools.com/howto/howto_css_switch.asp).
+  * The styling for the custom slider used in the settings modal was amended from the code generated from a [range.css generator](http://danielstern.ca/range.css/#/). I discovered the site from an article on css-tricks.com.
+  * The animation for the UFO's sliding in and out of the screen was initially generated on [animista.net](http://animista.net). Whilst I subsequently created several other animations I utilised the original code generated from the site as a reference point.
+  * How to create the custom toggle switches used in the settings modal were developed from a tutorial on [w3schools](https://www.w3schools.com/howto/howto_css_switch.asp).
  
 ### Reference Material
 * W3 Schools was used as a reference point for HTML, CSS and JavaScript
