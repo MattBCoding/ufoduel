@@ -16,8 +16,6 @@ Please note: To open any links in this document in a new browser tab, please pre
     * [The Structure Plane](#The-Structure-Plane)
     * [The Skeleton Plane](#The-Skeleton-Plane)
         * [Wireframes](#Wireframes)
-        * [Database Design](#Database-Design)
-        * [Security](#Security)
     * [The Surface Plane](#The-Surface-Plane)
         * [Design](#Design)
             * [Colour Scheme](#Colour-Scheme)
@@ -40,6 +38,7 @@ Please note: To open any links in this document in a new browser tab, please pre
 * As a user I want a fun and simple game to play
 * As a user I want to be able to control the time it takes to play the game
 * As a user I want to be able to play a more challenging version of the game
+* As a user I want to be able to play an easier and quicker version of the game
 * As a user I like to play games late at night and want to be able to control the colours to reduce eye strain
 * As a user I want to be able to play the game with my keyboard
 * As a user I want to be able to use a screen reader to help me play the game
@@ -88,6 +87,15 @@ Implementation:
 * The user will have the ability to change the difficulty level of the game. In combination with the ability to choose the number of rounds, this will enable the user to make the game easier or more challenging to suit their own preference.
 
 User Story:
+> As a user, I want to be able to play a quicker and easier version of the game
+
+Acceptance Criteria:
+* The user should be able to choose to play a simplier version of the game.
+
+Implementation:
+* The user will have the option to play the classic version of the game as well as the more challenging version that adds lizard and spock options. This in combination with the other controls for number of rounds and difficulty level will enable the user to fully control the amount of time or challenge posed by the game.
+
+User Story:
 
 > As a user, I like to play games late at night and want to be able to control the colours to reduce eye strain
 
@@ -132,18 +140,57 @@ Arising from user stories
 ## Wireframe mockups
 I initially utilised Balsamiq to produce low fidelity wireframes of how the game would appear across different devices. Although the game was intended to be contained within one page, wireframes were produced for the different content that would appear on the page. Utilising Balsamiq enabled me to consider multiple layouts for the game elements before settling on the final design.
 
+#### Main Menu
 ![Main Menu Wireframe](/assets/wireframes/main-menu.png)
+
+#### Enter Name Screen
 ![Enter Name Screen Wireframe](/assets/wireframes/enter-name-screen.png)
+
+#### Spock Game Screen
 ![Spock Game Screen Wireframe](/assets/wireframes/spock-game-screen.png)
+
+#### End of Game Screen
 ![End of Game Screen Wireframe](/assets/wireframes/endgame-screen.png)
-*
-*
-*
 
-Once happy with the overall structure for the site, and the layout of each section of the content, I produced a full colour mockup within Figma to test the colour scheme and font selection. The default colour scheme was generated using the Adobe colour selector to pull the colours from the vector image used as the background. For the dark colour scheme, I followed the recommendations provided by material.io which can be found at [material.io](https://material.io/design/color/dark-theme.html)
+To view the wireframes created for all pages
+[Mobile device wireframes](/assets/wireframes/mobile.png)
+[Tablet device wireframes](/assets/wireframes/tablet.png)
+[Desktop device wireframes](/assets/wireframes/desktop.png)
 
-* insert full colour mockup images
-* insert colour cards
+### The Surface Plane
+
+#### Design
+
+Once happy with the overall structure for the site, and the layout of each section of the content, I produced a full colour mockup within Adobe XD to test the colour scheme and font selection. The default colour scheme was generated using the Adobe colour selector to pull the colours from the vector image used as the background. For the dark colour scheme, I followed the recommendations provided by material.io which can be found at [material.io](https://material.io/design/color/dark-theme.html). It involved establishing shades of colours by overlaying white with varying degrees of opacity applied in order to lighten them. Whilst it was a time consuming process to perfect the design, it was one I found highly enjoyable.
+
+##### Background Image
+
+The background vector image provided the inspiration for the site and the overall theme. It was acquired from the vecteezy.com website where it was available for free download and use. It can be found [here](https://www.vecteezy.com/vector-art/295017-background-scene-with-pine-forest). It had been provided to the Vecteezy site by Graphics RF.
+
+![Original Vector Image](/assets/readme-images/original-vector-image.png)
+
+The original image was then amended in Adobe Illustrator to remove multiple elements. This was done for two reasons. Firstly to reduce the overall file size of the image for improved performance across all devices and secondly to reduce the number of elements to reduce visual clutter.
+
+##### Colour Scheme
+
+To ensure that the colours used for different elements provided the required contrast ratio the colour codes were loaded into a contrast checker available at [Contrast Grid](https://contrast-grid.eightshapes.com)
+
+Colour Schemes Used
+
+Day Mode Colour Scheme
+![Day time colour scheme](/assets/readme-images/day-mode-colour-scheme.png)
+
+Night Mode Colour Scheme
+![Night mode colour scheme](/assets/readme-images/night-mode-colour-scheme.png)
+
+##### Typography
+
+Google fonts was utilised to find a font that would be clean and clear for all users, whilst still conveying an element of fun. I eventually settled on 'Poppins' a sans-serif font.
+
+##### UFO Characters
+
+Whilst I originally experimented with creating UFO vector images for use in the site, I ultimately decided as I wanted to be able to animate the UFO's and change their colouring for the different colour modes it would make more sense to create them using CSS. The experience of creating them as vector images first however did reveal how to layer the different components to create the desired appearance.
+
 
 ## Features
 * Main Menu
