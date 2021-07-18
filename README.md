@@ -167,7 +167,7 @@ Once happy with the overall structure for the site, and the layout of each secti
 
 The background vector image provided the inspiration for the site and the overall theme. It was acquired from the vecteezy.com website where it was available for free download and use. It can be found [here](https://www.vecteezy.com/vector-art/295017-background-scene-with-pine-forest). It had been provided to the Vecteezy site by Graphics RF.
 
-![Original Vector Image](/assets/readme-images/original-vector-image.png)
+![Original Vector Image](/assets/readme-images/original-vector-image.jpg)
 
 The original image was then amended in Adobe Illustrator to remove multiple elements. This was done for two reasons. Firstly to reduce the overall file size of the image for improved performance across all devices and secondly to reduce the number of elements to reduce visual clutter.
 
@@ -193,20 +193,49 @@ Whilst I originally experimented with creating UFO vector images for use in the 
 
 
 ## Features
-* Main Menu
+* Common Features
+The site is designed with a central column that the JavaScript inserts the relevant HTML into. The title bar and site background remain on all screens.
 
+* Main Menu
+The main menu is the page of the site that the user is greeted by when they first visit. The design is based on numerous games to provide an instant indication of what the site is about without requiring the user to read too much text. With the options limited to four clearly labelled choices it is easy for users to know how to navigate the site.
+![Main Menu Day](/assets/readme-images/day-main-menu.png)
+
+Dark Colour Scheme
+![Main Menu Night](/assets/readme-images/night-main-menu.png)
 
 * Modals
+There are two modals available from the main menu, one for the rules of the game and one for the settings. The rules modal contains the rules for both versions of the game and also provides general information about the game.
+![Main Rules Modal](/assets/readme-images/rules.png)
 
+The settings modal provides the user with the ability to change the difficulty level of the game, the amount of rounds needed for the game and change the colour scheme.
+![Settings Modal](/assets/readme-images/settings.png)
 
-* Name Entry
+* Name Entry Screen
+The second screen the user will come across asks them to enter their name. The user can progress without entering their name if they so choose. 
+![Enter Name Screen](/assets/readme-images/day-enter-name.png)
 
+If the user enters a value that is incompatible with the input requirements it will trigger an error message to be displayed.
+![Enter Name Screen Error Message](/assets/readme-images/name-error-message.png)
 
 * Game Screens
+There are two versions of the game and therefore two different game screens, however they follow the same layout and format.
+Classic Game
+![Classic Game Screen](/assets/readme-images/classic-game.png)
 
+Spock Game
+![Spock Game Screen](/assets/readme-images/spock-game.png)
+
+Night Spock Game Screen
+![Spock Game Screen Night](/assets/readme-images/night-spock-game.png)
 
 * End Screens
+Depending on whether the user wins or loses the game will determine the message that is displayed at the end of the game.
 
+Winning Message
+![You Win Message](/assets/readme-images/night-you-win.png)
+
+Losing Message
+![You Lose Message](/assets/readme-images/night-you-lose.png)
 
 ## Future Enhancements
 
