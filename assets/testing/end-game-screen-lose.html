@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A browser based Rock Paper Scissors Lizard Spock game. Come and save the earth from the invading aliens.">
+  <!-- Favicon created by and downloaded from favicon-generator.org link code also generated-->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  <!-- end of generated code -->
+  <script src="https://kit.fontawesome.com/cd2a226592.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>U.F.O. Duel</title>
+
+</head>
+<body class="day">
+  <div class="screen-container" id="screen-container">
+    <div class="sun" id="sun"></div>
+    <div class="moon" id="moon"></div>
+  </div>
+
+  <main class="game-container">
+    <div class="title-container" id="title-container">
+      <!-- Title elements go in this container -->
+      <i class="fab fa-reddit-alien"></i><h1 class="title">U.F.O. Duel</h1><i class="fab fa-reddit-alien"></i>
+    </div>
+    <div class="middle-container" id="middle-container">
+      <!-- Scoreboard elements go in this container -->
+    </div>
+    <div class="main-container" id="main-container">
+      <!-- menu and game elements go in this container -->
+      <!-- html inserted by playerOverallLost function in app.js -->
+      <div class="endscreen-container">
+        <div class="endscreen-text-container">
+          <h2>You Lost!</h2>
+          <p>"Commander ${playerName} you have lost to the aliens ${playerScore}:${compScore}! I suggest you try again! Military personnel in this conflict do not have permission to lose.<br>All unaddressed losses will be dealt with through court martial with punishment being dealt swiftly and severely.<br>Between you and me, I've heard on the grapevine that the last commander who refused to try again, was made to enter the Eurovision Song Contest!"</p>
+        </div>
+        <button class="main-menu-button" id="end-back-to-menu-button">Back to Menu</button>
+      </div>
+      <!-- end of inserted html -->
+      <noscript class="no-js">
+        <p>This game requires JavaScript in order to work. Your browser either does not support JavaScript or you have it disabled. Try enabling JavaScript in your settings to play the game.
+        </p>
+      </noscript>
+    </div>
+  </main>
+  <!-- Main Rules Modal-->
+  <div class="modal-container" id="main-rules-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close" id="main-rules-modal-close" tabindex="0">&times;</span>
+        <h2>Rules of the game</h2>
+      </div>
+      <div class="modal-body" tabindex="0">
+        <h3>Background</h3>
+        <p>"Commander, I'm so glad you have arrived! Those pesky aliens are back again. That wasteland you see in front of you used to be a thriving city full of people. Now its just a desert. It's quiet down there now but at night they are a lot more active. The world leaders have been in communication with the aliens and they think they have found a solution. If you beat the aliens in mental combat, they will leave us alone, well they said that last time as well. This time however, they have offered us a longer rest between their visits if you take on the harder challenges. Good luck Commander, we are all counting on you!"</p>
+        <h3>How To Play</h3>
+        <p>To choose the hand that you want to play click or touch the corresponding UFO. Keyboard users can tab between the options and press the 'Enter' key to select. Be sure of which hand you want to play before making your selection. This is a battle soldier and there are no second chances. The selected UFO will move to face off against the boss and will return to their original starting location once the round has been played. You will need to win a total of 5 rounds before the boss alien does in order to win the game. You can choose a different number of rounds in the settings.</p>
+        <h3>Game Modes</h3>
+        <h4>Classic</h4>
+        <p>Play a classic game of Rock Paper Scissors. <br>
+          <i class="far fa-hand-rock"></i>
+           Rock beats Scissors 
+          <i class="far fa-hand-scissors"></i>
+          <br>
+          <i class="far fa-hand-scissors"></i>
+            Scissors beats Paper 
+          <i class="far fa-hand-paper"></i>
+          <br>
+          <i class="far fa-hand-paper"></i>
+             Paper beats Rock 
+          <i class="far fa-hand-rock"></i>
+        </p>
+        <h4>Spock</h4>
+        <p>Play them at the harder version of the game, Rock Paper Scissors Lizard Spock and buy us more time. 
+          <br>
+          <i class="far fa-hand-rock"></i>
+          Rock beats Scissors 
+          <i class="far fa-hand-scissors"></i>
+           and Lizard <i class="far fa-hand-lizard"></i>
+          <br>
+          <i class="far fa-hand-scissors"></i>
+            Scissors beats Paper 
+          <i class="far fa-hand-paper"></i>
+            and Lizard <i class="far fa-hand-lizard"></i>
+          <br>
+          <i class="far fa-hand-paper"></i>
+            Paper beats Rock 
+          <i class="far fa-hand-rock"></i>
+            and Spock <i class="far fa-hand-spock"></i>
+          <br>
+          <i class="far fa-hand-lizard"></i>
+           Lizard beats Spock 
+          <i class="far fa-hand-spock"></i>
+           and Paper 
+          <i class="far fa-hand-paper"></i>
+          <br>
+          <i class="far fa-hand-spock"></i>
+           Spock beats Scissors 
+          <i class="far fa-hand-scissors"></i>
+           and Rock 
+          <i class="far fa-hand-rock"></i>
+        </p>
+        <h3>Settings</h3>
+        <p>You can change the difficulty, number of rounds required to win and the colour scheme within the settings tab.</p>
+        <h4>Difficulty</h4>
+        <p>There are two difficulty levels, easy and hard. In easy difficulty the boss appears to be selecting its tiles at random. However, in the hard difficulty the boss is much more calculated. Those mad scientists over in the research division keep saying there is a pattern but no one has been able to figure it out yet.</p>
+        <h4>Rounds Required</h4>
+        <p>Adjust the slider to select more or less rounds required. The aliens won't get out of bed for a game of less than 3 rounds for a win, but they will happily play for hours upto a whopping 33 rounds required for a win.</p>
+        <h4>Colour Mode</h4>
+        <p>There are two colour modes available for you to choose from, light or dark. The dark mode can be easier on the eyes for those late night gaming sessions.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Settings Modal-->
+  <div class="modal-container" id="settings-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close" id="settings-modal-close" tabindex="0">&times;</span>
+        <h2>Game Settings</h2>
+      </div>
+      <div class="modal-body settings-modal-body">
+        <div class="settings-modal-column">
+          <h4 id="game-difficulty-heading">Game Difficulty</h4>
+          <div class="slider-container">
+            <p class="left-label">Easy</p>
+            <label for="difficulty-checkbox" aria-labelledby="game-difficulty-heading">
+              <input type="checkbox" id="difficulty-checkbox" class="checkbox">
+              <span class="toggle round" tabindex="0" id="difficulty-span"></span>
+            </label>
+            <p class="right-label">Hard</p>
+          </div>
+        </div>
+        <div class="settings-modal-column"> 
+          <h4 id="rounds-needed-heading">Rounds Needed To Win</h4>
+          <label for="rounds-slider" class="switch" aria-labelledby="rounds-needed-heading">
+            <input type="range" min="3" max="33" step="1" id="rounds-slider" value="5" tabindex="0">
+            <span class="slider round"></span>
+          </label>
+          <p id="rounds-wanted">5</p>
+        </div>
+        <div class="settings-modal-column">
+          <h4 id="colour-mode-heading">Colour Mode</h4>
+          <div class="slider-container">
+            <p class="left-label">Light</p>
+            <label for="colour-mode-checkbox" aria-labelledby="colour-mode-heading">
+              <input type="checkbox" id="colour-mode-checkbox" class="checkbox">
+              <span class="toggle round" tabindex="0" id="colour-mode-span"></span>
+            </label>
+            <p class="right-label">Dark</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container for in game modals to be inserted -->
+  <div id="rules-modal-container"></div>
+  <div id="quit-modal-container"></div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
