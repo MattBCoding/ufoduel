@@ -204,7 +204,8 @@ Whilst I originally experimented with creating UFO vector images for use in the 
 The site is designed with a central column that the JavaScript inserts the relevant HTML into. The title bar and site background remain on all screens.
 
 * Main Menu
-The main menu is the page of the site that the user is greeted by when they first visit. The design is based on numerous games to provide an instant indication of what the site is about without requiring the user to read too much text. With the options limited to four clearly labelled choices it is easy for users to know how to navigate the site.
+The main menu is the page of the site that the user is greeted by when they first visit. The design is based on numerous games to provide an instant indication of what the site is about without requiring the user to read too much text. With the options limited to four clearly labelled choices it is easy for users to know how to navigate the site. This links to the user story 'As a user, I want a fun and simple game to play'. The site visually indicates that it is a game through the use of colour, layout and imagery.
+
 ![Main Menu Day](/assets/readme-images/day-main-menu.png)
 
 Dark Colour Scheme
@@ -212,9 +213,11 @@ Dark Colour Scheme
 
 * Modals
 There are two modals available from the main menu, one for the rules of the game and one for the settings. The rules modal contains the rules for both versions of the game and also provides general information about the game.
+
 ![Main Rules Modal](/assets/readme-images/rules.png)
 
-The settings modal provides the user with the ability to change the difficulty level of the game, the amount of rounds needed for the game and change the colour scheme.
+The settings modal provides the user with the ability to change the difficulty level of the game, the amount of rounds needed for the game and change the colour scheme. This links to the user story 'As a user, I want to be able to control the time it takes to play the game' by providing the user with the ability to increase or decrease the number of rounds required to finish the game. It also links to the user story 'As a user, I want to be able to play a more challenging version of the game' & 'As a user, I want to be able to play a quicker and easier version of the game' by allowing the user to choose between two difficulty levels. Finally, the option for the user to change the colour scheme to the dark mode satisfies the user story 'As a user, I like to play games late at night and want to be able to control the colours to reduce eye strain'
+
 ![Settings Modal](/assets/readme-images/settings.png)
 
 * Name Entry Screen
@@ -272,8 +275,10 @@ Testing was divided into different sections to ensure everything was tested indi
 #### Validator Testing
 * HTML
   * No errors were returned when passing through the official W3C Validator. [View Report](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2F)
+
 * CSS
   * No errors were returned when passing through the official W3C CSS Validation Service - Jigsaw. [View Report](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
 * JavaScript
   * No errors were returned when passing through the validator service at JSHint.com. ![View Image of Report](/assets/readme-images/jshint-report.png)
 
