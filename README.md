@@ -305,8 +305,11 @@ The live link can be found here - [UFO Duel Live Site](https://mattbcoding.githu
 ### Content
 * CSS Styling
   * The styling for the custom slider used in the settings modal was amended from the code generated from a [range.css generator](http://danielstern.ca/range.css/#/). I discovered the site from an article on css-tricks.com.
-  * The animation for the UFO's sliding in and out of the screen was initially generated on [animista.net](http://animista.net). Whilst I subsequently created several other animations I utilised the original code generated from the site as a reference point.
+  * The animation for the UFO's sliding in and out of the screen was initially generated on [animista.net](http://animista.net). Whilst I subsequently created several other animations I used the original code generated from the site as a reference point.
   * How to create the custom toggle switches used in the settings modal were developed from a tutorial on [w3schools](https://www.w3schools.com/howto/howto_css_switch.asp).
+
+* Hard Mode Logic
+  * Wang, Z. and Xu, B. and Zhou, H. (2014) 'Social cycling and conditional responses in the Rock-Paper-Scissors game', Scientific Reports, 4(5830) available at: [link to published article](https://arxiv.org/pdf/1404.5199v1.pdf) last accessed on 24/07/2021. This journal article of a study done into the patterns in people's decision making during a game of Rock Paper Scissors formed the basis of the logic implemented for the hard difficulty.
  
 ### Reference Material
 * W3 Schools was used as a reference point for HTML, CSS and JavaScript

@@ -1152,6 +1152,7 @@ input[type=range]#rounds-slider:focus::-ms-fill-upper {
 
   #end-back-to-menu-button {
     margin-top: 15px;
+    min-height: 56px;
   }
 }
 
