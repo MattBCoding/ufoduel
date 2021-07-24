@@ -289,7 +289,7 @@ Testing was divided into different sections to ensure everything was tested indi
   * The lighthouse report gave an almost perfect score of 99, 100, 100, 100. ![View Image of Report](/assets/readme-images/lighthouse-report.png)
 
 #### Notable Bugs
-No bugs of note were discovered during the development or testing of the site. However frustration with the different requirements from different browsers was experienced.
+No bugs of note were discovered during the development or testing of the site. However frustration with the different requirements from different browsers was experienced. Multiple small visual errors were encountered during testing across different devices, browsers or browser versions which needed additional CSS style rules to overcome. For example, older versions of iOS safari required button minimum dimensions to be added in order to display the buttons correctly. 
 
 ## Deployment
 
