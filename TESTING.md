@@ -4,8 +4,17 @@
 
 The HTML code for the site was checked using the main validator services of w3.org for HTML. [View Report](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2F)
 
-Due to the site design and the JavaScript inserting and removing HTML depending on where in the site you are it is not possible to fully validate the HTML through the validator service from the deployed site. Therefore I created seperate files for each page in notepad and pasted in the HTML code that is inserted by JavaScript. These files were then uploaded to the validator service to ensure there were no errors. On the first attempt, the validator highlighted multiple errors on both the classic game screen and the spock game screen. These were as a result of duplicating id's for different elements, which I had inadvertently done after creating the first ufo block, which I then duplicated for the remaining ufo's. A simple fix of removing the unused id and values fixed the errors.
+Due to the site design and the JavaScript inserting and removing HTML depending on where in the site you are it is not possible to fully validate the HTML through the validator service from the deployed site. Therefore I created seperate files for each page and inserted the HTML code that JavaScript inserts to create the complete page. These files were then checked through the validator service to ensure there were no errors. On the first attempt, the validator highlighted multiple errors on both the classic game screen and the spock game screen. These were as a result of duplicating id's for different elements, which I had done inadvertently when creating the first ufo block and duplicating it for the remaining ufo's. A simple fix of removing the unused id's and values fixed the errors.
 The validator also highlighted a warning for the potential misuse of aria-labels on the div's that contain the ufo elements. These warnings were ignored as in this specific use case, the use of the aria-labels on the container divs for the ufo elements forms the basis for the game tiles and is the recommended action from webaim.org to allow the tile to be captured by screen readers given that it does not contain any text elements only background styling through CSS.
+
+The validator reports for each of the completed pages:
+[Main Menu](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2Fassets%2Ftesting%2Fmain-menu.html)
+[Enter Name Screen](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2Fassets%2Ftesting%2Fname-screen.html)
+[Classic Game Screen](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2Fassets%2Ftesting%2Fclassic-game-screen.html)
+[Spock Game Screen](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2Fassets%2Ftesting%2Fspock-game-screen.html)
+[End Screen - Player Win](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2Fassets%2Ftesting%2Fend-game-screen-win.html)
+[End Screen - Player Lose](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2Fassets%2Ftesting%2Fend-game-screen-lose.html)
+
 
 The CSS code for the site was checked using the w3.org jigsaw validator service for CSS. [View Report](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmattbcoding.github.io%2Fufoduel%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en). The report contains no errors, however it does flag 64 warnings which relate to the use of CSS variables and -webkit- or -moz- prefixes. The use of CSS variables were checked on caniuse.com and returned a compatibility of 95.64% across all browsers with all browsers reporting compatibility except Internet Explorer.
 
