@@ -782,7 +782,7 @@ function addClassicRulesModal() {
         <br>
         <p>"Commander, you need to decide which hand you want to play by touching or clicking on the ufo that is lighting it up. The aliens will have already decided which move they are going to make way before you, their minds are much quicker than ours. You don't have to worry about them cheating either, they may spend their time invading other planets, destroying everything and stealing anything of potential value, but they pride themselves on the fact they do it honourably, in a fair fight."</p>
         <h3>Hard Mode</h3>
-        <p>"If you were brave enough to try and beat them in the Hard mode you will be taking on the alien boss and not one of the minions, I wish you luck, you are going to need it. Some of the really crazy looking scientists keep muttering to themselves that there is a pattern to the way the boss plays but none of the previous commanders have ever survived to report back."</p> <span id="response"><p>"???"</p></span><p>"Oh, sorry, I thought you already knew you weren't the first choice"
+        <p>"If you were brave enough to try and beat them in the Hard mode you will be taking on the alien boss and not one of the minions, I wish you luck, you are going to need it. Some of the really crazy looking scientists keep muttering to themselves that there is a pattern to the way the boss plays but none of the previous commanders have ever survived to report back."</p> <div id="response"><p>"???"</p></div><p>"Oh, sorry, I thought you already knew you weren't the first choice"
         </p>
       </div>
     </div>
@@ -860,7 +860,7 @@ function addSpockRulesModal() {
         <br>
         <p>"Commander, you need to decide which hand you want to play by touching or clicking on the ufo that is lighting it up. The aliens will have already decided which move they are going to make way before you, their minds are much quicker than ours. You don't have to worry about them cheating either, they may spend their time invading other planets, destroying everything and stealing anything of potential value, but they pride themselves on the fact they do it honourably, in a fair fight."</p>
         <h3>Hard Mode</h3>
-        <p>"If you were brave enough to try and beat them in the Hard mode you will be taking on the alien boss and not one of the minions, I wish you luck, you are going to need it. Some of the really crazy looking scientists keep muttering to themselves that there is a pattern to the way the boss plays but none of the previous commanders have ever survived to report back."</p> <span id="response"><p>"???"</p></span><p>"Oh, sorry, I thought you already knew you weren't the first choice"
+        <p>"If you were brave enough to try and beat them in the Hard mode you will be taking on the alien boss and not one of the minions, I wish you luck, you are going to need it. Some of the really crazy looking scientists keep muttering to themselves that there is a pattern to the way the boss plays but none of the previous commanders have ever survived to report back."</p> <div id="response"><p>"???"</p></div><p>"Oh, sorry, I thought you already knew you weren't the first choice"
         </p>
       </div>
     </div>
@@ -1053,9 +1053,9 @@ function launchClassicGame() {
           <div class="glass"></div>
           <div class="separator"></div>
           <div class="body">
-            <div class="window small window-left" id="window-left"></div>
-            <div class="window window-center" id="window-center"></div>
-            <div class="window small window-right" id="window-right"></div>
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
           </div>
           <div class="light" id="scissors-light-classic"></div>
           <i class="far fa-hand-scissors"></i>
@@ -1069,9 +1069,9 @@ function launchClassicGame() {
           <div class="glass"></div>
           <div class="separator"></div>
           <div class="body-comp">
-            <div class="window small window-left" id="window-left"></div>
-            <div class="window window-center" id="window-center"></div>
-            <div class="window small window-right" id="window-right"></div>
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
           </div>
           <div id="comp-light-container"></div>
         </div>
@@ -1104,9 +1104,9 @@ function launchSpockGame() {
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
-          <div class="window small window-left" id="window-left"></div>
-          <div class="window window-center" id="window-center"></div>
-          <div class="window small window-right" id="window-right"></div>
+          <div class="window small window-left"></div>
+          <div class="window window-center"></div>
+          <div class="window small window-right"></div>
         </div>
         <div class="light" id="lizard-light-spock"></div>
         <i class="far fa-hand-lizard"></i>
@@ -1118,9 +1118,9 @@ function launchSpockGame() {
         <div class="glass"></div>
         <div class="separator"></div>
         <div class="body">
-          <div class="window small window-left" id="window-left"></div>
-          <div class="window window-center" id="window-center"></div>
-          <div class="window small window-right" id="window-right"></div>
+          <div class="window small window-left"></div>
+          <div class="window window-center"></div>
+          <div class="window small window-right"></div>
         </div>
         <div class="light" id="spock-light-spock"></div>
         <i class="far fa-hand-spock"></i>
@@ -1160,9 +1160,9 @@ function launchSpockGame() {
           <div class="glass"></div>
           <div class="separator"></div>
           <div class="body">
-            <div class="window small window-left" id="window-left"></div>
-            <div class="window window-center" id="window-center"></div>
-            <div class="window small window-right" id="window-right"></div>
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
           </div>
           <div class="light" id="scissors-light-spock"></div>
           <i class="far fa-hand-scissors"></i>
@@ -1176,9 +1176,9 @@ function launchSpockGame() {
           <div class="glass"></div>
           <div class="separator"></div>
           <div class="body-comp">
-            <div class="window small window-left" id="window-left"></div>
-            <div class="window window-center" id="window-center"></div>
-            <div class="window small window-right" id="window-right"></div>
+            <div class="window small window-left"></div>
+            <div class="window window-center"></div>
+            <div class="window small window-right"></div>
           </div>
           <div id="comp-light-container"></div>
         </div>
